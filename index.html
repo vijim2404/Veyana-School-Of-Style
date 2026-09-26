@@ -1,3089 +1,2795 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Veyana School of Style</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+<title>Veyana School Of Style</title>
+<meta name="description" content="Veyana School Of Style — Learn • Create • Build • Transform">
 
 <style>
-
-/* =====================================================
-   VEYANA SCHOOL OF STYLE
-   LUXURY EMERALD + GOLD DESIGN
-===================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
 
 :root{
-
-    --green-dark:#02120b;
-    --green:#062417;
-    --green-light:#0b3b27;
-
-    --gold:#d6aa3a;
-    --gold-light:#f4d77d;
-
-    --cream:#f7f1df;
-    --white:#ffffff;
-
-    --muted:#c7c9bd;
-
-    --border:rgba(214,170,58,.28);
-
+  --green:#031a10;
+  --green2:#072c1b;
+  --green3:#0b3d26;
+  --gold:#d4af37;
+  --gold2:#f1d77a;
+  --cream:#f8f3e5;
+  --muted:#c9cbbf;
+  --line:rgba(212,175,55,.28);
+  --card:rgba(6,39,24,.82);
 }
 
+*{box-sizing:border-box;margin:0;padding:0}
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-
-html{
-    scroll-behavior:smooth;
-}
-
+html{scroll-behavior:smooth}
 
 body{
-
-    background:var(--green-dark);
-
-    color:var(--cream);
-
-    font-family:'Montserrat',sans-serif;
-
-    line-height:1.75;
-
-    overflow-x:hidden;
-
+  background:var(--green);
+  color:var(--cream);
+  font-family:Montserrat,Arial,sans-serif;
+  line-height:1.7;
+  overflow-x:hidden;
 }
 
+a{text-decoration:none;color:inherit}
 
-img{
-    max-width:100%;
+button,input,select,textarea{font:inherit}
+
+/* BIG CENTER WATERMARK */
+body:before{
+  content:"";
+  position:fixed;
+  z-index:-1;
+  left:50%;
+  top:52%;
+  width:min(850px,78vw);
+  height:min(850px,78vw);
+  transform:translate(-50%,-50%);
+  background:url("logo.png") center/contain no-repeat;
+  opacity:.075;
+  pointer-events:none;
 }
-
-
-a{
-    color:inherit;
-    text-decoration:none;
-}
-
-
-/* =====================================================
-   NAVIGATION
-===================================================== */
-
-nav{
-
-    position:fixed;
-
-    top:0;
-    left:0;
-
-    width:100%;
-
-    height:82px;
-
-    display:flex;
-    align-items:center;
-
-    background:rgba(2,18,11,.94);
-
-    backdrop-filter:blur(15px);
-
-    border-bottom:1px solid var(--border);
-
-    z-index:1000;
-
-}
-
-
-.nav-inner{
-
-    width:min(1200px,92%);
-
-    margin:auto;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-}
-
-
-.logo{
-
-    width:68px;
-    height:68px;
-
-    object-fit:contain;
-
-}
-
-
-.nav-links{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:28px;
-
-    font-size:12px;
-
-    letter-spacing:1px;
-
-}
-
-
-.nav-links a{
-
-    transition:.3s ease;
-
-}
-
-
-.nav-links a:hover{
-
-    color:var(--gold-light);
-
-}
-
-
-.nav-button{
-
-    border:1px solid var(--gold);
-
-    padding:9px 18px;
-
-    border-radius:30px;
-
-    color:var(--gold-light);
-
-}
-
-
-.nav-button:hover{
-
-    background:var(--gold);
-
-    color:var(--green-dark);
-
-}
-
-
-/* =====================================================
-   HERO
-===================================================== */
-
-.hero{
-
-    min-height:100vh;
-
-    position:relative;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    overflow:hidden;
-
-    background:
-
-    radial-gradient(
-        circle at center,
-        rgba(11,59,39,.75),
-        transparent 48%
-    ),
-
-    linear-gradient(
-        135deg,
-        #02120b,
-        #062417 50%,
-        #02120b
-    );
-
-}
-
-
-.hero::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:850px;
-    height:850px;
-
-    left:50%;
-    top:50%;
-
-    transform:translate(-50%,-50%);
-
-    background-image:url("logo.png");
-
-    background-repeat:no-repeat;
-
-    background-position:center;
-
-    background-size:contain;
-
-    opacity:.045;
-
-    pointer-events:none;
-
-}
-
-
-.hero-content{
-
-    position:relative;
-
-    z-index:2;
-
-    width:min(950px,92%);
-
-    text-align:center;
-
-    padding-top:70px;
-
-}
-
-
-.hero-logo{
-
-    width:150px;
-    height:150px;
-
-    object-fit:contain;
-
-    margin-bottom:25px;
-
-    filter:drop-shadow(
-        0 15px 30px rgba(0,0,0,.5)
-    );
-
-}
-
-
-.hero h1{
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:clamp(55px,9vw,105px);
-
-    line-height:.85;
-
-    letter-spacing:5px;
-
-    color:var(--gold-light);
-
-}
-
-
-.hero-subtitle{
-
-    margin-top:25px;
-
-    font-size:14px;
-
-    letter-spacing:5px;
-
-    text-transform:uppercase;
-
-}
-
-
-.hero-line{
-
-    width:100px;
-
-    height:1px;
-
-    background:var(--gold);
-
-    margin:32px auto;
-
-}
-
-
-.hero-tagline{
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:clamp(25px,4vw,38px);
-
-    line-height:1.25;
-
-}
-
-
-.gold{
-
-    color:var(--gold-light);
-
-}
-
-
-.hero-description{
-
-    max-width:720px;
-
-    margin:25px auto 0;
-
-    color:var(--muted);
-
-    font-size:14px;
-
-}
-
-
-.hero-button{
-
-    display:inline-block;
-
-    margin-top:32px;
-
-    padding:14px 28px;
-
-    border:1px solid var(--gold);
-
-    color:var(--gold-light);
-
-    letter-spacing:1px;
-
-    transition:.3s;
-
-}
-
-
-.hero-button:hover{
-
-    background:var(--gold);
-
-    color:var(--green-dark);
-
-}
-
-
-/* =====================================================
-   GENERAL SECTIONS
-===================================================== */
-
-section{
-
-    position:relative;
-
-    overflow:hidden;
-
-    padding:110px 0;
-
-}
-
-
-/* =====================================================
-   CENTER WATERMARK
-===================================================== */
-
-section::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:680px;
-
-    height:680px;
-
-    left:50%;
-
-    top:50%;
-
-    transform:translate(-50%,-50%);
-
-    background-image:url("logo.png");
-
-    background-repeat:no-repeat;
-
-    background-position:center;
-
-    background-size:contain;
-
-    opacity:.045;
-
-    pointer-events:none;
-
-    z-index:0;
-
-}
-
-
-section > *{
-
-    position:relative;
-
-    z-index:1;
-
-}
-
-
-.section-dark{
-
-    background:
-
-    linear-gradient(
-        135deg,
-        rgba(2,18,11,.99),
-        rgba(6,36,23,.98)
-    );
-
-}
-
-
-.section-green{
-
-    background:
-
-    linear-gradient(
-        135deg,
-        #062417,
-        #0b3b27
-    );
-
-}
-
 
 .container{
-
-    width:min(1180px,92%);
-
-    margin:auto;
-
+  width:min(1180px,92%);
+  margin:auto;
 }
 
-
-.section-heading{
-
-    text-align:center;
-
-    margin-bottom:65px;
-
+.section{
+  padding:100px 0;
+  position:relative;
 }
 
-
-.section-heading span{
-
-    display:block;
-
-    color:var(--gold);
-
-    font-size:11px;
-
-    letter-spacing:4px;
-
-    text-transform:uppercase;
-
-    margin-bottom:10px;
-
+.section.alt{
+  background:rgba(1,12,7,.38);
 }
 
-
-.section-heading h2{
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:clamp(42px,6vw,68px);
-
-    color:var(--gold-light);
-
-    line-height:1;
-
+.eyebrow{
+  color:var(--gold2);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:3px;
+  text-transform:uppercase;
 }
 
-
-.section-heading p{
-
-    max-width:720px;
-
-    margin:18px auto 0;
-
-    color:var(--muted);
-
-    font-size:14px;
-
+h1,h2,h3{
+  font-family:"Cormorant Garamond",serif;
+  line-height:1.1;
 }
 
+h2{font-size:clamp(42px,6vw,70px)}
 
-/* =====================================================
-   ABOUT US
-===================================================== */
+h3{font-size:28px}
+
+.section-title{
+  text-align:center;
+  margin-bottom:55px;
+}
+
+.section-title h2{
+  margin-top:10px;
+}
+
+.section-title p{
+  max-width:780px;
+  margin:18px auto;
+  color:var(--muted);
+}
+
+/* HEADER */
+
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:82px;
+  z-index:1000;
+  background:rgba(3,26,16,.94);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid var(--line);
+}
+
+.nav{
+  height:100%;
+  width:min(1200px,92%);
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  width:66px;
+  height:66px;
+  object-fit:contain;
+}
+
+.navlinks{
+  display:flex;
+  gap:25px;
+  align-items:center;
+}
+
+.navlinks a{
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
+.navlinks a:hover{
+  color:var(--gold2);
+}
+
+.enroll-nav{
+  border:1px solid var(--gold);
+  color:var(--gold2)!important;
+  border-radius:25px;
+  padding:9px 18px;
+}
+
+.enroll-nav:hover{
+  background:var(--gold);
+  color:var(--green)!important;
+}
+
+.menu{
+  display:none;
+  background:none;
+  border:1px solid var(--line);
+  color:var(--gold2);
+  padding:7px 11px;
+  border-radius:7px;
+}
+
+/* HERO */
+
+.hero{
+  min-height:100vh;
+  padding:120px 0 80px;
+  display:flex;
+  align-items:center;
+  text-align:center;
+  background:
+    radial-gradient(circle at center,rgba(11,61,38,.72),transparent 55%),
+    linear-gradient(135deg,#031a10,#062819,#031a10);
+}
+
+.hero-content{
+  max-width:900px;
+  margin:auto;
+}
+
+.hero-logo{
+  width:110px;
+  height:110px;
+  object-fit:contain;
+  margin:0 auto 25px;
+}
+
+.hero h1{
+  margin-top:12px;
+  font-size:clamp(58px,9vw,105px);
+  color:var(--gold2);
+  text-transform:uppercase;
+}
+
+.hero h1 span{
+  display:block;
+  color:var(--cream);
+}
+
+.tagline{
+  margin:22px auto 12px;
+  font-family:"Cormorant Garamond",serif;
+  color:var(--gold2);
+  font-size:clamp(27px,4vw,42px);
+}
+
+.hero p{
+  max-width:720px;
+  margin:auto;
+  color:var(--muted);
+}
+
+.actions{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top:32px;
+}
+
+.btn{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  min-width:155px;
+  padding:13px 24px;
+  border-radius:30px;
+  border:1px solid var(--gold);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:.25s;
+}
+
+.btn.gold{
+  background:var(--gold);
+  color:var(--green);
+}
+
+.btn.gold:hover{
+  background:var(--gold2);
+  transform:translateY(-2px);
+}
+
+.btn.outline{
+  color:var(--gold2);
+}
+
+.btn.outline:hover{
+  background:var(--gold);
+  color:var(--green);
+}
+
+/* ABOUT */
 
 .about-grid{
-
-    display:grid;
-
-    grid-template-columns:1.1fr .9fr;
-
-    gap:70px;
-
-    align-items:center;
-
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:60px;
 }
 
-
-.about-text h3{
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:50px;
-
-    color:var(--gold-light);
-
-    margin-bottom:22px;
-
+.copy p{
+  color:var(--muted);
+  margin-bottom:18px;
 }
 
-
-.about-text p{
-
-    color:var(--muted);
-
-    font-size:15px;
-
-    margin-bottom:20px;
-
+.card{
+  border:1px solid var(--line);
+  background:var(--card);
+  border-radius:18px;
+  padding:32px;
 }
 
-
-.about-image{
-
-    min-height:520px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    padding:45px;
-
-    border:1px solid var(--border);
-
-    background:
-
-    radial-gradient(
-        circle,
-        rgba(214,170,58,.08),
-        transparent 65%
-    );
-
+.card h3{
+  color:var(--gold2);
+  margin-bottom:15px;
 }
 
-
-.about-image img{
-
-    width:min(390px,90%);
-
-    filter:drop-shadow(
-        0 25px 35px rgba(0,0,0,.55)
-    );
-
+.card p,
+.card li{
+  color:var(--muted);
 }
 
-
-/* =====================================================
-   VISION + MISSION
-===================================================== */
-
-.vm-grid{
-
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:30px;
-
+.quote{
+  margin-top:25px;
+  padding:20px 25px;
+  border-left:2px solid var(--gold);
+  color:var(--gold2);
+  font-family:"Cormorant Garamond",serif;
+  font-size:25px;
 }
 
+/* MISSION */
 
-.vm-card{
-
-    padding:50px 42px;
-
-    border:1px solid var(--border);
-
-    background:rgba(0,0,0,.16);
-
+.mission-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
 }
 
-
-.vm-number{
-
-    color:var(--gold);
-
-    font-size:12px;
-
-    letter-spacing:3px;
-
+ul{
+  padding-left:22px;
 }
 
-
-.vm-card h3{
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:45px;
-
-    color:var(--gold-light);
-
-    margin:12px 0 22px;
-
+li{
+  margin:6px 0;
 }
 
+/* DIFFERENCE */
 
-.vm-card p{
-
-    color:var(--muted);
-
-    font-size:15px;
-
+.features{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
 }
 
-
-.vm-card ul{
-
-    margin-top:20px;
-
-    padding-left:22px;
-
+.feature{
+  padding:30px;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:linear-gradient(145deg,rgba(11,61,38,.72),rgba(3,26,16,.86));
 }
 
-
-.vm-card li{
-
-    color:var(--muted);
-
-    margin-bottom:10px;
-
+.num{
+  color:var(--gold);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:1px;
 }
 
-
-/* =====================================================
-   WHAT MAKES VEYANA DIFFERENT
-===================================================== */
-
-.different-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    gap:20px;
-
+.feature h3{
+  color:var(--gold2);
+  margin:8px 0 12px;
 }
 
-
-.feature-card{
-
-    min-height:330px;
-
-    padding:32px 26px;
-
-    border:1px solid var(--border);
-
-    background:
-
-    linear-gradient(
-        145deg,
-        rgba(11,59,39,.7),
-        rgba(2,18,11,.8)
-    );
-
-    transition:.4s;
-
+.feature p,
+.feature li{
+  color:var(--muted);
 }
 
-
-.feature-card:hover{
-
-    transform:translateY(-8px);
-
-    border-color:var(--gold);
-
-    box-shadow:
-        0 20px 45px rgba(0,0,0,.25);
-
+.feature strong{
+  color:var(--cream);
 }
 
-
-.feature-number{
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:44px;
-
-    color:rgba(244,215,125,.35);
-
-}
-
-
-.feature-card h3{
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:27px;
-
-    line-height:1.15;
-
-    color:var(--gold-light);
-
-    margin:12px 0 16px;
-
-}
-
-
-.feature-card p{
-
-    color:var(--muted);
-
-    font-size:13px;
-
-}
-
-
-.difference-intro{
-
-    max-width:800px;
-
-    margin:0 auto 45px;
-
-    text-align:center;
-
-}
-
-
-.difference-intro h3{
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:38px;
-
-    color:var(--gold-light);
-
-}
-
-
-.difference-intro p{
-
-    color:var(--muted);
-
-    margin-top:12px;
-
-}
-
-
-/* =====================================================
-   LONG CONTENT CARDS
-===================================================== */
-
-.content-block{
-
-    margin-top:65px;
-
-}
-
-
-.content-block h3{
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:40px;
-
-    color:var(--gold-light);
-
-    margin-bottom:18px;
-
-}
-
-
-.content-block p{
-
-    color:var(--muted);
-
-    font-size:15px;
-
-}
-
-
-.content-block ul{
-
-    padding-left:25px;
-
-    margin-top:15px;
-
-}
-
-
-.content-block li{
-
-    color:var(--muted);
-
-    margin-bottom:8px;
-
-}
-
-
-/* =====================================================
-   LEARNING JOURNEY
-===================================================== */
+/* JOURNEY */
 
 .journey{
-
-    max-width:900px;
-
-    margin:auto;
-
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  gap:10px;
 }
 
-
-.journey-item{
-
-    display:grid;
-
-    grid-template-columns:110px 1fr;
-
-    gap:25px;
-
-    padding:30px 0;
-
-    border-bottom:1px solid var(--border);
-
+.step{
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:23px 12px;
+  text-align:center;
+  background:var(--card);
 }
 
-
-.journey-number{
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:55px;
-
-    color:var(--gold);
-
+.step strong{
+  display:block;
+  color:var(--gold2);
+  font-family:"Cormorant Garamond",serif;
+  font-size:25px;
 }
 
-
-.journey-item h3{
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:32px;
-
-    color:var(--gold-light);
-
-    margin-bottom:7px;
-
+.step small{
+  display:block;
+  color:var(--muted);
+  font-size:11px;
+  margin-top:8px;
 }
-
-
-.journey-item p{
-
-    color:var(--muted);
-
-    font-size:14px;
-
-}
-
 
 .arrow{
-
-    text-align:center;
-
-    color:var(--gold);
-
-    font-size:25px;
-
-    padding:8px;
-
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--gold);
+  font-size:22px;
 }
 
+/* COURSES */
 
-/* =====================================================
-   LEARN CARDS
-===================================================== */
-
-.learn-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:20px;
-
+.courses{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
 }
 
-
-.learn-card{
-
-    padding:35px;
-
-    border-left:2px solid var(--gold);
-
-    background:rgba(0,0,0,.15);
-
+.course{
+  overflow:hidden;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:var(--card);
+  display:flex;
+  flex-direction:column;
 }
 
-
-.learn-card h3{
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:30px;
-
-    color:var(--gold-light);
-
-    margin-bottom:12px;
-
+.course-top{
+  min-height:150px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,var(--green3),#041a10);
+  border-bottom:1px solid var(--line);
 }
 
-
-.learn-card p{
-
-    color:var(--muted);
-
-    font-size:14px;
-
+.course-top span{
+  font-family:"Cormorant Garamond",serif;
+  color:var(--gold2);
+  font-size:32px;
+  text-align:center;
+  padding:20px;
 }
 
-
-/* =====================================================
-   LEARN & EARN
-===================================================== */
-
-.earn-box{
-
-    max-width:950px;
-
-    margin:auto;
-
-    padding:70px 60px;
-
-    text-align:center;
-
-    border:1px solid var(--gold);
-
-    background:
-
-    radial-gradient(
-        circle at center,
-        rgba(214,170,58,.10),
-        transparent 65%
-    );
-
+.course-body{
+  padding:25px;
+  display:flex;
+  flex-direction:column;
+  flex:1;
 }
 
-
-.earn-box h2{
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:60px;
-
-    color:var(--gold-light);
-
-    margin-bottom:22px;
-
+.course h3{
+  color:var(--gold2);
+  font-size:27px;
 }
 
-
-.earn-box p{
-
-    color:var(--muted);
-
-    margin-bottom:20px;
-
+.course p{
+  color:var(--muted);
+  margin:10px 0 18px;
 }
 
+.course-meta{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-bottom:20px;
+}
+
+.badge{
+  font-size:10px;
+  padding:5px 9px;
+  border:1px solid var(--line);
+  border-radius:20px;
+  color:var(--cream);
+}
+
+.course .btn{
+  margin-top:auto;
+  width:100%;
+}
+
+/* LEARN EARN */
+
+.earn{
+  text-align:center;
+}
+
+.earn p{
+  max-width:780px;
+  margin:14px auto;
+  color:var(--muted);
+}
 
 .earn-list{
-
-    text-align:left;
-
-    max-width:650px;
-
-    margin:25px auto;
-
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  margin:32px auto;
+  max-width:950px;
 }
 
-
-.earn-list li{
-
-    color:var(--muted);
-
-    margin-bottom:9px;
-
+.earn-item{
+  padding:16px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  color:var(--cream);
+  background:var(--card);
 }
 
-
-.earn-line{
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:30px;
-
-    color:var(--gold-light);
-
-    margin-top:30px;
-
-}
-
-
-/* =====================================================
-   MORE THAN A COURSE
-===================================================== */
+/* MORE / WHY */
 
 .more-grid{
-
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:50px;
-
-    align-items:center;
-
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:55px;
+  align-items:center;
 }
 
-
-.more-text h2{
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:65px;
-
-    line-height:.95;
-
-    color:var(--gold-light);
-
+.bigtext{
+  color:var(--gold2);
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(40px,5vw,65px);
+  line-height:1.08;
 }
 
-
-.more-text p{
-
-    color:var(--muted);
-
-    margin-top:20px;
-
+.more-grid p{
+  color:var(--muted);
+  margin-bottom:15px;
 }
 
-
-.quote-box{
-
-    padding:55px 40px;
-
-    border:1px solid var(--border);
-
-    background:rgba(0,0,0,.15);
-
-    text-align:center;
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:34px;
-
-    color:var(--cream);
-
+.why{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px 35px;
 }
-
-
-/* =====================================================
-   WHY VEYANA
-===================================================== */
-
-.why-list{
-
-    max-width:850px;
-
-    margin:auto;
-
-}
-
 
 .why-item{
-
-    display:flex;
-
-    gap:18px;
-
-    padding:22px 0;
-
-    border-bottom:1px solid var(--border);
-
+  display:flex;
+  gap:15px;
+  padding:22px 0;
+  border-bottom:1px solid var(--line);
 }
 
-
-.why-icon{
-
-    color:var(--gold);
-
-    font-size:20px;
-
+.check{
+  color:var(--gold2);
+  font-size:20px;
 }
 
-
-.why-item h3{
-
-    font-family:'Cormorant Garamond',serif;
-
-    color:var(--gold-light);
-
-    font-size:28px;
-
+.why h3{
+  font-size:24px;
+  color:var(--gold2);
 }
 
-
-.why-item p{
-
-    color:var(--muted);
-
-    font-size:14px;
-
+.why p{
+  color:var(--muted);
+  font-size:14px;
 }
 
-
-/* =====================================================
-   BELIEF
-===================================================== */
+/* BELIEF */
 
 .belief{
-
-    max-width:900px;
-
-    margin:auto;
-
-    text-align:center;
-
+  text-align:center;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
 }
-
-
-.belief h2{
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:65px;
-
-    color:var(--gold-light);
-
-    margin-bottom:35px;
-
-}
-
 
 .belief-quote{
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:clamp(30px,5vw,48px);
-
-    line-height:1.2;
-
-    color:var(--gold-light);
-
-    margin-bottom:35px;
-
+  max-width:850px;
+  margin:25px auto;
+  color:var(--gold2);
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(38px,5vw,62px);
+  line-height:1.1;
 }
-
 
 .belief p{
-
-    color:var(--muted);
-
-    font-size:16px;
-
-    margin-bottom:20px;
-
+  color:var(--muted);
+  max-width:800px;
+  margin:10px auto;
 }
 
+/* ENROLL */
 
-/* =====================================================
-   CONTACT
-===================================================== */
-
-.contact{
-
-    text-align:center;
-
+#enroll{
+  background:linear-gradient(135deg,rgba(7,44,27,.85),rgba(3,26,16,.96));
 }
 
-
-.contact-box{
-
-    max-width:750px;
-
-    margin:auto;
-
-    padding:55px;
-
-    border:1px solid var(--border);
-
-    background:rgba(0,0,0,.15);
-
+.enroll-box{
+  max-width:900px;
+  margin:auto;
+  padding:45px;
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:rgba(2,16,10,.78);
 }
 
-
-.contact-box h2{
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:55px;
-
-    color:var(--gold-light);
-
+.enroll-box h2{
+  text-align:center;
+  color:var(--gold2);
 }
 
-
-.contact-box p{
-
-    color:var(--muted);
-
-    margin:10px 0;
-
+.enroll-box>p{
+  text-align:center;
+  color:var(--muted);
+  margin:10px auto 30px;
 }
 
+.formgrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
 
-/* =====================================================
-   FOOTER
-===================================================== */
+.field{
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+}
+
+.field.full{
+  grid-column:1/-1;
+}
+
+label{
+  font-size:11px;
+  color:var(--gold2);
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
+input,
+select,
+textarea{
+  width:100%;
+  background:rgba(255,255,255,.04);
+  color:var(--cream);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:13px;
+  outline:none;
+}
+
+select option{
+  background:var(--green);
+}
+
+textarea{
+  min-height:120px;
+  resize:vertical;
+}
+
+.form-actions{
+  text-align:center;
+  margin-top:24px;
+}
+
+/* COURSE DETAIL */
+
+.modal{
+  position:fixed;
+  inset:0;
+  z-index:2000;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  background:rgba(0,0,0,.78);
+  backdrop-filter:blur(8px);
+}
+
+.modal.show{
+  display:flex;
+}
+
+.modal-box{
+  width:min(760px,100%);
+  max-height:90vh;
+  overflow:auto;
+  background:#052217;
+  border:1px solid var(--gold);
+  border-radius:20px;
+  padding:35px;
+  position:relative;
+}
+
+.close{
+  position:absolute;
+  right:18px;
+  top:15px;
+  width:35px;
+  height:35px;
+  border-radius:50%;
+  border:1px solid var(--line);
+  background:transparent;
+  color:var(--gold2);
+  cursor:pointer;
+  font-size:20px;
+}
+
+.modal-box h2{
+  font-size:45px;
+  color:var(--gold2);
+  padding-right:35px;
+}
+
+.detail-row{
+  display:grid;
+  grid-template-columns:170px 1fr;
+  gap:15px;
+  padding:13px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.detail-label{
+  color:var(--gold2);
+  font-weight:700;
+}
+
+.detail-value{
+  color:var(--muted);
+}
+
+.modal-actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:25px;
+}
+
+/* FOOTER */
 
 footer{
-
-    padding:50px 20px;
-
-    text-align:center;
-
-    background:#010b07;
-
-    border-top:1px solid var(--border);
-
+  padding:55px 0 25px;
+  background:#011009;
+  border-top:1px solid var(--line);
 }
 
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.3fr 1fr 1fr;
+  gap:50px;
+}
 
 .footer-logo{
-
-    width:80px;
-
-    margin-bottom:15px;
-
+  width:82px;
+  height:82px;
+  object-fit:contain;
+  margin-bottom:15px;
 }
-
 
 footer h3{
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:32px;
-
-    color:var(--gold-light);
-
+  font-size:25px;
+  color:var(--gold2);
+  margin-bottom:13px;
 }
 
-
-.footer-tagline{
-
-    color:var(--gold);
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:21px;
-
-    margin:10px 0;
-
+footer p,
+footer a{
+  color:var(--muted);
 }
 
-
-footer p{
-
-    color:var(--muted);
-
-    font-size:12px;
-
+footer a{
+  display:block;
+  margin:7px 0;
+  font-size:14px;
 }
 
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media(max-width:1000px){
-
-    .different-grid{
-
-        grid-template-columns:repeat(2,1fr);
-
-    }
-
-    .learn-grid{
-
-        grid-template-columns:1fr 1fr;
-
-    }
-
+footer a:hover{
+  color:var(--gold2);
 }
 
-
-@media(max-width:750px){
-
-    nav{
-
-        height:70px;
-
-    }
-
-
-    .logo{
-
-        width:55px;
-
-        height:55px;
-
-    }
-
-
-    .nav-links{
-
-        display:none;
-
-    }
-
-
-    section{
-
-        padding:80px 0;
-
-    }
-
-
-    .hero-logo{
-
-        width:120px;
-
-        height:120px;
-
-    }
-
-
-    .hero h1{
-
-        font-size:50px;
-
-        letter-spacing:2px;
-
-    }
-
-
-    .hero-subtitle{
-
-        font-size:10px;
-
-        letter-spacing:3px;
-
-    }
-
-
-    .about-grid,
-    .vm-grid,
-    .more-grid{
-
-        grid-template-columns:1fr;
-
-    }
-
-
-    .different-grid,
-    .learn-grid{
-
-        grid-template-columns:1fr;
-
-    }
-
-
-    .about-image{
-
-        min-height:350px;
-
-    }
-
-
-    .journey-item{
-
-        grid-template-columns:70px 1fr;
-
-        gap:15px;
-
-    }
-
-
-    .journey-number{
-
-        font-size:42px;
-
-    }
-
-
-    .journey-item h3{
-
-        font-size:27px;
-
-    }
-
-
-    .earn-box{
-
-        padding:45px 25px;
-
-    }
-
-
-    .earn-box h2{
-
-        font-size:48px;
-
-    }
-
-
-    .more-text h2{
-
-        font-size:50px;
-
-    }
-
-
-    .quote-box{
-
-        padding:40px 25px;
-
-        font-size:28px;
-
-    }
-
-
-    .belief h2{
-
-        font-size:48px;
-
-    }
-
-
-    section::after{
-
-        width:450px;
-
-        height:450px;
-
-        opacity:.035;
-
-    }
-
+.copy{
+  border-top:1px solid var(--line);
+  margin-top:35px;
+  padding-top:20px;
+  text-align:center;
+  color:#858b82;
+  font-size:12px;
 }
 
+/* RESPONSIVE */
 
-@media(max-width:450px){
+@media(max-width:950px){
 
-    .hero h1{
+  .navlinks{
+    display:none;
+    position:absolute;
+    top:82px;
+    left:4%;
+    width:92%;
+    padding:18px;
+    flex-direction:column;
+    background:rgba(3,26,16,.98);
+    border:1px solid var(--line);
+    border-radius:0 0 15px 15px;
+  }
 
-        font-size:42px;
+  .navlinks.open{
+    display:flex;
+  }
 
-    }
+  .menu{
+    display:block;
+  }
 
+  .about-grid,
+  .mission-grid,
+  .more-grid{
+    grid-template-columns:1fr;
+  }
 
-    .hero-tagline{
+  .features,
+  .why{
+    grid-template-columns:1fr;
+  }
 
-        font-size:27px;
+  .courses{
+    grid-template-columns:1fr 1fr;
+  }
 
-    }
+  .journey{
+    grid-template-columns:1fr;
+  }
 
+  .arrow{
+    display:none;
+  }
 
-    .section-heading h2{
+  .earn-list{
+    grid-template-columns:1fr 1fr;
+  }
 
-        font-size:45px;
-
-    }
-
-
-    .feature-card{
-
-        min-height:auto;
-
-    }
-
+  .footer-grid{
+    grid-template-columns:1fr 1fr;
+  }
 }
 
+@media(max-width:600px){
+
+  .section{
+    padding:75px 0;
+  }
+
+  .hero h1{
+    font-size:55px;
+  }
+
+  .hero-logo{
+    width:90px;
+    height:90px;
+  }
+
+  body:before{
+    width:92vw;
+    height:92vw;
+    opacity:.065;
+  }
+
+  .courses,
+  .earn-list,
+  .footer-grid,
+  .formgrid{
+    grid-template-columns:1fr;
+  }
+
+  .field.full{
+    grid-column:auto;
+  }
+
+  .enroll-box{
+    padding:25px 18px;
+  }
+
+  .modal-box{
+    padding:25px 18px;
+  }
+
+  .modal-box h2{
+    font-size:38px;
+  }
+
+  .detail-row{
+    grid-template-columns:1fr;
+    gap:4px;
+  }
+}
 </style>
-
 </head>
-
 
 <body>
 
+<header>
+  <div class="nav">
 
-<!-- =====================================================
-     NAVIGATION
-===================================================== -->
+    <a href="#home">
+      <img src="logo.png" class="logo" alt="Veyana School Of Style">
+    </a>
 
-<nav>
+    <nav class="navlinks" id="navlinks">
+      <a href="#about">About</a>
+      <a href="#difference">Difference</a>
+      <a href="#journey">Journey</a>
+      <a href="#courses">Courses</a>
+      <a href="#learn-earn">Learn & Earn</a>
+      <a href="#why">Why Veyana</a>
+      <a href="#enroll" class="enroll-nav">Enroll Now</a>
+    </nav>
 
-<div class="nav-inner">
+    <button
+      class="menu"
+      onclick="document.getElementById('navlinks').classList.toggle('open')">
+      ☰
+    </button>
 
-<a href="#home">
+  </div>
+</header>
 
-<img src="logo.png"
-     class="logo"
-     alt="Veyana Groups Logo">
+<main>
 
-</a>
-
-
-<div class="nav-links">
-
-<a href="#about">About</a>
-
-<a href="#vision">Vision</a>
-
-<a href="#different">Difference</a>
-
-<a href="#journey">Journey</a>
-
-<a href="#learn">Learn</a>
-
-<a href="#contact"
-   class="nav-button">
-Contact
-</a>
-
-</div>
-
-</div>
-
-</nav>
-
-
-<!-- =====================================================
-     HERO
-===================================================== -->
+<!-- HERO -->
 
 <section class="hero" id="home">
 
-<div class="hero-content">
+  <div class="container hero-content">
 
+    <img
+      src="logo.png"
+      class="hero-logo"
+      alt="Veyana Logo">
 
-<img src="logo.png"
-     class="hero-logo"
-     alt="Veyana Groups Logo">
+    <div class="eyebrow">
+      Begin Your Journey
+    </div>
 
+    <h1>
+      VEYANA
+      <span>SCHOOL OF STYLE</span>
+    </h1>
 
-<h1>
-VEYANA
-</h1>
+    <div class="tagline">
+      We Don’t Teach Fashion. We Awaken It.
+    </div>
 
+    <p>
+      Professional fashion education designed to help you learn,
+      create, build your professional identity, and prepare for
+      the world of fashion.
+    </p>
 
-<div class="hero-subtitle">
-SCHOOL OF STYLE
-</div>
+    <div class="actions">
 
+      <a href="#courses" class="btn gold">
+        Start Now
+      </a>
 
-<div class="hero-line"></div>
+      <a href="#enroll" class="btn outline">
+        Enroll Now
+      </a>
 
+    </div>
 
-<div class="hero-tagline">
-
-We Don’t Teach Fashion.<br>
-
-<span class="gold">
-We Awaken It.
-</span>
-
-</div>
-
-
-<p class="hero-description">
-
-A professional fashion education platform
-created to transform aspiring learners into
-skilled, confident, creative, and
-industry-ready fashion professionals.
-
-</p>
-
-
-<a href="#about"
-   class="hero-button">
-
-DISCOVER VEYANA
-
-</a>
-
-
-</div>
+  </div>
 
 </section>
 
 
-<!-- =====================================================
-     ABOUT US
-===================================================== -->
+<!-- ABOUT -->
 
-<section class="section-dark"
-         id="about">
+<section class="section" id="about">
 
 <div class="container">
 
+  <div class="section-title">
 
-<div class="section-heading">
+    <div class="eyebrow">
+      About Us
+    </div>
 
-<span>
-About Veyana
-</span>
+    <h2>
+      More Than Fashion Education
+    </h2>
 
-<h2>
-About Us
-</h2>
-
-</div>
-
-
-<div class="about-grid">
+  </div>
 
 
-<div class="about-text">
+  <div class="about-grid">
+
+    <div class="copy">
+
+      <p>
+        <strong>Veyana School of Style</strong>
+        is a professional fashion education platform created
+        to transform aspiring learners into skilled, confident,
+        creative, and industry-ready fashion professionals.
+      </p>
+
+      <p>
+        Our approach goes beyond simply teaching tailoring or
+        fashion techniques. We combine theory, practical training,
+        draping, garment construction, design development,
+        professional finishing, and portfolio creation to provide
+        a complete fashion-learning experience.
+      </p>
+
+      <p>
+        We believe that a fashion student should not learn only
+        how to make a garment.
+      </p>
+
+      <p>
+        A student should learn how to design it, construct it,
+        present it, document it, and confidently take it to the
+        professional world.
+      </p>
+
+      <p>
+        Our goal is to prepare students to explore opportunities
+        not only locally, but also to build a professional identity
+        capable of reaching national and international fashion
+        opportunities.
+      </p>
+
+      <div class="quote">
+        “We Don’t Teach Fashion. We Awaken It.”
+      </div>
+
+    </div>
 
 
-<p>
+    <div class="card">
 
-<strong>
-Veyana School of Style
-</strong>
-is a professional fashion education platform created to transform aspiring learners into
-<strong>
-skilled, confident, creative, and industry-ready fashion professionals
-</strong>.
+      <h3>
+        OUR VISION
+      </h3>
 
-</p>
+      <p>
+        To build a new generation of professionally skilled and
+        globally prepared fashion professionals who can confidently
+        showcase their creativity, develop a strong professional
+        identity, and create opportunities for themselves anywhere
+        in the world.
+      </p>
 
+      <br>
 
-<p>
+      <p>
+        We envision fashion education that combines knowledge,
+        practical skill, creativity, presentation, and professional
+        exposure.
+      </p>
 
-Our approach goes beyond simply teaching tailoring or fashion techniques. We combine
-<strong>
-theory, practical training, draping, garment construction, design development, professional finishing, and portfolio creation
-</strong>
-to provide a complete fashion-learning experience.
+      <br>
 
-</p>
+      <h3>
+        OUR MISSION
+      </h3>
 
+      <p>
+        Our mission is to provide a complete and structured fashion
+        education that develops both technical ability and
+        professional confidence.
+      </p>
 
-<p>
+      <br>
 
-We believe that a fashion student should not learn only how to make a garment.
+      <ul>
 
-</p>
+        <li>
+          Provide strong theoretical and practical knowledge.
+        </li>
 
+        <li>
+          Develop professional garment construction skills.
+        </li>
 
-<p>
+        <li>
+          Teach creative and technical draping techniques.
+        </li>
 
-A student should learn how to
-<strong>
-design it, construct it, present it, document it, and confidently take it to the professional world.
-</strong>
+        <li>
+          Build strong design and problem-solving abilities.
+        </li>
 
-</p>
+        <li>
+          Help students develop their own design identity.
+        </li>
 
+        <li>
+          Guide students in creating a professional fashion
+          portfolio.
+        </li>
 
-<p>
+        <li>
+          Prepare students to present their work professionally.
+        </li>
 
-Our goal is to prepare students to explore opportunities not only locally, but also to build a professional identity capable of reaching
-<strong>
-national and international fashion opportunities
-</strong>.
+        <li>
+          Develop skills relevant to career, freelancing,
+          entrepreneurship, and further opportunities.
+        </li>
 
-</p>
+        <li>
+          Encourage students to think beyond local opportunities
+          and prepare for national and international possibilities.
+        </li>
 
+        <li>
+          Help learners transform their creativity into a
+          sustainable professional path.
+        </li>
 
-</div>
+      </ul>
 
+    </div>
 
-<div class="about-image">
-
-<img src="logo.png"
-     alt="Veyana Groups Logo">
-
-</div>
-
-
-</div>
+  </div>
 
 </div>
 
 </section>
 
 
-<!-- =====================================================
-     VISION + MISSION
-===================================================== -->
+<!-- WHAT MAKES VEYANA DIFFERENT -->
 
-<section class="section-green"
-         id="vision">
+<section class="section alt" id="difference">
 
 <div class="container">
 
+  <div class="section-title">
 
-<div class="section-heading">
+    <div class="eyebrow">
+      What Makes Veyana Different?
+    </div>
 
-<span>
-Our Direction
-</span>
+    <h2>
+      Beyond Learning. Towards a Professional Identity.
+    </h2>
 
-<h2>
-Our Vision & Mission
-</h2>
+    <p>
+      At Veyana, completing a course is not the final goal.
+      Building a professional identity is.
+    </p>
 
-</div>
+    <p>
+      Our learning approach brings together multiple areas
+      of fashion education so that students can progress from
+      learning → creating → presenting → building a portfolio
+      → exploring opportunities.
+    </p>
 
-
-<div class="vm-grid">
-
-
-<div class="vm-card">
-
-<div class="vm-number">
-01 — OUR VISION
-</div>
-
-
-<h3>
-OUR VISION
-</h3>
+  </div>
 
 
-<p>
-
-To build a new generation of
-<strong>
-professionally skilled and globally prepared fashion professionals
-</strong>
-who can confidently showcase their creativity, develop a strong professional identity, and create opportunities for themselves anywhere in the world.
-
-</p>
+  <div class="features">
 
 
-<p style="margin-top:20px;">
+    <!-- 01 -->
 
-We envision fashion education that combines
-<strong>
-knowledge, practical skill, creativity, presentation, and professional exposure
-</strong>.
+    <article class="feature">
 
-</p>
+      <div class="num">
+        01 — THEORY + PRACTICAL LEARNING
+      </div>
 
+      <h3>
+        Learn Why, How & What
+      </h3>
 
-</div>
+      <p>
+        Fashion cannot be mastered through theory alone.
+        Our learning combines conceptual knowledge with practical
+        application, allowing students to understand not only what
+        to do, but also why and how it is done.
+      </p>
 
-
-<div class="vm-card">
-
-<div class="vm-number">
-02 — OUR MISSION
-</div>
-
-
-<h3>
-OUR MISSION
-</h3>
+    </article>
 
 
-<p>
+    <!-- 02 -->
 
-Our mission is to provide a complete and structured fashion education that develops both
-<strong>
-technical ability and professional confidence
-</strong>.
+    <article class="feature">
 
-</p>
+      <div class="num">
+        02 — PROFESSIONAL DRAPING
+      </div>
 
+      <h3>
+        Understand Form in Three Dimensions
+      </h3>
 
-<p style="margin-top:20px;">
-We aim to:
-</p>
+      <p>
+        Students are introduced to draping techniques as part
+        of their fashion-learning journey. Draping helps learners
+        understand fabric behaviour, form, proportion, silhouette,
+        and three-dimensional garment development.
+      </p>
 
-
-<ul>
-
-<li>
-Provide strong theoretical and practical knowledge.
-</li>
-
-<li>
-Develop professional garment construction skills.
-</li>
-
-<li>
-Teach creative and technical draping techniques.
-</li>
-
-<li>
-Build strong design and problem-solving abilities.
-</li>
-
-<li>
-Help students develop their own design identity.
-</li>
-
-<li>
-Guide students in creating a professional fashion portfolio.
-</li>
-
-<li>
-Prepare students to present their work professionally.
-</li>
-
-<li>
-Develop skills relevant to career, freelancing, entrepreneurship, and further opportunities.
-</li>
-
-<li>
-Encourage students to think beyond local opportunities and prepare for national and international possibilities.
-</li>
-
-<li>
-Help learners transform their creativity into a sustainable professional path.
-</li>
-
-</ul>
+    </article>
 
 
-</div>
+    <!-- 03 -->
+
+    <article class="feature">
+
+      <div class="num">
+        03 — GARMENT CONSTRUCTION
+      </div>
+
+      <h3>
+        From Measurement to Finish
+      </h3>
+
+      <p>
+        Students learn the complete construction process,
+        including:
+      </p>
+
+      <ul>
+
+        <li>Measurements</li>
+        <li>Pattern development</li>
+        <li>Cutting</li>
+        <li>Construction</li>
+        <li>Fitting</li>
+        <li>Finishing</li>
+        <li>Professional presentation</li>
+
+      </ul>
+
+      <p>
+        The focus is on developing real garment-making ability,
+        not simply completing classroom exercises.
+      </p>
+
+    </article>
 
 
-</div>
+    <!-- 04 -->
+
+    <article class="feature">
+
+      <div class="num">
+        04 — PORTFOLIO DEVELOPMENT
+      </div>
+
+      <h3>
+        Build Proof of Your Skills
+      </h3>
+
+      <p>
+        Students are guided to document and present their work
+        so that they can gradually build a portfolio that
+        represents their:
+      </p>
+
+      <ul>
+
+        <li>Designs</li>
+        <li>Garments</li>
+        <li>Draping work</li>
+        <li>Embroidery</li>
+        <li>Construction skills</li>
+        <li>Creative concepts</li>
+        <li>Practical projects</li>
+
+      </ul>
+
+      <p>
+        A portfolio becomes a visual representation of a student's
+        skills, creativity, development, and design identity.
+      </p>
+
+    </article>
+
+
+    <!-- 05 -->
+
+    <article class="feature">
+
+      <div class="num">
+        05 — BUILD YOUR DESIGN IDENTITY
+      </div>
+
+      <h3>
+        Discover Your Creative Direction
+      </h3>
+
+      <p>
+        We encourage students to discover their own creative
+        direction rather than simply copying existing designs.
+      </p>
+
+      <p>
+        <strong>
+          Ideas → Inspiration → Design Development
+          → Creation → Presentation
+        </strong>
+      </p>
+
+      <p>
+        The objective is to help every learner gradually understand
+        what makes their creative work their own.
+      </p>
+
+    </article>
+
+
+    <!-- 06 -->
+
+    <article class="feature">
+
+      <div class="num">
+        06 — PROFESSIONAL PRESENTATION
+      </div>
+
+      <h3>
+        Create It. Present It.
+      </h3>
+
+      <p>
+        Knowing how to create a garment is one skill.
+        Knowing how to present that garment professionally
+        is another.
+      </p>
+
+      <p>
+        Students are guided to understand the importance of:
+      </p>
+
+      <ul>
+
+        <li>Design presentation</li>
+        <li>Garment presentation</li>
+        <li>Portfolio presentation</li>
+        <li>Visual documentation</li>
+        <li>Professional appearance</li>
+        <li>Communicating their design ideas</li>
+
+      </ul>
+
+    </article>
+
+
+    <!-- 07 -->
+
+    <article class="feature">
+
+      <div class="num">
+        07 — GLOBAL-READY MINDSET
+      </div>
+
+      <h3>
+        Think Beyond Boundaries
+      </h3>
+
+      <p>
+        Our students are encouraged to think beyond the boundaries
+        of their immediate surroundings.
+      </p>
+
+      <p>
+        We aim to develop learners who can confidently say:
+      </p>
+
+      <p>
+        <strong>
+          “I have a skill. I have created my work.
+          I can present my work.”
+        </strong>
+      </p>
+
+      <p>
+        The objective is to help students prepare themselves for
+        opportunities that may exist across India and international
+        markets, depending on their skills, qualifications,
+        portfolio, and career pathway.
+      </p>
+
+    </article>
+
+
+    <!-- 08 -->
+
+    <article class="feature">
+
+      <div class="num">
+        08 — CAREER & BUSINESS READINESS
+      </div>
+
+      <h3>
+        Turn Skills Into Possibilities
+      </h3>
+
+      <p>
+        Students are encouraged to understand how their fashion
+        skills can support different professional pathways.
+      </p>
+
+      <ul>
+
+        <li>Career opportunities</li>
+
+        <li>Freelance work</li>
+
+        <li>Tailoring and custom orders</li>
+
+        <li>Embroidery services</li>
+
+        <li>Fashion-related businesses</li>
+
+        <li>Teaching opportunities</li>
+
+        <li>Further professional education</li>
+
+      </ul>
+
+      <p>
+        The focus is on helping learners understand, build,
+        and present skills that can support their individual
+        professional journey.
+      </p>
+
+    </article>
+
+  </div>
 
 </div>
 
 </section>
 
 
-<!-- =====================================================
-     WHAT MAKES VEYANA DIFFERENT
-===================================================== -->
+<!-- LEARNING JOURNEY -->
 
-<section class="section-dark"
-         id="different">
+<section class="section" id="journey">
 
 <div class="container">
 
+  <div class="section-title">
 
-<div class="section-heading">
+    <div class="eyebrow">
+      Our Learning Journey
+    </div>
 
-<span>
-Beyond Learning
-</span>
+    <h2>
+      Learn → Create → Build → Explore
+    </h2>
 
-<h2>
-What Makes Veyana Different?
-</h2>
+  </div>
 
-</div>
 
+  <div class="journey">
 
-<div class="difference-intro">
+    <div class="step">
 
-<h3>
-Beyond Learning. Towards a Professional Identity.
-</h3>
+      <strong>LEARN</strong>
 
+      <small>
+        Understand the theory, techniques,
+        terminology, and fundamentals.
+      </small>
 
-<p>
+    </div>
 
-At Veyana, completing a course is not the final goal.
+    <div class="arrow">
+      →
+    </div>
 
-</p>
+    <div class="step">
 
+      <strong>PRACTICE</strong>
 
-<p>
-<strong>
-Building a professional identity is.
-</strong>
-</p>
+      <small>
+        Apply knowledge through structured
+        practical training.
+      </small>
 
+    </div>
 
-<p>
+    <div class="arrow">
+      →
+    </div>
 
-Our learning approach brings together multiple areas of fashion education so that students can progress from
-<strong>
-learning → creating → presenting → building a portfolio → exploring opportunities.
-</strong>
+    <div class="step">
 
-</p>
+      <strong>CREATE</strong>
 
-</div>
+      <small>
+        Develop garments, designs, embroidery,
+        draping projects, and creative work.
+      </small>
 
+    </div>
 
-<div class="different-grid">
+    <div class="arrow">
+      →
+    </div>
 
+    <div class="step">
 
-<!-- 01 -->
+      <strong>REFINE</strong>
 
-<div class="feature-card">
+      <small>
+        Improve construction, fitting,
+        finishing, presentation, and
+        professional standards.
+      </small>
 
-<div class="feature-number">
-01
-</div>
+    </div>
 
-<h3>
-THEORY + PRACTICAL LEARNING
-</h3>
+  </div>
 
-<p>
 
-Fashion cannot be mastered through theory alone.
+  <div class="journey" style="margin-top:15px">
 
-Our learning combines
-<strong>
-conceptual knowledge with practical application
-</strong>,
-allowing students to understand not only
-<em>what</em>
-to do, but also
-<em>why</em>
-and
-<em>how</em>
-it is done.
+    <div class="step">
 
-</p>
+      <strong>BUILD</strong>
 
-</div>
+      <small>
+        Create a personal collection of work
+        and develop a professional portfolio.
+      </small>
 
+    </div>
 
-<!-- 02 -->
+    <div class="arrow">
+      →
+    </div>
 
-<div class="feature-card">
+    <div class="step">
 
-<div class="feature-number">
-02
-</div>
+      <strong>PRESENT</strong>
 
-<h3>
-PROFESSIONAL DRAPING
-</h3>
+      <small>
+        Learn how to showcase your skills
+        and creative identity professionally.
+      </small>
 
-<p>
+    </div>
 
-Students are introduced to
-<strong>
-draping techniques
-</strong>
-as part of their fashion-learning journey.
+    <div class="arrow">
+      →
+    </div>
 
-Draping helps learners understand fabric behaviour, form, proportion, silhouette, and three-dimensional garment development.
+    <div class="step">
 
-</p>
+      <strong>EXPLORE</strong>
 
-</div>
+      <small>
+        Use your skills and portfolio to explore
+        career, business, freelance, and further
+        learning opportunities.
+      </small>
 
+    </div>
 
-<!-- 03 -->
-
-<div class="feature-card">
-
-<div class="feature-number">
-03
-</div>
-
-<h3>
-GARMENT CONSTRUCTION
-</h3>
-
-<p>
-Students learn the complete construction process, including:
-</p>
-
-<ul style="padding-left:18px; color:var(--muted); font-size:13px;">
-
-<li>Measurements</li>
-<li>Pattern development</li>
-<li>Cutting</li>
-<li>Construction</li>
-<li>Fitting</li>
-<li>Finishing</li>
-<li>Professional presentation</li>
-
-</ul>
-
-<p style="margin-top:10px;">
-
-The focus is on developing
-<strong>
-real garment-making ability
-</strong>,
-not simply completing classroom exercises.
-
-</p>
-
-</div>
-
-
-<!-- 04 -->
-
-<div class="feature-card">
-
-<div class="feature-number">
-04
-</div>
-
-<h3>
-PORTFOLIO DEVELOPMENT
-</h3>
-
-<p>
-
-One of the important parts of the Veyana learning journey is
-<strong>
-professional portfolio development
-</strong>.
-
-</p>
-
-<p style="margin-top:10px;">
-Students are guided to document and present their work so that they can gradually build a portfolio that represents their:
-</p>
-
-<ul style="padding-left:18px; color:var(--muted); font-size:13px;">
-
-<li>Designs</li>
-<li>Garments</li>
-<li>Draping work</li>
-<li>Embroidery</li>
-<li>Construction skills</li>
-<li>Creative concepts</li>
-<li>Practical projects</li>
-
-</ul>
-
-</div>
-
-
-<!-- 05 -->
-
-<div class="feature-card">
-
-<div class="feature-number">
-05
-</div>
-
-<h3>
-BUILD YOUR DESIGN IDENTITY
-</h3>
-
-<p>
-
-We encourage students to discover their own creative direction rather than simply copying existing designs.
-
-</p>
-
-<p style="margin-top:12px;">
-
-<strong>
-Ideas → Inspiration → Design Development → Creation → Presentation
-</strong>
-
-</p>
-
-<p style="margin-top:12px;">
-
-The objective is to help every learner gradually understand
-<strong>
-what makes their creative work their own.
-</strong>
-
-</p>
-
-</div>
-
-
-<!-- 06 -->
-
-<div class="feature-card">
-
-<div class="feature-number">
-06
-</div>
-
-<h3>
-PROFESSIONAL PRESENTATION
-</h3>
-
-<p>
-
-Knowing how to create a garment is one skill.
-
-Knowing how to
-<strong>
-present that garment professionally
-</strong>
-is another.
-
-</p>
-
-<ul style="padding-left:18px; color:var(--muted); font-size:13px; margin-top:10px;">
-
-<li>Design presentation</li>
-<li>Garment presentation</li>
-<li>Portfolio presentation</li>
-<li>Visual documentation</li>
-<li>Professional appearance</li>
-<li>Communicating design ideas</li>
-
-</ul>
-
-</div>
-
-
-<!-- 07 -->
-
-<div class="feature-card">
-
-<div class="feature-number">
-07
-</div>
-
-<h3>
-GLOBAL-READY MINDSET
-</h3>
-
-<p>
-
-Our students are encouraged to think beyond the boundaries of their immediate surroundings.
-
-</p>
-
-<p style="margin-top:12px;">
-
-We aim to develop learners who can confidently say:
-
-</p>
-
-<p style="margin-top:12px; color:var(--gold-light);">
-
-<strong>
-“I have a skill. I have created my work. I can present my work.”
-</strong>
-
-</p>
-
-<p style="margin-top:12px;">
-
-The objective is to help students prepare themselves for opportunities that may exist across
-<strong>
-India and international markets
-</strong>,
-depending on their skills, qualifications, portfolio, and career pathway.
-
-</p>
-
-</div>
-
-
-<!-- 08 -->
-
-<div class="feature-card">
-
-<div class="feature-number">
-08
-</div>
-
-<h3>
-CAREER & ENTREPRENEURSHIP
-</h3>
-
-<p>
-
-Fashion skills can become more than a qualification.
-
-</p>
-
-<p style="margin-top:12px;">
-
-Students are encouraged to understand how their skills can be developed into:
-
-</p>
-
-<ul style="padding-left:18px; color:var(--muted); font-size:13px; margin-top:10px;">
-
-<li>Freelance services</li>
-
-<li>Tailoring businesses</li>
-
-<li>Boutique ventures</li>
-
-<li>Embroidery services</li>
-
-<li>Teaching opportunities</li>
-
-<li>Fashion-related businesses</li>
-
-<li>Other professional pathways</li>
-
-</ul>
-
-</div>
-
-
-</div>
+  </div>
 
 </div>
 
 </section>
 
 
-<!-- =====================================================
-     LEARNING JOURNEY
-===================================================== -->
+<!-- COURSES -->
 
-<section class="section-green"
-         id="journey">
+<section class="section alt" id="courses">
 
 <div class="container">
 
+  <div class="section-title">
 
-<div class="section-heading">
+    <div class="eyebrow">
+      What You Can Learn At Veyana
+    </div>
 
-<span>
-Your Growth
-</span>
+    <h2>
+      Explore Our Courses
+    </h2>
 
-<h2>
-Our Learning Journey
-</h2>
+    <p>
+      Choose a course to view its duration, mode,
+      details, fees and enrollment option.
+    </p>
 
-</div>
+  </div>
 
 
-<div class="journey">
+  <div class="courses">
 
 
-<div class="journey-item">
+    <!-- COURSE 1 -->
 
-<div class="journey-number">
-01
-</div>
+    <article class="course">
 
-<div>
+      <div class="course-top">
+        <span>Fashion Designing</span>
+      </div>
 
-<h3>
-LEARN
-</h3>
+      <div class="course-body">
 
-<p>
-Understand the theory, techniques, terminology, and fundamentals.
-</p>
+        <h3>
+          Diploma in Fashion Designing
+        </h3>
 
-</div>
+        <div class="course-meta">
 
-</div>
+          <span class="badge">
+            6–8 Months
+          </span>
 
+          <span class="badge">
+            Online / Offline
+          </span>
 
-<div class="arrow">
-↓
-</div>
+        </div>
 
+        <p>
+          Design development, fashion concepts, creativity,
+          silhouettes, garment construction, draping and
+          professional design practices.
+        </p>
 
-<div class="journey-item">
+        <button
+          class="btn gold"
+          onclick="openCourse('Diploma in Fashion Designing')">
 
-<div class="journey-number">
-02
-</div>
+          Enroll Now
 
-<div>
+        </button>
 
-<h3>
-PRACTICE
-</h3>
+      </div>
 
-<p>
-Apply knowledge through structured practical training.
-</p>
+    </article>
 
-</div>
 
-</div>
+    <!-- COURSE 2 -->
 
+    <article class="course">
 
-<div class="arrow">
-↓
-</div>
+      <div class="course-top">
+        <span>Master Diploma</span>
+      </div>
 
+      <div class="course-body">
 
-<div class="journey-item">
+        <h3>
+          Master Diploma in Fashion Designing
+        </h3>
 
-<div class="journey-number">
-03
-</div>
+        <div class="course-meta">
 
-<div>
+          <span class="badge">
+            Advanced
+          </span>
 
-<h3>
-CREATE
-</h3>
+          <span class="badge">
+            Online / Offline
+          </span>
 
-<p>
-Develop garments, designs, embroidery, draping projects, and creative work.
-</p>
+        </div>
 
-</div>
+        <p>
+          Advanced fashion learning with design development,
+          draping, construction, finishing and portfolio
+          development.
+        </p>
 
-</div>
+        <button
+          class="btn gold"
+          onclick="openCourse('Master Diploma in Fashion Designing')">
 
+          Enroll Now
 
-<div class="arrow">
-↓
-</div>
+        </button>
 
+      </div>
 
-<div class="journey-item">
+    </article>
 
-<div class="journey-number">
-04
-</div>
 
-<div>
+    <!-- COURSE 3 -->
 
-<h3>
-REFINE
-</h3>
+    <article class="course">
 
-<p>
-Improve construction, fitting, finishing, presentation, and professional standards.
-</p>
+      <div class="course-top">
+        <span>Aari Embroidery</span>
+      </div>
 
-</div>
+      <div class="course-body">
 
-</div>
+        <h3>
+          Aari Embroidery Professional Course
+        </h3>
 
+        <div class="course-meta">
 
-<div class="arrow">
-↓
-</div>
+          <span class="badge">
+            Professional
+          </span>
 
+          <span class="badge">
+            Online / Offline
+          </span>
 
-<div class="journey-item">
+        </div>
 
-<div class="journey-number">
-05
-</div>
+        <p>
+          Traditional and professional Aari embroidery
+          techniques with practical application and
+          design work.
+        </p>
 
-<div>
+        <button
+          class="btn gold"
+          onclick="openCourse('Aari Embroidery Professional Course')">
 
-<h3>
-BUILD
-</h3>
+          Enroll Now
 
-<p>
-Create a personal collection of work and develop a professional portfolio.
-</p>
+        </button>
 
-</div>
+      </div>
 
-</div>
+    </article>
 
 
-<div class="arrow">
-↓
-</div>
+    <!-- COURSE 4 -->
 
+    <article class="course">
 
-<div class="journey-item">
+      <div class="course-top">
+        <span>Tailoring</span>
+      </div>
 
-<div class="journey-number">
-06
-</div>
+      <div class="course-body">
 
-<div>
+        <h3>
+          Professional Tailoring
+        </h3>
 
-<h3>
-PRESENT
-</h3>
+        <div class="course-meta">
 
-<p>
-Learn how to showcase your skills and creative identity professionally.
-</p>
+          <span class="badge">
+            Practical
+          </span>
 
-</div>
+          <span class="badge">
+            Online / Offline
+          </span>
 
-</div>
+        </div>
 
+        <p>
+          Measurements, cutting, construction, fitting,
+          finishing and practical garment-making skills.
+        </p>
 
-<div class="arrow">
-↓
-</div>
+        <button
+          class="btn gold"
+          onclick="openCourse('Professional Tailoring')">
 
+          Enroll Now
 
-<div class="journey-item">
+        </button>
 
-<div class="journey-number">
-07
-</div>
+      </div>
 
-<div>
+    </article>
 
-<h3>
-EXPLORE
-</h3>
 
-<p>
-Use your skills and portfolio to explore career, business, freelance, and further learning opportunities.
-</p>
+    <!-- COURSE 5 -->
 
-</div>
+    <article class="course">
 
-</div>
+      <div class="course-top">
+        <span>Draping</span>
+      </div>
 
+      <div class="course-body">
 
-</div>
+        <h3>
+          Professional Draping
+        </h3>
+
+        <div class="course-meta">
+
+          <span class="badge">
+            Skill Course
+          </span>
+
+          <span class="badge">
+            Online / Offline
+          </span>
+
+        </div>
+
+        <p>
+          Three-dimensional garment development and
+          understanding fabric, form, proportion and
+          silhouette.
+        </p>
+
+        <button
+          class="btn gold"
+          onclick="openCourse('Professional Draping')">
+
+          Enroll Now
+
+        </button>
+
+      </div>
+
+    </article>
+
+
+    <!-- COURSE 6 -->
+
+    <article class="course">
+
+      <div class="course-top">
+        <span>Hand Embroidery</span>
+      </div>
+
+      <div class="course-body">
+
+        <h3>
+          Hand Embroidery
+        </h3>
+
+        <div class="course-meta">
+
+          <span class="badge">
+            Creative Skill
+          </span>
+
+          <span class="badge">
+            Online / Offline
+          </span>
+
+        </div>
+
+        <p>
+          Creative hand-embroidery techniques and surface
+          embellishment for fashion and garment work.
+        </p>
+
+        <button
+          class="btn gold"
+          onclick="openCourse('Hand Embroidery')">
+
+          Enroll Now
+
+        </button>
+
+      </div>
+
+    </article>
+
+
+  </div>
 
 </div>
 
 </section>
 
 
-<!-- =====================================================
-     WHAT YOU CAN LEARN
-===================================================== -->
+<!-- LEARN & EARN -->
 
-<section class="section-dark"
-         id="learn">
+<section class="section earn" id="learn-earn">
 
 <div class="container">
 
+  <div class="section-title">
 
-<div class="section-heading">
+    <div class="eyebrow">
+      Learn & Earn Opportunity
+    </div>
 
-<span>
-Explore Your Skills
-</span>
+    <h2>
+      LEARN. CREATE. BUILD. EARN.
+    </h2>
 
-<h2>
-What You Can Learn at Veyana
-</h2>
+    <p>
+      Your skill can become your opportunity.
+    </p>
 
-</div>
+  </div>
 
+  <p>
+    At Veyana, we believe that learning a skill can
+    open the door to opportunity.
+  </p>
 
-<div class="learn-grid">
-
-
-<div class="learn-card">
-
-<h3>
-Fashion Designing
-</h3>
-
-<p>
-Design development, fashion concepts, creativity, silhouettes, and professional design practices.
-</p>
-
-</div>
+  <p>
+    Students can explore how their fashion skills
+    may be transformed into:
+  </p>
 
 
-<div class="learn-card">
+  <div class="earn-list">
 
-<h3>
-Tailoring
-</h3>
+    <div class="earn-item">
+      Tailoring services
+    </div>
 
-<p>
-Practical garment-making skills, measurements, cutting, construction, fitting, and finishing.
-</p>
+    <div class="earn-item">
+      Custom orders
+    </div>
 
-</div>
+    <div class="earn-item">
+      Embroidery work
+    </div>
 
+    <div class="earn-item">
+      Freelance opportunities
+    </div>
 
-<div class="learn-card">
+    <div class="earn-item">
+      Fashion-related businesses
+    </div>
 
-<h3>
-Draping
-</h3>
+    <div class="earn-item">
+      Teaching opportunities
+    </div>
 
-<p>
-Three-dimensional garment development and understanding fabric, form, proportion, and silhouette.
-</p>
+    <div class="earn-item">
+      Further professional education
+    </div>
 
-</div>
+    <div class="earn-item">
+      Career opportunities
+    </div>
 
-
-<div class="learn-card">
-
-<h3>
-Aari Embroidery
-</h3>
-
-<p>
-Traditional and professional Aari embroidery techniques with practical application.
-</p>
-
-</div>
+  </div>
 
 
-<div class="learn-card">
-
-<h3>
-Hand Embroidery
-</h3>
-
-<p>
-Creative hand-embroidery techniques and surface embellishment.
-</p>
-
-</div>
-
-
-<div class="learn-card">
-
-<h3>
-Garment Construction
-</h3>
-
-<p>
-From measurements and patterns to construction, fitting, and professional finishing.
-</p>
-
-</div>
-
-
-<div class="learn-card">
-
-<h3>
-Fashion Portfolio Development
-</h3>
-
-<p>
-Learn how to document and present your work as a professional body of creative work.
-</p>
-
-</div>
-
-
-</div>
+  <p style="
+    font-family:'Cormorant Garamond',serif;
+    font-size:32px;
+    color:var(--gold2);
+  ">
+    Your skill can become your opportunity.
+  </p>
 
 </div>
 
 </section>
 
 
-<!-- =====================================================
-     LEARN & EARN
-===================================================== -->
+<!-- MORE THAN A COURSE -->
 
-<section class="section-green">
+<section class="section" id="more">
+
+<div class="container more-grid">
+
+  <div>
+
+    <div class="eyebrow">
+      More Than A Course
+    </div>
+
+    <div class="bigtext">
+
+      A certificate tells people
+      you completed a course.
+
+      <br><br>
+
+      A portfolio shows people
+      what you can create.
+
+    </div>
+
+  </div>
+
+
+  <div>
+
+    <p>
+      A certificate tells people that you completed
+      a course.
+    </p>
+
+    <p>
+      A portfolio shows people what you can create.
+    </p>
+
+    <p>
+      That is why Veyana focuses on both learning
+      and creating.
+    </p>
+
+    <p>
+      Our aim is for students to leave their learning
+      journey with more than theoretical knowledge —
+      with practical skills, completed work, creative
+      confidence, and a portfolio that represents
+      their abilities.
+    </p>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- WHY VEYANA -->
+
+<section class="section alt" id="why">
 
 <div class="container">
 
+  <div class="section-title">
 
-<div class="earn-box">
+    <div class="eyebrow">
+      Why Veyana School Of Style?
+    </div>
 
+    <h2>
+      Designed For The Complete Journey
+    </h2>
 
-<h2>
-LEARN & EARN OPPORTUNITY
-</h2>
-
-
-<p>
-
-At Veyana, we believe that
-<strong>
-learning a skill can open the door to opportunity.
-</strong>
-
-</p>
+  </div>
 
 
-<p>
+  <div class="why">
 
-Students can explore how their fashion skills may be transformed into:
+    <div class="why-item">
 
-</p>
+      <span class="check">✓</span>
 
+      <div>
 
-<ul class="earn-list">
+        <h3>
+          Theory + Practical
+        </h3>
 
-<li>Tailoring services</li>
+        <p>
+          Learn the knowledge and apply it.
+        </p>
 
-<li>Custom orders</li>
+      </div>
 
-<li>Embroidery work</li>
-
-<li>Freelance opportunities</li>
-
-<li>Fashion-related businesses</li>
-
-<li>Teaching opportunities</li>
-
-<li>Further professional education</li>
-
-<li>Career opportunities</li>
-
-</ul>
+    </div>
 
 
-<div class="earn-line">
+    <div class="why-item">
 
-LEARN. CREATE. BUILD. EARN.
+      <span class="check">✓</span>
 
-</div>
+      <div>
+
+        <h3>
+          Draping
+        </h3>
+
+        <p>
+          Develop an understanding of
+          three-dimensional garment creation.
+        </p>
+
+      </div>
+
+    </div>
 
 
-<p style="margin-top:15px;">
+    <div class="why-item">
 
-Your skill can become your opportunity.
+      <span class="check">✓</span>
 
-</p>
+      <div>
+
+        <h3>
+          Garment Construction
+        </h3>
+
+        <p>
+          Build strong technical and
+          practical skills.
+        </p>
+
+      </div>
+
+    </div>
 
 
-</div>
+    <div class="why-item">
+
+      <span class="check">✓</span>
+
+      <div>
+
+        <h3>
+          Portfolio Development
+        </h3>
+
+        <p>
+          Create a professional collection
+          of your work.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="why-item">
+
+      <span class="check">✓</span>
+
+      <div>
+
+        <h3>
+          Creative Identity
+        </h3>
+
+        <p>
+          Develop your own design direction.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="why-item">
+
+      <span class="check">✓</span>
+
+      <div>
+
+        <h3>
+          Professional Presentation
+        </h3>
+
+        <p>
+          Learn to present your work
+          with confidence.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="why-item">
+
+      <span class="check">✓</span>
+
+      <div>
+
+        <h3>
+          Learn & Earn
+        </h3>
+
+        <p>
+          Understand how skills can become
+          opportunities.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="why-item">
+
+      <span class="check">✓</span>
+
+      <div>
+
+        <h3>
+          Global Perspective
+        </h3>
+
+        <p>
+          Prepare yourself to explore
+          opportunities beyond your
+          immediate surroundings.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </div>
 
 </section>
 
 
-<!-- =====================================================
-     MORE THAN A COURSE
-===================================================== -->
+<!-- OUR BELIEF -->
 
-<section class="section-dark">
+<section class="section belief">
 
 <div class="container">
 
-
-<div class="more-grid">
-
-
-<div class="more-text">
-
-<h2>
-MORE THAN<br>
-A COURSE
-</h2>
+  <div class="eyebrow">
+    Our Belief
+  </div>
 
 
-<p>
+  <div class="belief-quote">
 
-A certificate tells people that you completed a course.
+    “Your Skill Is Your Identity.
 
-</p>
+    <br>
 
+    Your Portfolio Is Your Story.
 
-<p>
+    <br>
 
-<strong>
-A portfolio shows people what you can create.
-</strong>
+    Your Creativity Is Your Opportunity.”
 
-</p>
-
-
-<p>
-
-That is why Veyana focuses on both
-<strong>
-learning and creating.
-</strong>
-
-</p>
+  </div>
 
 
-<p>
+  <p>
+    At Veyana School of Style, we don't simply
+    teach you how to make clothes.
+  </p>
 
-Our aim is for students to leave their learning journey with more than theoretical knowledge — with
-<strong>
-practical skills, completed work, creative confidence, and a portfolio that represents their abilities.
-</strong>
-
-</p>
-
-</div>
-
-
-<div class="quote-box">
-
-“A portfolio shows people
-what you can create.”
-
-</div>
-
-
-</div>
+  <p>
+    We help you learn, create, develop your identity,
+    build your portfolio, and prepare for the
+    professional world.
+  </p>
 
 </div>
 
 </section>
 
 
-<!-- =====================================================
-     WHY VEYANA
-===================================================== -->
+<!-- ENROLL NOW -->
 
-<section class="section-green">
+<section class="section" id="enroll">
 
 <div class="container">
 
+  <div class="enroll-box">
 
-<div class="section-heading">
+    <h2>
+      ENROLL NOW
+    </h2>
 
-<span>
-The Veyana Difference
-</span>
+    <p>
+      Choose your course and submit your
+      enrollment enquiry.
+    </p>
 
-<h2>
-Why Veyana School of Style?
-</h2>
 
-</div>
+    <form onsubmit="submitEnrollment(event)">
 
+      <div class="formgrid">
 
-<div class="why-list">
 
+        <div class="field">
 
-<div class="why-item">
+          <label>
+            Full Name
+          </label>
 
-<div class="why-icon">
-✓
-</div>
+          <input
+            id="studentName"
+            required
+            placeholder="Enter your name"
+          >
 
-<div>
+        </div>
 
-<h3>
-Theory + Practical
-</h3>
 
-<p>
-Learn the knowledge and apply it.
-</p>
+        <div class="field">
 
-</div>
+          <label>
+            Phone Number
+          </label>
 
-</div>
+          <input
+            id="studentPhone"
+            required
+            type="tel"
+            placeholder="Enter your phone number"
+          >
 
+        </div>
 
-<div class="why-item">
 
-<div class="why-icon">
-✓
-</div>
+        <div class="field full">
 
-<div>
+          <label>
+            Course Name
+          </label>
 
-<h3>
-Draping
-</h3>
+          <select
+            id="studentCourse"
+            required
+          >
 
-<p>
-Develop an understanding of three-dimensional garment creation.
-</p>
+            <option value="">
+              Select a course
+            </option>
 
-</div>
+            <option>
+              Diploma in Fashion Designing
+            </option>
 
-</div>
+            <option>
+              Master Diploma in Fashion Designing
+            </option>
 
+            <option>
+              Aari Embroidery Professional Course
+            </option>
 
-<div class="why-item">
+            <option>
+              Professional Tailoring
+            </option>
 
-<div class="why-icon">
-✓
-</div>
+            <option>
+              Professional Draping
+            </option>
 
-<div>
+            <option>
+              Hand Embroidery
+            </option>
 
-<h3>
-Garment Construction
-</h3>
+          </select>
 
-<p>
-Build strong technical and practical skills.
-</p>
+        </div>
 
-</div>
 
-</div>
+        <div class="field full">
 
+          <label>
+            Message
+          </label>
 
-<div class="why-item">
+          <textarea
+            id="studentMessage"
+            placeholder="Any questions or requirements?"
+          ></textarea>
 
-<div class="why-icon">
-✓
-</div>
+        </div>
 
-<div>
 
-<h3>
-Portfolio Development
-</h3>
+      </div>
 
-<p>
-Create a professional collection of your work.
-</p>
 
-</div>
+      <div class="form-actions">
 
-</div>
+        <button
+          class="btn gold"
+          type="submit"
+        >
+          Submit Enrollment
+        </button>
 
+      </div>
 
-<div class="why-item">
+    </form>
 
-<div class="why-icon">
-✓
-</div>
-
-<div>
-
-<h3>
-Creative Identity
-</h3>
-
-<p>
-Develop your own design direction.
-</p>
-
-</div>
-
-</div>
-
-
-<div class="why-item">
-
-<div class="why-icon">
-✓
-</div>
-
-<div>
-
-<h3>
-Professional Presentation
-</h3>
-
-<p>
-Learn to present your work with confidence.
-</p>
-
-</div>
-
-</div>
-
-
-<div class="why-item">
-
-<div class="why-icon">
-✓
-</div>
-
-<div>
-
-<h3>
-Learn & Earn
-</h3>
-
-<p>
-Understand how skills can become opportunities.
-</p>
-
-</div>
-
-</div>
-
-
-<div class="why-item">
-
-<div class="why-icon">
-✓
-</div>
-
-<div>
-
-<h3>
-Global Perspective
-</h3>
-
-<p>
-Prepare yourself to explore opportunities beyond your immediate surroundings.
-</p>
-
-</div>
-
-</div>
-
-
-</div>
+  </div>
 
 </div>
 
 </section>
 
-
-<!-- =====================================================
-     OUR BELIEF
-===================================================== -->
-
-<section class="section-dark">
-
-<div class="container">
+</main>
 
 
-<div class="belief">
-
-
-<h2>
-OUR BELIEF
-</h2>
-
-
-<div class="belief-quote">
-
-“Your Skill Is Your Identity.<br>
-
-Your Portfolio Is Your Story.<br>
-
-Your Creativity Is Your Opportunity.”
-
-</div>
-
-
-<p>
-
-At Veyana School of Style, we don't simply teach you how to make clothes.
-
-</p>
-
-
-<p>
-
-<strong>
-We help you learn, create, develop your identity, build your portfolio, and prepare for the professional world.
-</strong>
-
-</p>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     CONTACT
-===================================================== -->
-
-<section class="section-green"
-         id="contact">
-
-<div class="container">
-
-
-<div class="contact">
-
-
-<div class="section-heading">
-
-<span>
-Begin Your Journey
-</span>
-
-<h2>
-Step Into Your Style
-</h2>
-
-</div>
-
-
-<div class="contact-box">
-
-
-<h2>
-VEYANA SCHOOL OF STYLE
-</h2>
-
-
-<p>
-Learn • Create • Build • Transform
-</p>
-
-
-<p>
-We Don’t Teach Fashion. We Awaken It.
-</p>
-
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+<!-- FOOTER -->
 
 <footer>
 
+<div class="container">
 
-<img src="logo.png"
-     class="footer-logo"
-     alt="Veyana Groups Logo">
-
-
-<h3>
-VEYANA SCHOOL OF STYLE
-</h3>
+  <div class="footer-grid">
 
 
-<div class="footer-tagline">
+    <div>
 
-Learn • Create • Build • Transform
+      <img
+        src="logo.png"
+        class="footer-logo"
+        alt="Veyana School Of Style"
+      >
+
+      <h3>
+        VEYANA SCHOOL OF STYLE
+      </h3>
+
+      <p>
+        Learn • Create • Build • Transform
+      </p>
+
+      <p>
+        We Don’t Teach Fashion. We Awaken It.
+      </p>
+
+    </div>
+
+
+    <div>
+
+      <h3>
+        Explore
+      </h3>
+
+      <a href="#about">
+        About Veyana
+      </a>
+
+      <a href="#difference">
+        What Makes Veyana Different?
+      </a>
+
+      <a href="#journey">
+        Learning Journey
+      </a>
+
+      <a href="#courses">
+        Courses
+      </a>
+
+      <a href="#learn-earn">
+        Learn & Earn
+      </a>
+
+    </div>
+
+
+    <div>
+
+      <h3>
+        Start
+      </h3>
+
+      <a href="#courses">
+        Start Now
+      </a>
+
+      <a href="#enroll">
+        Enroll Now
+      </a>
+
+      <a href="#why">
+        Why Veyana
+      </a>
+
+      <a href="#home">
+        Back To Top ↑
+      </a>
+
+    </div>
+
+
+  </div>
+
+
+  <div class="copy">
+
+    © 2026 Veyana School Of Style.
+    All Rights Reserved.
+
+  </div>
+
+</div>
+
+</footer>
+
+
+<!-- COURSE DETAIL POPUP -->
+
+<div
+  class="modal"
+  id="courseModal"
+  onclick="closeOutside(event)"
+>
+
+  <div class="modal-box">
+
+    <button
+      class="close"
+      onclick="closeCourse()"
+    >
+      ×
+    </button>
+
+
+    <div class="eyebrow">
+      Course Details
+    </div>
+
+
+    <h2 id="modalTitle">
+      Course
+    </h2>
+
+
+    <div class="detail-row">
+
+      <div class="detail-label">
+        Course Name
+      </div>
+
+      <div
+        class="detail-value"
+        id="modalName"
+      ></div>
+
+    </div>
+
+
+    <div class="detail-row">
+
+      <div class="detail-label">
+        Course Duration
+      </div>
+
+      <div
+        class="detail-value"
+        id="modalDuration"
+      ></div>
+
+    </div>
+
+
+    <div class="detail-row">
+
+      <div class="detail-label">
+        Online / Offline
+      </div>
+
+      <div
+        class="detail-value"
+        id="modalMode"
+      ></div>
+
+    </div>
+
+
+    <div class="detail-row">
+
+      <div class="detail-label">
+        Course Details
+      </div>
+
+      <div
+        class="detail-value"
+        id="modalDetails"
+      ></div>
+
+    </div>
+
+
+    <div class="detail-row">
+
+      <div class="detail-label">
+        Fees
+      </div>
+
+      <div
+        class="detail-value"
+        id="modalFees"
+      ></div>
+
+    </div>
+
+
+    <div class="modal-actions">
+
+      <button
+        class="btn gold"
+        onclick="enrollFromCourse()"
+      >
+        Enroll Now
+      </button>
+
+      <button
+        class="btn outline"
+        onclick="closeCourse()"
+      >
+        Close
+      </button>
+
+    </div>
+
+  </div>
 
 </div>
 
 
-<p>
+<script>
 
-We Don’t Teach Fashion. We Awaken It.
+const courseData = {
 
-</p>
+  "Diploma in Fashion Designing":{
+
+    duration:"6–8 Months",
+
+    mode:"Online / Offline",
+
+    details:
+      "Design development, fashion concepts, creativity, silhouettes, draping, garment construction, professional finishing and portfolio development.",
+
+    fees:
+      "Fees to be announced"
+
+  },
 
 
-<p style="margin-top:10px;">
+  "Master Diploma in Fashion Designing":{
 
-© 2026 Veyana School of Style. All Rights Reserved.
+    duration:
+      "Advanced Programme",
 
-</p>
+    mode:
+      "Online / Offline",
+
+    details:
+      "Advanced fashion design learning covering design development, draping, garment construction, finishing, creative development and professional portfolio work.",
+
+    fees:
+      "Fees to be announced"
+
+  },
 
 
-</footer>
+  "Aari Embroidery Professional Course":{
 
+    duration:
+      "Course schedule varies",
+
+    mode:
+      "Online / Offline",
+
+    details:
+      "Traditional and professional Aari embroidery techniques with practical application, motifs and embroidery design development.",
+
+    fees:
+      "Fees to be announced"
+
+  },
+
+
+  "Professional Tailoring":{
+
+    duration:
+      "Course schedule varies",
+
+    mode:
+      "Online / Offline",
+
+    details:
+      "Measurements, pattern development, cutting, garment construction, fitting, finishing and practical tailoring skills.",
+
+    fees:
+      "Fees to be announced"
+
+  },
+
+
+  "Professional Draping":{
+
+    duration:
+      "Course schedule varies",
+
+    mode:
+      "Online / Offline",
+
+    details:
+      "Three-dimensional garment development with practical understanding of fabric behaviour, form, proportion and silhouette.",
+
+    fees:
+      "Fees to be announced"
+
+  },
+
+
+  "Hand Embroidery":{
+
+    duration:
+      "Course schedule varies",
+
+    mode:
+      "Online / Offline",
+
+    details:
+      "Creative hand-embroidery techniques and surface embellishment with practical fashion applications.",
+
+    fees:
+      "Fees to be announced"
+
+  }
+
+};
+
+
+let selectedCourse="";
+
+
+function openCourse(name){
+
+  selectedCourse=name;
+
+  const c=courseData[name];
+
+  document.getElementById("modalTitle").textContent=name;
+
+  document.getElementById("modalName").textContent=name;
+
+  document.getElementById("modalDuration").textContent=
+    c.duration;
+
+  document.getElementById("modalMode").textContent=
+    c.mode;
+
+  document.getElementById("modalDetails").textContent=
+    c.details;
+
+  document.getElementById("modalFees").textContent=
+    c.fees;
+
+  document
+    .getElementById("courseModal")
+    .classList.add("show");
+
+  document.body.style.overflow="hidden";
+
+}
+
+
+function closeCourse(){
+
+  document
+    .getElementById("courseModal")
+    .classList.remove("show");
+
+  document.body.style.overflow="";
+
+}
+
+
+function closeOutside(e){
+
+  if(e.target.id==="courseModal"){
+
+    closeCourse();
+
+  }
+
+}
+
+
+function enrollFromCourse(){
+
+  closeCourse();
+
+  document.getElementById("studentCourse").value=
+    selectedCourse;
+
+  document
+    .getElementById("enroll")
+    .scrollIntoView({
+      behavior:"smooth"
+    });
+
+}
+
+
+function submitEnrollment(e){
+
+  e.preventDefault();
+
+
+  const name=
+    document
+      .getElementById("studentName")
+      .value
+      .trim();
+
+
+  const phone=
+    document
+      .getElementById("studentPhone")
+      .value
+      .trim();
+
+
+  const course=
+    document
+      .getElementById("studentCourse")
+      .value;
+
+
+  alert(
+
+    "Thank you, "+name+"!\n\n"+
+
+    "Course: "+course+"\n"+
+
+    "Phone: "+phone+"\n\n"+
+
+    "Your enrollment enquiry has been submitted on this page.\n"+
+
+    "Payment integration will be connected later."
+
+  );
+
+}
+
+</script>
 
 </body>
 </html>
