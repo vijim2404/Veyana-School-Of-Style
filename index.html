@@ -3,41 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Veyana School Of Style</title>
-<meta name="description" content="Veyana School Of Style — Learn • Create • Build • Transform">
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
-
 :root{
-  --green:#031a10;
-  --green2:#072c1b;
-  --green3:#0b3d26;
+  --green:#062d25;
+  --green2:#0b4035;
   --gold:#d4af37;
-  --gold2:#f1d77a;
-  --cream:#f8f3e5;
-  --muted:#c9cbbf;
-  --line:rgba(212,175,55,.28);
-  --card:rgba(6,39,24,.82);
+  --gold2:#f0d477;
+  --cream:#f7f1df;
+  --white:#ffffff;
+  --text:#e9eee9;
+  --muted:#b9c7c1;
+  --dark:#031b17;
 }
 
-*{box-sizing:border-box;margin:0;padding:0}
-
-html{scroll-behavior:smooth}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
 
 body{
-  background:var(--green);
-  color:var(--cream);
-  font-family:Montserrat,Arial,sans-serif;
+  font-family:Georgia, "Times New Roman", serif;
+  background:
+    radial-gradient(circle at top right, rgba(212,175,55,.10), transparent 35%),
+    linear-gradient(135deg,#031b17,#062d25 45%,#031b17);
+  color:var(--text);
   line-height:1.7;
   overflow-x:hidden;
 }
 
-a{text-decoration:none;color:inherit}
-
-button,input,select,textarea{font:inherit}
-
-/* BIG CENTER WATERMARK */
 body:before{
   content:"";
   position:fixed;
@@ -48,54 +46,23 @@ body:before{
   height:min(850px,78vw);
   transform:translate(-50%,-50%);
   background:url("logo.png") center/contain no-repeat;
-  opacity:.075;
+  opacity:.055;
   pointer-events:none;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+img{
+  max-width:100%;
+  display:block;
 }
 
 .container{
   width:min(1180px,92%);
   margin:auto;
-}
-
-.section{
-  padding:100px 0;
-  position:relative;
-}
-
-.section.alt{
-  background:rgba(1,12,7,.38);
-}
-
-.eyebrow{
-  color:var(--gold2);
-  font-size:12px;
-  font-weight:700;
-  letter-spacing:3px;
-  text-transform:uppercase;
-}
-
-h1,h2,h3{
-  font-family:"Cormorant Garamond",serif;
-  line-height:1.1;
-}
-
-h2{font-size:clamp(42px,6vw,70px)}
-
-h3{font-size:28px}
-
-.section-title{
-  text-align:center;
-  margin-bottom:55px;
-}
-
-.section-title h2{
-  margin-top:10px;
-}
-
-.section-title p{
-  max-width:780px;
-  margin:18px auto;
-  color:var(--muted);
 }
 
 /* HEADER */
@@ -104,644 +71,504 @@ header{
   position:fixed;
   top:0;
   left:0;
-  width:100%;
-  height:82px;
+  right:0;
   z-index:1000;
-  background:rgba(3,26,16,.94);
-  backdrop-filter:blur(15px);
-  border-bottom:1px solid var(--line);
+  background:rgba(3,27,23,.94);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(212,175,55,.25);
 }
 
 .nav{
-  height:100%;
-  width:min(1200px,92%);
-  margin:auto;
+  min-height:78px;
   display:flex;
   align-items:center;
   justify-content:space-between;
+  gap:20px;
 }
 
-.logo{
-  width:66px;
-  height:66px;
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-weight:bold;
+  letter-spacing:2px;
+  color:var(--gold2);
+  white-space:nowrap;
+}
+
+.brand img{
+  width:52px;
+  height:52px;
   object-fit:contain;
 }
 
-.navlinks{
+.nav-links{
   display:flex;
-  gap:25px;
   align-items:center;
+  gap:25px;
 }
 
-.navlinks a{
-  font-size:12px;
-  font-weight:600;
+.nav-links a{
+  font-size:13px;
   letter-spacing:1px;
-  text-transform:uppercase;
+  color:#e8eee9;
+  transition:.3s;
 }
 
-.navlinks a:hover{
+.nav-links a:hover{
   color:var(--gold2);
 }
 
-.enroll-nav{
+.lang-btn{
   border:1px solid var(--gold);
-  color:var(--gold2)!important;
-  border-radius:25px;
-  padding:9px 18px;
+  background:transparent;
+  color:var(--gold2);
+  padding:7px 12px;
+  border-radius:20px;
+  cursor:pointer;
+  font-size:12px;
 }
 
-.enroll-nav:hover{
-  background:var(--gold);
-  color:var(--green)!important;
-}
-
-.menu{
+.menu-btn{
   display:none;
   background:none;
-  border:1px solid var(--line);
+  border:1px solid rgba(212,175,55,.5);
   color:var(--gold2);
-  padding:7px 11px;
-  border-radius:7px;
+  padding:7px 10px;
+  cursor:pointer;
 }
 
 /* HERO */
 
 .hero{
   min-height:100vh;
-  padding:120px 0 80px;
   display:flex;
   align-items:center;
+  justify-content:center;
   text-align:center;
-  background:
-    radial-gradient(circle at center,rgba(11,61,38,.72),transparent 55%),
-    linear-gradient(135deg,#031a10,#062819,#031a10);
+  padding:120px 20px 80px;
+  position:relative;
 }
 
 .hero-content{
   max-width:900px;
-  margin:auto;
 }
 
 .hero-logo{
-  width:110px;
-  height:110px;
+  width:170px;
+  height:170px;
   object-fit:contain;
   margin:0 auto 25px;
+  filter:drop-shadow(0 0 25px rgba(212,175,55,.12));
+}
+
+.eyebrow{
+  color:var(--gold2);
+  letter-spacing:5px;
+  font-size:14px;
+  margin-bottom:15px;
 }
 
 .hero h1{
-  margin-top:12px;
-  font-size:clamp(58px,9vw,105px);
-  color:var(--gold2);
-  text-transform:uppercase;
-}
-
-.hero h1 span{
-  display:block;
+  font-size:clamp(38px,7vw,76px);
+  line-height:1.05;
+  letter-spacing:4px;
   color:var(--cream);
+  margin-bottom:18px;
 }
 
-.tagline{
-  margin:22px auto 12px;
-  font-family:"Cormorant Garamond",serif;
+.hero h2{
+  font-size:clamp(17px,3vw,25px);
   color:var(--gold2);
-  font-size:clamp(27px,4vw,42px);
+  font-weight:normal;
+  margin-bottom:18px;
 }
 
 .hero p{
   max-width:720px;
   margin:auto;
   color:var(--muted);
+  font-size:17px;
 }
 
-.actions{
+.buttons{
+  margin-top:30px;
   display:flex;
   justify-content:center;
-  gap:14px;
+  gap:15px;
   flex-wrap:wrap;
-  margin-top:32px;
 }
 
 .btn{
-  display:inline-flex;
-  justify-content:center;
-  align-items:center;
-  min-width:155px;
-  padding:13px 24px;
-  border-radius:30px;
+  display:inline-block;
+  padding:13px 26px;
+  border-radius:4px;
   border:1px solid var(--gold);
-  font-size:12px;
-  font-weight:700;
+  font-size:13px;
   letter-spacing:1px;
-  text-transform:uppercase;
   cursor:pointer;
-  transition:.25s;
+  transition:.3s;
 }
 
-.btn.gold{
-  background:var(--gold);
-  color:var(--green);
+.btn-gold{
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:#13251f;
 }
 
-.btn.gold:hover{
-  background:var(--gold2);
-  transform:translateY(-2px);
-}
-
-.btn.outline{
+.btn-outline{
+  background:transparent;
   color:var(--gold2);
 }
 
-.btn.outline:hover{
-  background:var(--gold);
-  color:var(--green);
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 25px rgba(212,175,55,.18);
+}
+
+/* SECTIONS */
+
+section{
+  padding:100px 0;
+  border-top:1px solid rgba(212,175,55,.08);
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:55px;
+}
+
+.section-title .small{
+  color:var(--gold2);
+  letter-spacing:4px;
+  font-size:12px;
+}
+
+.section-title h2{
+  color:var(--cream);
+  font-size:38px;
+  margin:8px 0;
+}
+
+.section-title p{
+  color:var(--muted);
+  max-width:700px;
+  margin:auto;
 }
 
 /* ABOUT */
 
-.about-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:30px;
-  align-items:start;
+.about-content{
+  max-width:900px;
+  margin:0 auto 45px;
+  text-align:center;
 }
 
-.copy p{
-  color:var(--muted);
-  margin-bottom:18px;
-}
-
-.card{
-  border:1px solid var(--line);
-  background:var(--card);
-  border-radius:18px;
-  padding:32px;
-}
-
-.card h3{
+.about-content h3{
   color:var(--gold2);
+  font-size:26px;
   margin-bottom:15px;
 }
 
-.card p,
-.card li{
+.about-content p{
   color:var(--muted);
 }
 
-.quote{
-  margin-top:25px;
-  padding:20px 25px;
-  border-left:2px solid var(--gold);
-  color:var(--gold2);
-  font-family:"Cormorant Garamond",serif;
-  font-size:25px;
-}
+/* VISION MISSION */
 
-/* MISSION */
-
-.mission-grid{
+.vm-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:25px;
+  margin-top:35px;
 }
 
-ul{
-  padding-left:22px;
+.vm-card{
+  padding:38px;
+  border:1px solid rgba(212,175,55,.28);
+  background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.015));
+  border-radius:8px;
+  min-height:250px;
 }
 
-li{
-  margin:6px 0;
+.vm-card h3{
+  color:var(--gold2);
+  font-size:25px;
+  margin-bottom:15px;
+}
+
+.vm-card p{
+  color:var(--muted);
 }
 
 /* DIFFERENCE */
 
-.features{
+.difference-grid{
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:22px;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
 }
 
-.feature{
-  padding:30px;
-  border:1px solid var(--line);
-  border-radius:18px;
-  background:linear-gradient(145deg,rgba(11,61,38,.72),rgba(3,26,16,.86));
+.diff-card{
+  padding:28px 22px;
+  border:1px solid rgba(212,175,55,.18);
+  background:rgba(255,255,255,.025);
+  min-height:190px;
+  border-radius:7px;
+  transition:.3s;
 }
 
-.num{
+.diff-card:hover{
+  transform:translateY(-5px);
+  border-color:rgba(212,175,55,.55);
+}
+
+.number{
   color:var(--gold);
-  font-size:12px;
-  font-weight:700;
-  letter-spacing:1px;
+  font-size:14px;
+  letter-spacing:2px;
 }
 
-.feature h3{
-  color:var(--gold2);
-  margin:8px 0 12px;
-}
-
-.feature p,
-.feature li{
-  color:var(--muted);
-}
-
-.feature strong{
+.diff-card h3{
   color:var(--cream);
+  font-size:18px;
+  margin:12px 0;
+}
+
+.diff-card p{
+  color:var(--muted);
+  font-size:14px;
 }
 
 /* JOURNEY */
 
 .journey{
+  max-width:900px;
+  margin:auto;
+}
+
+.journey-step{
   display:grid;
-  grid-template-columns:repeat(7,1fr);
-  gap:10px;
+  grid-template-columns:90px 1fr;
+  gap:25px;
+  padding:25px 0;
+  border-bottom:1px solid rgba(212,175,55,.12);
 }
 
-.step{
-  border:1px solid var(--line);
-  border-radius:14px;
-  padding:23px 12px;
-  text-align:center;
-  background:var(--card);
-}
-
-.step strong{
-  display:block;
+.step-no{
   color:var(--gold2);
-  font-family:"Cormorant Garamond",serif;
   font-size:25px;
 }
 
-.step small{
-  display:block;
-  color:var(--muted);
-  font-size:11px;
-  margin-top:8px;
+.journey-step h3{
+  color:var(--cream);
 }
 
-.arrow{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:var(--gold);
-  font-size:22px;
+.journey-step p{
+  color:var(--muted);
 }
 
 /* COURSES */
 
-.courses{
+.course-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:22px;
+  gap:25px;
 }
 
-.course{
+.course-card{
   overflow:hidden;
-  border:1px solid var(--line);
-  border-radius:18px;
-  background:var(--card);
-  display:flex;
-  flex-direction:column;
+  border:1px solid rgba(212,175,55,.25);
+  border-radius:8px;
+  background:rgba(255,255,255,.035);
+  transition:.3s;
 }
 
-.course-top{
-  min-height:150px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:linear-gradient(135deg,var(--green3),#041a10);
-  border-bottom:1px solid var(--line);
+.course-card:hover{
+  transform:translateY(-6px);
+  border-color:var(--gold);
 }
 
-.course-top span{
-  font-family:"Cormorant Garamond",serif;
-  color:var(--gold2);
-  font-size:32px;
-  text-align:center;
-  padding:20px;
+.course-image{
+  width:100%;
+  aspect-ratio:16/9;
+  object-fit:cover;
+  background:#092f28;
 }
 
 .course-body{
   padding:25px;
-  display:flex;
-  flex-direction:column;
-  flex:1;
 }
 
-.course h3{
-  color:var(--gold2);
-  font-size:27px;
-}
-
-.course p{
-  color:var(--muted);
-  margin:10px 0 18px;
-}
-
-.course-meta{
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-  margin-bottom:20px;
-}
-
-.badge{
-  font-size:10px;
-  padding:5px 9px;
-  border:1px solid var(--line);
-  border-radius:20px;
+.course-body h3{
   color:var(--cream);
+  font-size:20px;
+  margin-bottom:10px;
 }
 
-.course .btn{
-  margin-top:auto;
-  width:100%;
+.course-body p{
+  color:var(--muted);
+  font-size:14px;
+  margin-bottom:18px;
 }
 
 /* LEARN EARN */
 
-.earn{
-  text-align:center;
-}
-
-.earn p{
-  max-width:780px;
-  margin:14px auto;
-  color:var(--muted);
-}
-
-.earn-list{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:14px;
-  margin:32px auto;
-  max-width:950px;
-}
-
-.earn-item{
-  padding:16px;
-  border:1px solid var(--line);
-  border-radius:12px;
-  color:var(--cream);
-  background:var(--card);
-}
-
-/* MORE / WHY */
-
-.more-grid{
+.learn-box{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:55px;
-  align-items:center;
+  gap:25px;
 }
 
-.bigtext{
+.learn-card{
+  padding:38px;
+  border:1px solid rgba(212,175,55,.25);
+  background:rgba(255,255,255,.025);
+  border-radius:8px;
+}
+
+.learn-card h3{
   color:var(--gold2);
-  font-family:"Cormorant Garamond",serif;
-  font-size:clamp(40px,5vw,65px);
-  line-height:1.08;
-}
-
-.more-grid p{
-  color:var(--muted);
+  font-size:25px;
   margin-bottom:15px;
 }
 
-.why{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px 35px;
-}
-
-.why-item{
-  display:flex;
-  gap:15px;
-  padding:22px 0;
-  border-bottom:1px solid var(--line);
-}
-
-.check{
-  color:var(--gold2);
-  font-size:20px;
-}
-
-.why h3{
-  font-size:24px;
-  color:var(--gold2);
-}
-
-.why p{
+.learn-card p,
+.learn-card li{
   color:var(--muted);
-  font-size:14px;
 }
 
-/* BELIEF */
-
-.belief{
-  text-align:center;
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
+.learn-card ul{
+  padding-left:20px;
 }
 
-.belief-quote{
+/* WHY */
+
+.why-box{
   max-width:850px;
-  margin:25px auto;
-  color:var(--gold2);
-  font-family:"Cormorant Garamond",serif;
-  font-size:clamp(38px,5vw,62px);
-  line-height:1.1;
+  margin:auto;
+  text-align:center;
+  padding:50px 30px;
+  border:1px solid rgba(212,175,55,.3);
+  background:rgba(255,255,255,.025);
+  border-radius:8px;
 }
 
-.belief p{
+.why-box h3{
+  color:var(--gold2);
+  font-size:28px;
+  margin-bottom:15px;
+}
+
+.why-box p{
   color:var(--muted);
-  max-width:800px;
-  margin:10px auto;
 }
 
 /* ENROLL */
 
-#enroll{
-  background:linear-gradient(135deg,rgba(7,44,27,.85),rgba(3,26,16,.96));
-}
-
 .enroll-box{
-  max-width:900px;
+  max-width:760px;
   margin:auto;
-  padding:45px;
-  border:1px solid var(--line);
-  border-radius:22px;
-  background:rgba(2,16,10,.78);
+  padding:40px;
+  border:1px solid rgba(212,175,55,.3);
+  background:rgba(255,255,255,.035);
+  border-radius:8px;
 }
 
-.enroll-box h2{
-  text-align:center;
+.form-group{
+  margin-bottom:18px;
+}
+
+.form-group label{
+  display:block;
   color:var(--gold2);
+  font-size:13px;
+  margin-bottom:7px;
 }
 
-.enroll-box>p{
-  text-align:center;
-  color:var(--muted);
-  margin:10px auto 30px;
-}
-
-.formgrid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
-}
-
-.field{
-  display:flex;
-  flex-direction:column;
-  gap:7px;
-}
-
-.field.full{
-  grid-column:1/-1;
-}
-
-label{
-  font-size:11px;
-  color:var(--gold2);
-  letter-spacing:1px;
-  text-transform:uppercase;
-}
-
-input,
-select,
-textarea{
+.form-group input,
+.form-group select,
+.form-group textarea{
   width:100%;
-  background:rgba(255,255,255,.04);
-  color:var(--cream);
-  border:1px solid var(--line);
-  border-radius:10px;
   padding:13px;
+  border-radius:4px;
+  border:1px solid rgba(212,175,55,.25);
+  background:#061f1b;
+  color:white;
   outline:none;
 }
 
-select option{
-  background:var(--green);
-}
-
-textarea{
+.form-group textarea{
   min-height:120px;
   resize:vertical;
 }
 
-.form-actions{
-  text-align:center;
-  margin-top:24px;
-}
+/* CONTACT */
 
-/* COURSE DETAIL */
-
-.modal{
-  position:fixed;
-  inset:0;
-  z-index:2000;
-  display:none;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-  background:rgba(0,0,0,.78);
-  backdrop-filter:blur(8px);
-}
-
-.modal.show{
-  display:flex;
-}
-
-.modal-box{
-  width:min(760px,100%);
-  max-height:90vh;
-  overflow:auto;
-  background:#052217;
-  border:1px solid var(--gold);
-  border-radius:20px;
-  padding:35px;
-  position:relative;
-}
-
-.close{
-  position:absolute;
-  right:18px;
-  top:15px;
-  width:35px;
-  height:35px;
-  border-radius:50%;
-  border:1px solid var(--line);
-  background:transparent;
-  color:var(--gold2);
-  cursor:pointer;
-  font-size:20px;
-}
-
-.modal-box h2{
-  font-size:45px;
-  color:var(--gold2);
-  padding-right:35px;
-}
-
-.detail-row{
+.contact-grid{
   display:grid;
-  grid-template-columns:170px 1fr;
-  gap:15px;
-  padding:13px 0;
-  border-bottom:1px solid var(--line);
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
 }
 
-.detail-label{
+.contact-card{
+  padding:30px;
+  text-align:center;
+  border:1px solid rgba(212,175,55,.2);
+  background:rgba(255,255,255,.025);
+  border-radius:8px;
+}
+
+.contact-card h3{
   color:var(--gold2);
-  font-weight:700;
+  margin-bottom:10px;
 }
 
-.detail-value{
+.contact-card p,
+.contact-card a{
   color:var(--muted);
 }
 
-.modal-actions{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:25px;
+.contact-card a:hover{
+  color:var(--gold2);
 }
 
 /* FOOTER */
 
 footer{
-  padding:55px 0 25px;
-  background:#011009;
-  border-top:1px solid var(--line);
+  padding:60px 0 30px;
+  border-top:1px solid rgba(212,175,55,.2);
 }
 
 .footer-grid{
   display:grid;
-  grid-template-columns:1.3fr 1fr 1fr;
-  gap:50px;
+  grid-template-columns:1.5fr 1fr 1fr;
+  gap:40px;
 }
 
-.footer-logo{
-  width:82px;
-  height:82px;
-  object-fit:contain;
+.footer-brand img{
+  width:80px;
   margin-bottom:15px;
 }
 
-footer h3{
-  font-size:25px;
+.footer-brand h3{
   color:var(--gold2);
-  margin-bottom:13px;
+  letter-spacing:2px;
 }
 
-footer p,
-footer a{
+.footer-brand p{
   color:var(--muted);
+  margin-top:8px;
+}
+
+footer h4{
+  color:var(--gold2);
+  margin-bottom:12px;
 }
 
 footer a{
   display:block;
-  margin:7px 0;
+  color:var(--muted);
+  margin:6px 0;
   font-size:14px;
 }
 
@@ -749,65 +576,121 @@ footer a:hover{
   color:var(--gold2);
 }
 
-.copy{
-  border-top:1px solid var(--line);
-  margin-top:35px;
-  padding-top:20px;
+.copyright{
   text-align:center;
-  color:#858b82;
-  font-size:12px;
+  border-top:1px solid rgba(212,175,55,.1);
+  margin-top:40px;
+  padding-top:25px;
+  color:#81928c;
+  font-size:13px;
 }
 
-/* RESPONSIVE */
+/* MODAL */
 
-@media(max-width:950px){
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:2000;
+  background:rgba(0,0,0,.75);
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
 
-  .navlinks{
+.modal.active{
+  display:flex;
+}
+
+.modal-box{
+  width:min(650px,100%);
+  max-height:90vh;
+  overflow:auto;
+  background:#062d25;
+  border:1px solid var(--gold);
+  border-radius:8px;
+  padding:35px;
+  position:relative;
+}
+
+.close{
+  position:absolute;
+  top:12px;
+  right:17px;
+  font-size:25px;
+  color:var(--gold2);
+  cursor:pointer;
+}
+
+.modal-box h2{
+  color:var(--gold2);
+  margin-bottom:15px;
+}
+
+.modal-box p{
+  color:var(--muted);
+  margin:8px 0;
+}
+
+/* LANGUAGE */
+
+.tamil{
+  display:none;
+}
+
+body.tamil-mode .english{
+  display:none;
+}
+
+body.tamil-mode .tamil{
+  display:inline;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+  .nav-links{
     display:none;
     position:absolute;
-    top:82px;
-    left:4%;
-    width:92%;
-    padding:18px;
+    top:78px;
+    left:0;
+    right:0;
+    background:#031b17;
     flex-direction:column;
-    background:rgba(3,26,16,.98);
-    border:1px solid var(--line);
-    border-radius:0 0 15px 15px;
+    padding:25px;
+    border-bottom:1px solid rgba(212,175,55,.25);
   }
 
-  .navlinks.open{
+  .nav-links.show{
     display:flex;
   }
 
-  .menu{
+  .menu-btn{
     display:block;
   }
 
-  .about-grid,
-  .mission-grid,
-  .more-grid{
-    grid-template-columns:1fr;
+  .nav-right{
+    display:flex;
+    align-items:center;
+    gap:8px;
   }
 
-  .features,
-  .why{
-    grid-template-columns:1fr;
-  }
-
-  .courses{
+  .difference-grid{
     grid-template-columns:1fr 1fr;
   }
 
-  .journey{
-    grid-template-columns:1fr;
-  }
-
-  .arrow{
-    display:none;
-  }
-
-  .earn-list{
+  .course-grid{
     grid-template-columns:1fr 1fr;
+  }
+
+  .vm-grid,
+  .learn-box{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .contact-grid{
+    grid-template-columns:1fr;
   }
 
   .footer-grid{
@@ -817,51 +700,40 @@ footer a:hover{
 
 @media(max-width:600px){
 
-  .section{
-    padding:75px 0;
-  }
-
-  .hero h1{
-    font-size:55px;
+  .hero{
+    padding-top:130px;
   }
 
   .hero-logo{
-    width:90px;
-    height:90px;
+    width:130px;
+    height:130px;
   }
 
-  body:before{
-    width:92vw;
-    height:92vw;
-    opacity:.065;
+  section{
+    padding:75px 0;
   }
 
-  .courses,
-  .earn-list,
-  .footer-grid,
-  .formgrid{
+  .section-title h2{
+    font-size:30px;
+  }
+
+  .vm-grid,
+  .learn-box,
+  .course-grid,
+  .difference-grid{
     grid-template-columns:1fr;
   }
 
-  .field.full{
-    grid-column:auto;
+  .journey-step{
+    grid-template-columns:55px 1fr;
   }
 
   .enroll-box{
     padding:25px 18px;
   }
 
-  .modal-box{
-    padding:25px 18px;
-  }
-
-  .modal-box h2{
-    font-size:38px;
-  }
-
-  .detail-row{
+  .footer-grid{
     grid-template-columns:1fr;
-    gap:4px;
   }
 }
 </style>
@@ -869,72 +741,112 @@ footer a:hover{
 
 <body>
 
-<header>
-  <div class="nav">
+<!-- HEADER -->
 
-    <a href="#home">
-      <img src="logo.png" class="logo" alt="Veyana School Of Style">
+<header>
+  <div class="container nav">
+
+    <a href="#home" class="brand">
+      <img src="logo.png" alt="Veyana Logo">
+      <span>VEYANA</span>
     </a>
 
-    <nav class="navlinks" id="navlinks">
-      <a href="#about">About</a>
-      <a href="#difference">Difference</a>
-      <a href="#journey">Journey</a>
-      <a href="#courses">Courses</a>
-      <a href="#learn-earn">Learn & Earn</a>
-      <a href="#why">Why Veyana</a>
-      <a href="#enroll" class="enroll-nav">Enroll Now</a>
-    </nav>
+    <div class="nav-right">
 
-    <button
-      class="menu"
-      onclick="document.getElementById('navlinks').classList.toggle('open')">
-      ☰
-    </button>
+      <nav class="nav-links" id="navLinks">
 
+        <a href="#about">
+          <span class="english">ABOUT</span>
+          <span class="tamil">எங்களைப் பற்றி</span>
+        </a>
+
+        <a href="#difference">
+          <span class="english">DIFFERENCE</span>
+          <span class="tamil">எங்கள் சிறப்பு</span>
+        </a>
+
+        <a href="#journey">
+          <span class="english">JOURNEY</span>
+          <span class="tamil">பயணம்</span>
+        </a>
+
+        <a href="#courses">
+          <span class="english">COURSES</span>
+          <span class="tamil">பாடநெறிகள்</span>
+        </a>
+
+        <a href="#learn">
+          <span class="english">LEARN & EARN</span>
+          <span class="tamil">கற்றுக்கொண்டு சம்பாதிக்க</span>
+        </a>
+
+        <a href="#why">
+          <span class="english">WHY VEYANA</span>
+          <span class="tamil">ஏன் VEYANA?</span>
+        </a>
+
+        <a href="#enroll">
+          <span class="english">ENROLL NOW</span>
+          <span class="tamil">இப்போதே சேருங்கள்</span>
+        </a>
+
+      </nav>
+
+      <button class="lang-btn" onclick="toggleLanguage()" id="langBtn">
+        தமிழ்
+      </button>
+
+      <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    </div>
   </div>
 </header>
 
-<main>
 
 <!-- HERO -->
 
 <section class="hero" id="home">
 
-  <div class="container hero-content">
+  <div class="hero-content">
 
-    <img
-      src="logo.png"
-      class="hero-logo"
-      alt="Veyana Logo">
+    <img src="logo.png" class="hero-logo" alt="Veyana School Of Style">
 
     <div class="eyebrow">
-      Begin Your Journey
+      <span class="english">BEGIN YOUR JOURNEY</span>
+      <span class="tamil">உங்கள் பயணத்தைத் தொடங்குங்கள்</span>
     </div>
 
-    <h1>
-      VEYANA
-      <span>SCHOOL OF STYLE</span>
-    </h1>
+    <h1>VEYANA SCHOOL OF STYLE</h1>
 
-    <div class="tagline">
-      We Don’t Teach Fashion. We Awaken It.
-    </div>
+    <h2>
+      <span class="english">Your style is waiting.</span>
+      <span class="tamil">உங்கள் தனித்துவமான பாணி உங்களுக்காக காத்திருக்கிறது.</span>
+    </h2>
 
     <p>
-      Professional fashion education designed to help you learn,
-      create, build your professional identity, and prepare for
-      the world of fashion.
+      <span class="english">
+        Whether you are beginning your fashion journey or building your
+        professional skills, Veyana School of Style is designed to help you
+        move forward.
+      </span>
+
+      <span class="tamil">
+        நீங்கள் ஃபேஷன் துறையில் உங்கள் பயணத்தைத் தொடங்குபவராக இருந்தாலும்,
+        உங்கள் தொழில்முறை திறன்களை வளர்த்துக் கொண்டிருப்பவராக இருந்தாலும்,
+        Veyana School of Style உங்களை அடுத்த நிலைக்கு அழைத்துச் செல்ல உருவாக்கப்பட்டுள்ளது.
+      </span>
     </p>
 
-    <div class="actions">
+    <div class="buttons">
 
-      <a href="#courses" class="btn gold">
-        Start Now
+      <a href="#courses" class="btn btn-gold">
+        <span class="english">START NOW</span>
+        <span class="tamil">இப்போதே தொடங்குங்கள்</span>
       </a>
 
-      <a href="#enroll" class="btn outline">
-        Enroll Now
+      <a href="#enroll" class="btn btn-outline">
+        <span class="english">ENROLL NOW</span>
+        <span class="tamil">இப்போதே சேருங்கள்</span>
       </a>
 
     </div>
@@ -946,1623 +858,1019 @@ footer a:hover{
 
 <!-- ABOUT -->
 
-<section class="section" id="about">
+<section id="about">
 
-<div class="container">
+  <div class="container">
 
-  <div class="section-title">
+    <div class="section-title">
 
-    <div class="eyebrow">
-      About Us
+      <div class="small">
+        <span class="english">ABOUT VEYANA</span>
+        <span class="tamil">VEYANA பற்றி</span>
+      </div>
+
+      <h2>
+        <span class="english">More Than Fashion Education</span>
+        <span class="tamil">ஃபேஷன் கல்வியைத் தாண்டி</span>
+      </h2>
+
     </div>
 
-    <h2>
-      More Than Fashion Education
-    </h2>
+    <div class="about-content">
 
-  </div>
-
-
-  <div class="about-grid">
-
-    <div class="copy">
+      <h3>
+        <span class="english">Veyana School Of Style</span>
+        <span class="tamil">Veyana School Of Style</span>
+      </h3>
 
       <p>
-        <strong>Veyana School of Style</strong>
-        is a professional fashion education platform created
-        to transform aspiring learners into skilled, confident,
-        creative, and industry-ready fashion professionals.
+        <span class="english">
+          Veyana School Of Style is a professional fashion education platform
+          created to transform aspiring learners into skilled, confident,
+          creative and industry-ready fashion professionals.
+        </span>
+
+        <span class="tamil">
+          Veyana School Of Style என்பது ஆர்வமுள்ள மாணவர்களை திறமையான,
+          தன்னம்பிக்கையான, படைப்பாற்றல் மிக்க மற்றும் தொழில்துறைக்கு தயாரான
+          ஃபேஷன் நிபுணர்களாக உருவாக்கும் ஒரு தொழில்முறை கல்வி தளம்.
+        </span>
       </p>
 
-      <p>
-        Our approach goes beyond simply teaching tailoring or
-        fashion techniques. We combine theory, practical training,
-        draping, garment construction, design development,
-        professional finishing, and portfolio creation to provide
-        a complete fashion-learning experience.
-      </p>
+    </div>
 
-      <p>
-        We believe that a fashion student should not learn only
-        how to make a garment.
-      </p>
 
-      <p>
-        A student should learn how to design it, construct it,
-        present it, document it, and confidently take it to the
-        professional world.
-      </p>
+    <!-- VISION LEFT / MISSION RIGHT -->
 
-      <p>
-        Our goal is to prepare students to explore opportunities
-        not only locally, but also to build a professional identity
-        capable of reaching national and international fashion
-        opportunities.
-      </p>
+    <div class="vm-grid">
 
-      <div class="quote">
-        “We Don’t Teach Fashion. We Awaken It.”
+      <div class="vm-card">
+
+        <h3>
+          <span class="english">VISION</span>
+          <span class="tamil">நோக்கம்</span>
+        </h3>
+
+        <p>
+          <span class="english">
+            To build a generation of skilled fashion professionals who can
+            learn, create, earn and grow with confidence.
+          </span>
+
+          <span class="tamil">
+            கற்றுக்கொண்டு, உருவாக்கி, சம்பாதித்து, தன்னம்பிக்கையுடன்
+            வளரக்கூடிய திறமையான ஃபேஷன் நிபுணர்களின் தலைமுறையை உருவாக்குவது.
+          </span>
+        </p>
+
+      </div>
+
+
+      <div class="vm-card">
+
+        <h3>
+          <span class="english">MISSION</span>
+          <span class="tamil">பணி</span>
+        </h3>
+
+        <p>
+          <span class="english">
+            To provide practical fashion education, professional skills,
+            creative guidance and opportunities that help learners turn
+            their talent into a meaningful career or business.
+          </span>
+
+          <span class="tamil">
+            நடைமுறை சார்ந்த ஃபேஷன் கல்வி, தொழில்முறை திறன்கள்,
+            படைப்பாற்றல் வழிகாட்டுதல் மற்றும் மாணவர்களின் திறமையை
+            பயனுள்ள தொழில் அல்லது வணிகமாக மாற்ற உதவும் வாய்ப்புகளை வழங்குவது.
+          </span>
+        </p>
+
       </div>
 
     </div>
 
-
-    <div class="card">
-
-      <h3>
-        OUR VISION
-      </h3>
-
-      <p>
-        To build a new generation of professionally skilled and
-        globally prepared fashion professionals who can confidently
-        showcase their creativity, develop a strong professional
-        identity, and create opportunities for themselves anywhere
-        in the world.
-      </p>
-
-      <br>
-
-      <p>
-        We envision fashion education that combines knowledge,
-        practical skill, creativity, presentation, and professional
-        exposure.
-      </p>
-
-      <br>
-
-      <h3>
-        OUR MISSION
-      </h3>
-
-      <p>
-        Our mission is to provide a complete and structured fashion
-        education that develops both technical ability and
-        professional confidence.
-      </p>
-
-      <br>
-
-      <ul>
-
-        <li>
-          Provide strong theoretical and practical knowledge.
-        </li>
-
-        <li>
-          Develop professional garment construction skills.
-        </li>
-
-        <li>
-          Teach creative and technical draping techniques.
-        </li>
-
-        <li>
-          Build strong design and problem-solving abilities.
-        </li>
-
-        <li>
-          Help students develop their own design identity.
-        </li>
-
-        <li>
-          Guide students in creating a professional fashion
-          portfolio.
-        </li>
-
-        <li>
-          Prepare students to present their work professionally.
-        </li>
-
-        <li>
-          Develop skills relevant to career, freelancing,
-          entrepreneurship, and further opportunities.
-        </li>
-
-        <li>
-          Encourage students to think beyond local opportunities
-          and prepare for national and international possibilities.
-        </li>
-
-        <li>
-          Help learners transform their creativity into a
-          sustainable professional path.
-        </li>
-
-      </ul>
-
-    </div>
-
   </div>
-
-</div>
 
 </section>
 
 
-<!-- WHAT MAKES VEYANA DIFFERENT -->
+<!-- DIFFERENCE -->
 
-<section class="section alt" id="difference">
+<section id="difference">
 
-<div class="container">
+  <div class="container">
 
-  <div class="section-title">
+    <div class="section-title">
 
-    <div class="eyebrow">
-      What Makes Veyana Different?
+      <div class="small">
+        <span class="english">THE VEYANA DIFFERENCE</span>
+        <span class="tamil">VEYANA-வின் சிறப்பு</span>
+      </div>
+
+      <h2>
+        <span class="english">Why We Are Different</span>
+        <span class="tamil">நாங்கள் ஏன் வித்தியாசமானவர்கள்?</span>
+      </h2>
+
     </div>
 
-    <h2>
-      Beyond Learning. Towards a Professional Identity.
-    </h2>
+    <div class="difference-grid">
 
-    <p>
-      At Veyana, completing a course is not the final goal.
-      Building a professional identity is.
-    </p>
+      <div class="diff-card">
+        <div class="number">01</div>
+        <h3>
+          <span class="english">Practical Learning</span>
+          <span class="tamil">நடைமுறை கற்றல்</span>
+        </h3>
+        <p>
+          <span class="english">Learn through practical fashion techniques and real work.</span>
+          <span class="tamil">நடைமுறை ஃபேஷன் நுட்பங்கள் மற்றும் உண்மையான பணிகளின் மூலம் கற்றுக்கொள்ளுங்கள்.</span>
+        </p>
+      </div>
 
-    <p>
-      Our learning approach brings together multiple areas
-      of fashion education so that students can progress from
-      learning → creating → presenting → building a portfolio
-      → exploring opportunities.
-    </p>
+      <div class="diff-card">
+        <div class="number">02</div>
+        <h3>
+          <span class="english">Professional Skills</span>
+          <span class="tamil">தொழில்முறை திறன்கள்</span>
+        </h3>
+        <p>
+          <span class="english">Build skills that can support your professional journey.</span>
+          <span class="tamil">உங்கள் தொழில்முறை பயணத்திற்கு உதவும் திறன்களை வளர்த்துக்கொள்ளுங்கள்.</span>
+        </p>
+      </div>
+
+      <div class="diff-card">
+        <div class="number">03</div>
+        <h3>
+          <span class="english">Creative Thinking</span>
+          <span class="tamil">படைப்பாற்றல் சிந்தனை</span>
+        </h3>
+        <p>
+          <span class="english">Develop your own ideas, designs and creative identity.</span>
+          <span class="tamil">உங்கள் சொந்த யோசனைகள், வடிவமைப்புகள் மற்றும் படைப்பாற்றல் அடையாளத்தை வளர்த்துக்கொள்ளுங்கள்.</span>
+        </p>
+      </div>
+
+      <div class="diff-card">
+        <div class="number">04</div>
+        <h3>
+          <span class="english">Personal Guidance</span>
+          <span class="tamil">தனிப்பட்ட வழிகாட்டுதல்</span>
+        </h3>
+        <p>
+          <span class="english">Guidance designed to help learners progress confidently.</span>
+          <span class="tamil">மாணவர்கள் தன்னம்பிக்கையுடன் முன்னேற உதவும் வழிகாட்டுதல்.</span>
+        </p>
+      </div>
+
+      <div class="diff-card">
+        <div class="number">05</div>
+        <h3>
+          <span class="english">Online & Offline</span>
+          <span class="tamil">இணையவழி & நேரடி வகுப்புகள்</span>
+        </h3>
+        <p>
+          <span class="english">Choose the learning format that works for you.</span>
+          <span class="tamil">உங்களுக்கு ஏற்ற கற்றல் முறையைத் தேர்வு செய்யலாம்.</span>
+        </p>
+      </div>
+
+      <div class="diff-card">
+        <div class="number">06</div>
+        <h3>
+          <span class="english">Skill Development</span>
+          <span class="tamil">திறன் வளர்ச்சி</span>
+        </h3>
+        <p>
+          <span class="english">Progress from fundamentals to professional-level skills.</span>
+          <span class="tamil">அடிப்படையிலிருந்து தொழில்முறை திறன் வரை முன்னேறுங்கள்.</span>
+        </p>
+      </div>
+
+      <div class="diff-card">
+        <div class="number">07</div>
+        <h3>
+          <span class="english">Learn & Create</span>
+          <span class="tamil">கற்றுக்கொண்டு உருவாக்குங்கள்</span>
+        </h3>
+        <p>
+          <span class="english">Turn what you learn into real creative work.</span>
+          <span class="tamil">நீங்கள் கற்றதை உண்மையான படைப்புகளாக மாற்றுங்கள்.</span>
+        </p>
+      </div>
+
+      <div class="diff-card">
+        <div class="number">08</div>
+        <h3>
+          <span class="english">Career & Business Readiness</span>
+          <span class="tamil">தொழில் & வணிகத் தயாரிப்பு</span>
+        </h3>
+        <p>
+          <span class="english">Build skills that can support employment, freelancing or your own business.</span>
+          <span class="tamil">வேலை, ஃப்ரீலான்சிங் அல்லது சொந்த தொழிலுக்கு உதவும் திறன்களை உருவாக்குங்கள்.</span>
+        </p>
+      </div>
+
+    </div>
 
   </div>
-
-
-  <div class="features">
-
-
-    <!-- 01 -->
-
-    <article class="feature">
-
-      <div class="num">
-        01 — THEORY + PRACTICAL LEARNING
-      </div>
-
-      <h3>
-        Learn Why, How & What
-      </h3>
-
-      <p>
-        Fashion cannot be mastered through theory alone.
-        Our learning combines conceptual knowledge with practical
-        application, allowing students to understand not only what
-        to do, but also why and how it is done.
-      </p>
-
-    </article>
-
-
-    <!-- 02 -->
-
-    <article class="feature">
-
-      <div class="num">
-        02 — PROFESSIONAL DRAPING
-      </div>
-
-      <h3>
-        Understand Form in Three Dimensions
-      </h3>
-
-      <p>
-        Students are introduced to draping techniques as part
-        of their fashion-learning journey. Draping helps learners
-        understand fabric behaviour, form, proportion, silhouette,
-        and three-dimensional garment development.
-      </p>
-
-    </article>
-
-
-    <!-- 03 -->
-
-    <article class="feature">
-
-      <div class="num">
-        03 — GARMENT CONSTRUCTION
-      </div>
-
-      <h3>
-        From Measurement to Finish
-      </h3>
-
-      <p>
-        Students learn the complete construction process,
-        including:
-      </p>
-
-      <ul>
-
-        <li>Measurements</li>
-        <li>Pattern development</li>
-        <li>Cutting</li>
-        <li>Construction</li>
-        <li>Fitting</li>
-        <li>Finishing</li>
-        <li>Professional presentation</li>
-
-      </ul>
-
-      <p>
-        The focus is on developing real garment-making ability,
-        not simply completing classroom exercises.
-      </p>
-
-    </article>
-
-
-    <!-- 04 -->
-
-    <article class="feature">
-
-      <div class="num">
-        04 — PORTFOLIO DEVELOPMENT
-      </div>
-
-      <h3>
-        Build Proof of Your Skills
-      </h3>
-
-      <p>
-        Students are guided to document and present their work
-        so that they can gradually build a portfolio that
-        represents their:
-      </p>
-
-      <ul>
-
-        <li>Designs</li>
-        <li>Garments</li>
-        <li>Draping work</li>
-        <li>Embroidery</li>
-        <li>Construction skills</li>
-        <li>Creative concepts</li>
-        <li>Practical projects</li>
-
-      </ul>
-
-      <p>
-        A portfolio becomes a visual representation of a student's
-        skills, creativity, development, and design identity.
-      </p>
-
-    </article>
-
-
-    <!-- 05 -->
-
-    <article class="feature">
-
-      <div class="num">
-        05 — BUILD YOUR DESIGN IDENTITY
-      </div>
-
-      <h3>
-        Discover Your Creative Direction
-      </h3>
-
-      <p>
-        We encourage students to discover their own creative
-        direction rather than simply copying existing designs.
-      </p>
-
-      <p>
-        <strong>
-          Ideas → Inspiration → Design Development
-          → Creation → Presentation
-        </strong>
-      </p>
-
-      <p>
-        The objective is to help every learner gradually understand
-        what makes their creative work their own.
-      </p>
-
-    </article>
-
-
-    <!-- 06 -->
-
-    <article class="feature">
-
-      <div class="num">
-        06 — PROFESSIONAL PRESENTATION
-      </div>
-
-      <h3>
-        Create It. Present It.
-      </h3>
-
-      <p>
-        Knowing how to create a garment is one skill.
-        Knowing how to present that garment professionally
-        is another.
-      </p>
-
-      <p>
-        Students are guided to understand the importance of:
-      </p>
-
-      <ul>
-
-        <li>Design presentation</li>
-        <li>Garment presentation</li>
-        <li>Portfolio presentation</li>
-        <li>Visual documentation</li>
-        <li>Professional appearance</li>
-        <li>Communicating their design ideas</li>
-
-      </ul>
-
-    </article>
-
-
-    <!-- 07 -->
-
-    <article class="feature">
-
-      <div class="num">
-        07 — GLOBAL-READY MINDSET
-      </div>
-
-      <h3>
-        Think Beyond Boundaries
-      </h3>
-
-      <p>
-        Our students are encouraged to think beyond the boundaries
-        of their immediate surroundings.
-      </p>
-
-      <p>
-        We aim to develop learners who can confidently say:
-      </p>
-
-      <p>
-        <strong>
-          “I have a skill. I have created my work.
-          I can present my work.”
-        </strong>
-      </p>
-
-      <p>
-        The objective is to help students prepare themselves for
-        opportunities that may exist across India and international
-        markets, depending on their skills, qualifications,
-        portfolio, and career pathway.
-      </p>
-
-    </article>
-
-
-    <!-- 08 -->
-
-    <article class="feature">
-
-      <div class="num">
-        08 — CAREER & BUSINESS READINESS
-      </div>
-
-      <h3>
-        Turn Skills Into Possibilities
-      </h3>
-
-      <p>
-        Students are encouraged to understand how their fashion
-        skills can support different professional pathways.
-      </p>
-
-      <ul>
-
-        <li>Career opportunities</li>
-
-        <li>Freelance work</li>
-
-        <li>Tailoring and custom orders</li>
-
-        <li>Embroidery services</li>
-
-        <li>Fashion-related businesses</li>
-
-        <li>Teaching opportunities</li>
-
-        <li>Further professional education</li>
-
-      </ul>
-
-      <p>
-        The focus is on helping learners understand, build,
-        and present skills that can support their individual
-        professional journey.
-      </p>
-
-    </article>
-
-  </div>
-
-</div>
 
 </section>
 
 
-<!-- LEARNING JOURNEY -->
+<!-- JOURNEY -->
 
-<section class="section" id="journey">
+<section id="journey">
 
-<div class="container">
+  <div class="container">
 
-  <div class="section-title">
+    <div class="section-title">
 
-    <div class="eyebrow">
-      Our Learning Journey
-    </div>
+      <div class="small">
+        <span class="english">YOUR LEARNING JOURNEY</span>
+        <span class="tamil">உங்கள் கற்றல் பயணம்</span>
+      </div>
 
-    <h2>
-      Learn → Create → Build → Explore
-    </h2>
-
-  </div>
-
-
-  <div class="journey">
-
-    <div class="step">
-
-      <strong>LEARN</strong>
-
-      <small>
-        Understand the theory, techniques,
-        terminology, and fundamentals.
-      </small>
+      <h2>
+        <span class="english">Learn. Create. Build. Transform.</span>
+        <span class="tamil">கற்றுக்கொள்ளுங்கள். உருவாக்குங்கள். வளருங்கள். மாற்றத்தை உருவாக்குங்கள்.</span>
+      </h2>
 
     </div>
 
-    <div class="arrow">
-      →
-    </div>
+    <div class="journey">
 
-    <div class="step">
+      <div class="journey-step">
+        <div class="step-no">01</div>
+        <div>
+          <h3>
+            <span class="english">Learn</span>
+            <span class="tamil">கற்றுக்கொள்ளுங்கள்</span>
+          </h3>
+          <p>
+            <span class="english">Understand the fundamentals and professional techniques.</span>
+            <span class="tamil">அடிப்படைகள் மற்றும் தொழில்முறை நுட்பங்களை கற்றுக்கொள்ளுங்கள்.</span>
+          </p>
+        </div>
+      </div>
 
-      <strong>PRACTICE</strong>
+      <div class="journey-step">
+        <div class="step-no">02</div>
+        <div>
+          <h3>
+            <span class="english">Create</span>
+            <span class="tamil">உருவாக்குங்கள்</span>
+          </h3>
+          <p>
+            <span class="english">Practice and develop your own creative work.</span>
+            <span class="tamil">பயிற்சி செய்து உங்கள் சொந்த படைப்புகளை உருவாக்குங்கள்.</span>
+          </p>
+        </div>
+      </div>
 
-      <small>
-        Apply knowledge through structured
-        practical training.
-      </small>
+      <div class="journey-step">
+        <div class="step-no">03</div>
+        <div>
+          <h3>
+            <span class="english">Build</span>
+            <span class="tamil">வளருங்கள்</span>
+          </h3>
+          <p>
+            <span class="english">Build your portfolio, confidence and professional skills.</span>
+            <span class="tamil">உங்கள் போர்ட்ஃபோலியோ, தன்னம்பிக்கை மற்றும் தொழில்முறை திறன்களை வளர்த்துக்கொள்ளுங்கள்.</span>
+          </p>
+        </div>
+      </div>
 
-    </div>
-
-    <div class="arrow">
-      →
-    </div>
-
-    <div class="step">
-
-      <strong>CREATE</strong>
-
-      <small>
-        Develop garments, designs, embroidery,
-        draping projects, and creative work.
-      </small>
-
-    </div>
-
-    <div class="arrow">
-      →
-    </div>
-
-    <div class="step">
-
-      <strong>REFINE</strong>
-
-      <small>
-        Improve construction, fitting,
-        finishing, presentation, and
-        professional standards.
-      </small>
-
-    </div>
-
-  </div>
-
-
-  <div class="journey" style="margin-top:15px">
-
-    <div class="step">
-
-      <strong>BUILD</strong>
-
-      <small>
-        Create a personal collection of work
-        and develop a professional portfolio.
-      </small>
-
-    </div>
-
-    <div class="arrow">
-      →
-    </div>
-
-    <div class="step">
-
-      <strong>PRESENT</strong>
-
-      <small>
-        Learn how to showcase your skills
-        and creative identity professionally.
-      </small>
-
-    </div>
-
-    <div class="arrow">
-      →
-    </div>
-
-    <div class="step">
-
-      <strong>EXPLORE</strong>
-
-      <small>
-        Use your skills and portfolio to explore
-        career, business, freelance, and further
-        learning opportunities.
-      </small>
+      <div class="journey-step">
+        <div class="step-no">04</div>
+        <div>
+          <h3>
+            <span class="english">Transform</span>
+            <span class="tamil">மாற்றத்தை உருவாக்குங்கள்</span>
+          </h3>
+          <p>
+            <span class="english">Use your skills to move towards your career or business goals.</span>
+            <span class="tamil">உங்கள் திறன்களைப் பயன்படுத்தி தொழில் அல்லது வணிக இலக்குகளை நோக்கி முன்னேறுங்கள்.</span>
+          </p>
+        </div>
+      </div>
 
     </div>
 
   </div>
-
-</div>
 
 </section>
 
 
 <!-- COURSES -->
 
-<section class="section alt" id="courses">
+<section id="courses">
 
-<div class="container">
+  <div class="container">
 
-  <div class="section-title">
+    <div class="section-title">
 
-    <div class="eyebrow">
-      What You Can Learn At Veyana
+      <div class="small">
+        <span class="english">OUR COURSES</span>
+        <span class="tamil">எங்கள் பாடநெறிகள்</span>
+      </div>
+
+      <h2>
+        <span class="english">Choose Your Learning Path</span>
+        <span class="tamil">உங்களுக்கு ஏற்ற பாடநெறியைத் தேர்வு செய்யுங்கள்</span>
+      </h2>
+
     </div>
 
-    <h2>
-      Explore Our Courses
-    </h2>
+    <div class="course-grid">
 
-    <p>
-      Choose a course to view its duration, mode,
-      details, fees and enrollment option.
-    </p>
+      <!-- COURSE 1 -->
+
+      <div class="course-card">
+
+        <img src="logo.png" class="course-image" alt="Diploma">
+
+        <div class="course-body">
+
+          <h3>
+            <span class="english">Diploma in Fashion Designing</span>
+            <span class="tamil">ஆடை வடிவமைப்பு டிப்ளமோ</span>
+          </h3>
+
+          <p>
+            <span class="english">
+              Build a strong foundation in fashion designing, garment construction and creative development.
+            </span>
+
+            <span class="tamil">
+              ஆடை வடிவமைப்பு, ஆடை உருவாக்கம் மற்றும் படைப்பாற்றல் வளர்ச்சியில் வலுவான அடித்தளத்தை உருவாக்குங்கள்.
+            </span>
+          </p>
+
+          <button class="btn btn-outline"
+            onclick="openCourse('Diploma in Fashion Designing')">
+            <span class="english">VIEW COURSE</span>
+            <span class="tamil">பாடநெறியைப் பார்க்க</span>
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- COURSE 2 -->
+
+      <div class="course-card">
+
+        <img src="logo.png" class="course-image" alt="Master Diploma">
+
+        <div class="course-body">
+
+          <h3>
+            <span class="english">Master Diploma in Fashion Designing</span>
+            <span class="tamil">மாஸ்டர் டிப்ளமோ – ஆடை வடிவமைப்பு</span>
+          </h3>
+
+          <p>
+            <span class="english">
+              Advanced learning for learners who want to develop professional-level fashion skills.
+            </span>
+
+            <span class="tamil">
+              தொழில்முறை அளவிலான ஃபேஷன் திறன்களை வளர்த்துக்கொள்ள விரும்புபவர்களுக்கான மேம்பட்ட பாடநெறி.
+            </span>
+          </p>
+
+          <button class="btn btn-outline"
+            onclick="openCourse('Master Diploma in Fashion Designing')">
+            <span class="english">VIEW COURSE</span>
+            <span class="tamil">பாடநெறியைப் பார்க்க</span>
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- COURSE 3 -->
+
+      <div class="course-card">
+
+        <img src="logo.png" class="course-image" alt="Aari Embroidery">
+
+        <div class="course-body">
+
+          <h3>
+            <span class="english">Aari Embroidery Professional Course</span>
+            <span class="tamil">ஆரி எம்பிராய்டரி தொழில்முறை பாடநெறி</span>
+          </h3>
+
+          <p>
+            <span class="english">
+              Learn Aari embroidery techniques from fundamentals to professional creative work.
+            </span>
+
+            <span class="tamil">
+              அடிப்படையிலிருந்து தொழில்முறை படைப்புகள் வரை ஆரி எம்பிராய்டரி நுட்பங்களை கற்றுக்கொள்ளுங்கள்.
+            </span>
+          </p>
+
+          <button class="btn btn-outline"
+            onclick="openCourse('Aari Embroidery Professional Course')">
+            <span class="english">VIEW COURSE</span>
+            <span class="tamil">பாடநெறியைப் பார்க்க</span>
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- COURSE 4 -->
+
+      <div class="course-card">
+
+        <img src="logo.png" class="course-image" alt="Tailoring">
+
+        <div class="course-body">
+
+          <h3>
+            <span class="english">Professional Tailoring</span>
+            <span class="tamil">தொழில்முறை தையல்</span>
+          </h3>
+
+          <p>
+            <span class="english">
+              Develop practical tailoring and garment construction skills.
+            </span>
+
+            <span class="tamil">
+              நடைமுறை தையல் மற்றும் ஆடை உருவாக்கத் திறன்களை வளர்த்துக்கொள்ளுங்கள்.
+            </span>
+          </p>
+
+          <button class="btn btn-outline"
+            onclick="openCourse('Professional Tailoring')">
+            <span class="english">VIEW COURSE</span>
+            <span class="tamil">பாடநெறியைப் பார்க்க</span>
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- COURSE 5 -->
+
+      <div class="course-card">
+
+        <img src="logo.png" class="course-image" alt="Draping">
+
+        <div class="course-body">
+
+          <h3>
+            <span class="english">Professional Draping</span>
+            <span class="tamil">தொழில்முறை டிரேப்பிங்</span>
+          </h3>
+
+          <p>
+            <span class="english">
+              Explore garment draping techniques and creative styling.
+            </span>
+
+            <span class="tamil">
+              ஆடை டிரேப்பிங் நுட்பங்கள் மற்றும் படைப்பாற்றல் ஸ்டைலிங்கை கற்றுக்கொள்ளுங்கள்.
+            </span>
+          </p>
+
+          <button class="btn btn-outline"
+            onclick="openCourse('Professional Draping')">
+            <span class="english">VIEW COURSE</span>
+            <span class="tamil">பாடநெறியைப் பார்க்க</span>
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- COURSE 6 -->
+
+      <div class="course-card">
+
+        <img src="logo.png" class="course-image" alt="Hand Embroidery">
+
+        <div class="course-body">
+
+          <h3>
+            <span class="english">Hand Embroidery</span>
+            <span class="tamil">கை எம்பிராய்டரி</span>
+          </h3>
+
+          <p>
+            <span class="english">
+              Learn beautiful hand embroidery techniques and creative surface design.
+            </span>
+
+            <span class="tamil">
+              அழகான கை எம்பிராய்டரி நுட்பங்கள் மற்றும் படைப்பாற்றல் மேற்பரப்பு வடிவமைப்பை கற்றுக்கொள்ளுங்கள்.
+            </span>
+          </p>
+
+          <button class="btn btn-outline"
+            onclick="openCourse('Hand Embroidery')">
+            <span class="english">VIEW COURSE</span>
+            <span class="tamil">பாடநெறியைப் பார்க்க</span>
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
 
   </div>
-
-
-  <div class="courses">
-
-
-    <!-- COURSE 1 -->
-
-    <article class="course">
-
-      <div class="course-top">
-        <span>Fashion Designing</span>
-      </div>
-
-      <div class="course-body">
-
-        <h3>
-          Diploma in Fashion Designing
-        </h3>
-
-        <div class="course-meta">
-
-          <span class="badge">
-            6–8 Months
-          </span>
-
-          <span class="badge">
-            Online / Offline
-          </span>
-
-        </div>
-
-        <p>
-          Design development, fashion concepts, creativity,
-          silhouettes, garment construction, draping and
-          professional design practices.
-        </p>
-
-        <button
-          class="btn gold"
-          onclick="openCourse('Diploma in Fashion Designing')">
-
-          Enroll Now
-
-        </button>
-
-      </div>
-
-    </article>
-
-
-    <!-- COURSE 2 -->
-
-    <article class="course">
-
-      <div class="course-top">
-        <span>Master Diploma</span>
-      </div>
-
-      <div class="course-body">
-
-        <h3>
-          Master Diploma in Fashion Designing
-        </h3>
-
-        <div class="course-meta">
-
-          <span class="badge">
-            Advanced
-          </span>
-
-          <span class="badge">
-            Online / Offline
-          </span>
-
-        </div>
-
-        <p>
-          Advanced fashion learning with design development,
-          draping, construction, finishing and portfolio
-          development.
-        </p>
-
-        <button
-          class="btn gold"
-          onclick="openCourse('Master Diploma in Fashion Designing')">
-
-          Enroll Now
-
-        </button>
-
-      </div>
-
-    </article>
-
-
-    <!-- COURSE 3 -->
-
-    <article class="course">
-
-      <div class="course-top">
-        <span>Aari Embroidery</span>
-      </div>
-
-      <div class="course-body">
-
-        <h3>
-          Aari Embroidery Professional Course
-        </h3>
-
-        <div class="course-meta">
-
-          <span class="badge">
-            Professional
-          </span>
-
-          <span class="badge">
-            Online / Offline
-          </span>
-
-        </div>
-
-        <p>
-          Traditional and professional Aari embroidery
-          techniques with practical application and
-          design work.
-        </p>
-
-        <button
-          class="btn gold"
-          onclick="openCourse('Aari Embroidery Professional Course')">
-
-          Enroll Now
-
-        </button>
-
-      </div>
-
-    </article>
-
-
-    <!-- COURSE 4 -->
-
-    <article class="course">
-
-      <div class="course-top">
-        <span>Tailoring</span>
-      </div>
-
-      <div class="course-body">
-
-        <h3>
-          Professional Tailoring
-        </h3>
-
-        <div class="course-meta">
-
-          <span class="badge">
-            Practical
-          </span>
-
-          <span class="badge">
-            Online / Offline
-          </span>
-
-        </div>
-
-        <p>
-          Measurements, cutting, construction, fitting,
-          finishing and practical garment-making skills.
-        </p>
-
-        <button
-          class="btn gold"
-          onclick="openCourse('Professional Tailoring')">
-
-          Enroll Now
-
-        </button>
-
-      </div>
-
-    </article>
-
-
-    <!-- COURSE 5 -->
-
-    <article class="course">
-
-      <div class="course-top">
-        <span>Draping</span>
-      </div>
-
-      <div class="course-body">
-
-        <h3>
-          Professional Draping
-        </h3>
-
-        <div class="course-meta">
-
-          <span class="badge">
-            Skill Course
-          </span>
-
-          <span class="badge">
-            Online / Offline
-          </span>
-
-        </div>
-
-        <p>
-          Three-dimensional garment development and
-          understanding fabric, form, proportion and
-          silhouette.
-        </p>
-
-        <button
-          class="btn gold"
-          onclick="openCourse('Professional Draping')">
-
-          Enroll Now
-
-        </button>
-
-      </div>
-
-    </article>
-
-
-    <!-- COURSE 6 -->
-
-    <article class="course">
-
-      <div class="course-top">
-        <span>Hand Embroidery</span>
-      </div>
-
-      <div class="course-body">
-
-        <h3>
-          Hand Embroidery
-        </h3>
-
-        <div class="course-meta">
-
-          <span class="badge">
-            Creative Skill
-          </span>
-
-          <span class="badge">
-            Online / Offline
-          </span>
-
-        </div>
-
-        <p>
-          Creative hand-embroidery techniques and surface
-          embellishment for fashion and garment work.
-        </p>
-
-        <button
-          class="btn gold"
-          onclick="openCourse('Hand Embroidery')">
-
-          Enroll Now
-
-        </button>
-
-      </div>
-
-    </article>
-
-
-  </div>
-
-</div>
 
 </section>
 
 
 <!-- LEARN & EARN -->
 
-<section class="section earn" id="learn-earn">
+<section id="learn">
 
-<div class="container">
+  <div class="container">
 
-  <div class="section-title">
+    <div class="section-title">
 
-    <div class="eyebrow">
-      Learn & Earn Opportunity
+      <div class="small">
+        <span class="english">LEARN & EARN</span>
+        <span class="tamil">கற்றுக்கொண்டு சம்பாதிக்க</span>
+      </div>
+
+      <h2>
+        <span class="english">Turn Skills Into Opportunities</span>
+        <span class="tamil">திறன்களை வாய்ப்புகளாக மாற்றுங்கள்</span>
+      </h2>
+
     </div>
 
-    <h2>
-      LEARN. CREATE. BUILD. EARN.
-    </h2>
+    <div class="learn-box">
 
-    <p>
-      Your skill can become your opportunity.
-    </p>
+      <div class="learn-card">
 
-  </div>
+        <h3>
+          <span class="english">Learn</span>
+          <span class="tamil">கற்றுக்கொள்ளுங்கள்</span>
+        </h3>
 
-  <p>
-    At Veyana, we believe that learning a skill can
-    open the door to opportunity.
-  </p>
+        <p>
+          <span class="english">
+            Develop practical skills in tailoring, embroidery, fashion designing,
+            garment construction and creative styling.
+          </span>
 
-  <p>
-    Students can explore how their fashion skills
-    may be transformed into:
-  </p>
+          <span class="tamil">
+            தையல், எம்பிராய்டரி, ஆடை வடிவமைப்பு, ஆடை உருவாக்கம் மற்றும்
+            படைப்பாற்றல் ஸ்டைலிங் போன்ற நடைமுறை திறன்களை வளர்த்துக்கொள்ளுங்கள்.
+          </span>
+        </p>
 
-
-  <div class="earn-list">
-
-    <div class="earn-item">
-      Tailoring services
-    </div>
-
-    <div class="earn-item">
-      Custom orders
-    </div>
-
-    <div class="earn-item">
-      Embroidery work
-    </div>
-
-    <div class="earn-item">
-      Freelance opportunities
-    </div>
-
-    <div class="earn-item">
-      Fashion-related businesses
-    </div>
-
-    <div class="earn-item">
-      Teaching opportunities
-    </div>
-
-    <div class="earn-item">
-      Further professional education
-    </div>
-
-    <div class="earn-item">
-      Career opportunities
-    </div>
-
-  </div>
+      </div>
 
 
-  <p style="
-    font-family:'Cormorant Garamond',serif;
-    font-size:32px;
-    color:var(--gold2);
-  ">
-    Your skill can become your opportunity.
-  </p>
+      <div class="learn-card">
 
-</div>
+        <h3>
+          <span class="english">Earn</span>
+          <span class="tamil">சம்பாதிக்க</span>
+        </h3>
 
-</section>
+        <ul>
 
+          <li>
+            <span class="english">Freelance work</span>
+            <span class="tamil">ஃப்ரீலான்ஸ் வேலை</span>
+          </li>
 
-<!-- MORE THAN A COURSE -->
+          <li>
+            <span class="english">Tailoring services</span>
+            <span class="tamil">தையல் சேவைகள்</span>
+          </li>
 
-<section class="section" id="more">
+          <li>
+            <span class="english">Embroidery work</span>
+            <span class="tamil">எம்பிராய்டரி வேலை</span>
+          </li>
 
-<div class="container more-grid">
+          <li>
+            <span class="english">Fashion business</span>
+            <span class="tamil">ஃபேஷன் வணிகம்</span>
+          </li>
 
-  <div>
+          <li>
+            <span class="english">Teaching & training</span>
+            <span class="tamil">கற்பித்தல் & பயிற்சி</span>
+          </li>
 
-    <div class="eyebrow">
-      More Than A Course
-    </div>
+        </ul>
 
-    <div class="bigtext">
-
-      A certificate tells people
-      you completed a course.
-
-      <br><br>
-
-      A portfolio shows people
-      what you can create.
+      </div>
 
     </div>
 
   </div>
-
-
-  <div>
-
-    <p>
-      A certificate tells people that you completed
-      a course.
-    </p>
-
-    <p>
-      A portfolio shows people what you can create.
-    </p>
-
-    <p>
-      That is why Veyana focuses on both learning
-      and creating.
-    </p>
-
-    <p>
-      Our aim is for students to leave their learning
-      journey with more than theoretical knowledge —
-      with practical skills, completed work, creative
-      confidence, and a portfolio that represents
-      their abilities.
-    </p>
-
-  </div>
-
-</div>
 
 </section>
 
 
 <!-- WHY VEYANA -->
 
-<section class="section alt" id="why">
+<section id="why">
 
-<div class="container">
+  <div class="container">
 
-  <div class="section-title">
+    <div class="section-title">
 
-    <div class="eyebrow">
-      Why Veyana School Of Style?
-    </div>
-
-    <h2>
-      Designed For The Complete Journey
-    </h2>
-
-  </div>
-
-
-  <div class="why">
-
-    <div class="why-item">
-
-      <span class="check">✓</span>
-
-      <div>
-
-        <h3>
-          Theory + Practical
-        </h3>
-
-        <p>
-          Learn the knowledge and apply it.
-        </p>
-
+      <div class="small">
+        <span class="english">WHY VEYANA</span>
+        <span class="tamil">ஏன் VEYANA?</span>
       </div>
+
+      <h2>
+        <span class="english">We Don't Teach Fashion. We Awaken It.</span>
+        <span class="tamil">நாங்கள் ஃபேஷனை மட்டும் கற்றுக்கொடுப்பதில்லை. அதை உங்களுக்குள் விழிப்பூட்டுகிறோம்.</span>
+      </h2>
 
     </div>
 
+    <div class="why-box">
 
-    <div class="why-item">
+      <h3>
+        <span class="english">Your Talent. Your Skill. Your Style.</span>
+        <span class="tamil">உங்கள் திறமை. உங்கள் திறன். உங்கள் பாணி.</span>
+      </h3>
 
-      <span class="check">✓</span>
+      <p>
+        <span class="english">
+          Veyana is designed to help learners discover their potential,
+          develop practical skills and move confidently towards their own
+          creative and professional journey.
+        </span>
 
-      <div>
-
-        <h3>
-          Draping
-        </h3>
-
-        <p>
-          Develop an understanding of
-          three-dimensional garment creation.
-        </p>
-
-      </div>
-
-    </div>
-
-
-    <div class="why-item">
-
-      <span class="check">✓</span>
-
-      <div>
-
-        <h3>
-          Garment Construction
-        </h3>
-
-        <p>
-          Build strong technical and
-          practical skills.
-        </p>
-
-      </div>
-
-    </div>
-
-
-    <div class="why-item">
-
-      <span class="check">✓</span>
-
-      <div>
-
-        <h3>
-          Portfolio Development
-        </h3>
-
-        <p>
-          Create a professional collection
-          of your work.
-        </p>
-
-      </div>
-
-    </div>
-
-
-    <div class="why-item">
-
-      <span class="check">✓</span>
-
-      <div>
-
-        <h3>
-          Creative Identity
-        </h3>
-
-        <p>
-          Develop your own design direction.
-        </p>
-
-      </div>
-
-    </div>
-
-
-    <div class="why-item">
-
-      <span class="check">✓</span>
-
-      <div>
-
-        <h3>
-          Professional Presentation
-        </h3>
-
-        <p>
-          Learn to present your work
-          with confidence.
-        </p>
-
-      </div>
-
-    </div>
-
-
-    <div class="why-item">
-
-      <span class="check">✓</span>
-
-      <div>
-
-        <h3>
-          Learn & Earn
-        </h3>
-
-        <p>
-          Understand how skills can become
-          opportunities.
-        </p>
-
-      </div>
-
-    </div>
-
-
-    <div class="why-item">
-
-      <span class="check">✓</span>
-
-      <div>
-
-        <h3>
-          Global Perspective
-        </h3>
-
-        <p>
-          Prepare yourself to explore
-          opportunities beyond your
-          immediate surroundings.
-        </p>
-
-      </div>
+        <span class="tamil">
+          மாணவர்கள் தங்களுடைய திறனை கண்டறிந்து, நடைமுறை திறன்களை வளர்த்து,
+          தங்களுடைய படைப்பாற்றல் மற்றும் தொழில்முறை பயணத்தில்
+          தன்னம்பிக்கையுடன் முன்னேற Veyana உருவாக்கப்பட்டுள்ளது.
+        </span>
+      </p>
 
     </div>
 
   </div>
-
-</div>
 
 </section>
 
 
-<!-- OUR BELIEF -->
+<!-- ENROLL -->
 
-<section class="section belief">
+<section id="enroll">
 
-<div class="container">
+  <div class="container">
 
-  <div class="eyebrow">
-    Our Belief
-  </div>
+    <div class="section-title">
 
+      <div class="small">
+        <span class="english">ADMISSIONS</span>
+        <span class="tamil">சேர்க்கை</span>
+      </div>
 
-  <div class="belief-quote">
+      <h2>
+        <span class="english">Start Your Journey</span>
+        <span class="tamil">உங்கள் பயணத்தைத் தொடங்குங்கள்</span>
+      </h2>
 
-    “Your Skill Is Your Identity.
+      <p>
+        <span class="english">
+          Fill in your details and our team will contact you.
+        </span>
 
-    <br>
+        <span class="tamil">
+          உங்கள் விவரங்களை பதிவு செய்யுங்கள். எங்கள் குழு உங்களைத் தொடர்புகொள்ளும்.
+        </span>
+      </p>
 
-    Your Portfolio Is Your Story.
-
-    <br>
-
-    Your Creativity Is Your Opportunity.”
-
-  </div>
-
-
-  <p>
-    At Veyana School of Style, we don't simply
-    teach you how to make clothes.
-  </p>
-
-  <p>
-    We help you learn, create, develop your identity,
-    build your portfolio, and prepare for the
-    professional world.
-  </p>
-
-</div>
-
-</section>
+    </div>
 
 
-<!-- ENROLL NOW -->
+    <div class="enroll-box">
 
-<section class="section" id="enroll">
+      <form onsubmit="submitEnquiry(event)">
 
-<div class="container">
-
-  <div class="enroll-box">
-
-    <h2>
-      ENROLL NOW
-    </h2>
-
-    <p>
-      Choose your course and submit your
-      enrollment enquiry.
-    </p>
-
-
-    <form onsubmit="submitEnrollment(event)">
-
-      <div class="formgrid">
-
-
-        <div class="field">
+        <div class="form-group">
 
           <label>
-            Full Name
+            <span class="english">Name</span>
+            <span class="tamil">பெயர்</span>
           </label>
 
-          <input
-            id="studentName"
-            required
-            placeholder="Enter your name"
-          >
+          <input type="text" id="name" required>
 
         </div>
 
 
-        <div class="field">
+        <div class="form-group">
 
           <label>
-            Phone Number
+            <span class="english">Mobile Number</span>
+            <span class="tamil">மொபைல் எண்</span>
           </label>
 
-          <input
-            id="studentPhone"
-            required
-            type="tel"
-            placeholder="Enter your phone number"
-          >
+          <input type="tel" id="phone" required>
 
         </div>
 
 
-        <div class="field full">
+        <div class="form-group">
 
           <label>
-            Course Name
+            <span class="english">Select Course</span>
+            <span class="tamil">பாடநெறியைத் தேர்வு செய்யுங்கள்</span>
           </label>
 
-          <select
-            id="studentCourse"
-            required
-          >
+          <select id="course" required>
 
             <option value="">
-              Select a course
+              Select / தேர்வு செய்யுங்கள்
             </option>
 
-            <option>
-              Diploma in Fashion Designing
-            </option>
+            <option>Diploma in Fashion Designing</option>
 
-            <option>
-              Master Diploma in Fashion Designing
-            </option>
+            <option>Master Diploma in Fashion Designing</option>
 
-            <option>
-              Aari Embroidery Professional Course
-            </option>
+            <option>Aari Embroidery Professional Course</option>
 
-            <option>
-              Professional Tailoring
-            </option>
+            <option>Professional Tailoring</option>
 
-            <option>
-              Professional Draping
-            </option>
+            <option>Professional Draping</option>
 
-            <option>
-              Hand Embroidery
-            </option>
+            <option>Hand Embroidery</option>
 
           </select>
 
         </div>
 
 
-        <div class="field full">
+        <div class="form-group">
 
           <label>
-            Message
+            <span class="english">Message</span>
+            <span class="tamil">செய்தி</span>
           </label>
 
-          <textarea
-            id="studentMessage"
-            placeholder="Any questions or requirements?"
-          ></textarea>
+          <textarea id="message"></textarea>
 
         </div>
 
 
-      </div>
+        <button class="btn btn-gold" type="submit">
 
+          <span class="english">SEND ENQUIRY ON WHATSAPP</span>
+          <span class="tamil">வாட்ஸ்அப்பில் விசாரிக்கவும்</span>
 
-      <div class="form-actions">
-
-        <button
-          class="btn gold"
-          type="submit"
-        >
-          Submit Enrollment
         </button>
 
-      </div>
+      </form>
 
-    </form>
+    </div>
 
   </div>
 
-</div>
-
 </section>
 
-</main>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <div class="small">
+        <span class="english">CONTACT VEYANA</span>
+        <span class="tamil">VEYANA-வை தொடர்புகொள்ள</span>
+      </div>
+
+      <h2>
+        <span class="english">Let's Connect</span>
+        <span class="tamil">தொடர்புகொள்வோம்</span>
+      </h2>
+
+    </div>
+
+
+    <div class="contact-grid">
+
+      <div class="contact-card">
+
+        <h3>
+          <span class="english">Phone</span>
+          <span class="tamil">தொலைபேசி</span>
+        </h3>
+
+        <a href="tel:+919789805888">
+          9789805888
+        </a>
+
+      </div>
+
+
+      <div class="contact-card">
+
+        <h3>WhatsApp</h3>
+
+        <a href="https://wa.me/919789805888" target="_blank">
+          9789805888
+        </a>
+
+      </div>
+
+
+      <div class="contact-card">
+
+        <h3>
+          <span class="english">Enquire</span>
+          <span class="tamil">விசாரிக்க</span>
+        </h3>
+
+        <a href="#enroll">
+          <span class="english">Send an Enquiry</span>
+          <span class="tamil">விசாரணையை அனுப்புங்கள்</span>
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
 
 <!-- FOOTER -->
 
 <footer>
 
-<div class="container">
+  <div class="container">
 
-  <div class="footer-grid">
+    <div class="footer-grid">
 
+      <div class="footer-brand">
 
-    <div>
+        <img src="logo.png" alt="Veyana">
 
-      <img
-        src="logo.png"
-        class="footer-logo"
-        alt="Veyana School Of Style"
-      >
+        <h3>VEYANA SCHOOL OF STYLE</h3>
 
-      <h3>
-        VEYANA SCHOOL OF STYLE
-      </h3>
+        <p>
+          <span class="english">
+            We Don't Teach Fashion. We Awaken It.
+          </span>
 
-      <p>
-        Learn • Create • Build • Transform
-      </p>
+          <span class="tamil">
+            நாங்கள் ஃபேஷனை மட்டும் கற்றுக்கொடுப்பதில்லை. அதை உங்களுக்குள் விழிப்பூட்டுகிறோம்.
+          </span>
+        </p>
 
-      <p>
-        We Don’t Teach Fashion. We Awaken It.
-      </p>
-
-    </div>
+      </div>
 
 
-    <div>
+      <div>
 
-      <h3>
-        Explore
-      </h3>
+        <h4>
+          <span class="english">EXPLORE</span>
+          <span class="tamil">ஆராயுங்கள்</span>
+        </h4>
 
-      <a href="#about">
-        About Veyana
-      </a>
+        <a href="#about">
+          <span class="english">About Veyana</span>
+          <span class="tamil">Veyana பற்றி</span>
+        </a>
 
-      <a href="#difference">
-        What Makes Veyana Different?
-      </a>
+        <a href="#courses">
+          <span class="english">Courses</span>
+          <span class="tamil">பாடநெறிகள்</span>
+        </a>
 
-      <a href="#journey">
-        Learning Journey
-      </a>
+        <a href="#learn">
+          <span class="english">Learn & Earn</span>
+          <span class="tamil">கற்றுக்கொண்டு சம்பாதிக்க</span>
+        </a>
 
-      <a href="#courses">
-        Courses
-      </a>
+        <a href="#why">
+          <span class="english">Why Veyana</span>
+          <span class="tamil">ஏன் Veyana?</span>
+        </a>
 
-      <a href="#learn-earn">
-        Learn & Earn
-      </a>
-
-    </div>
+      </div>
 
 
-    <div>
+      <div>
 
-      <h3>
-        Start
-      </h3>
+        <h4>
+          <span class="english">CONNECT</span>
+          <span class="tamil">தொடர்புக்கு</span>
+        </h4>
 
-      <a href="#courses">
-        Start Now
-      </a>
+        <a href="#enroll">
+          <span class="english">Enquire</span>
+          <span class="tamil">விசாரிக்க</span>
+        </a>
 
-      <a href="#enroll">
-        Enroll Now
-      </a>
+        <a href="tel:+919789805888">
+          9789805888
+        </a>
 
-      <a href="#why">
-        Why Veyana
-      </a>
+        <a href="https://wa.me/919789805888" target="_blank">
+          WhatsApp
+        </a>
 
-      <a href="#home">
-        Back To Top ↑
-      </a>
+      </div>
 
     </div>
 
+
+    <div class="copyright">
+      © 2026 Veyana School Of Style. All Rights Reserved.
+    </div>
 
   </div>
-
-
-  <div class="copy">
-
-    © 2026 Veyana School Of Style.
-    All Rights Reserved.
-
-  </div>
-
-</div>
 
 </footer>
 
 
-<!-- COURSE DETAIL POPUP -->
+<!-- COURSE MODAL -->
 
-<div
-  class="modal"
-  id="courseModal"
-  onclick="closeOutside(event)"
->
+<div class="modal" id="courseModal">
 
   <div class="modal-box">
 
-    <button
-      class="close"
-      onclick="closeCourse()"
-    >
-      ×
-    </button>
+    <span class="close" onclick="closeCourse()">×</span>
 
+    <h2 id="modalCourseName"></h2>
 
-    <div class="eyebrow">
-      Course Details
-    </div>
+    <p>
+      <strong>
+        <span class="english">Duration:</span>
+        <span class="tamil">கால அளவு:</span>
+      </strong>
 
+      <span class="english">Course specific</span>
+      <span class="tamil">பாடநெறிக்கு ஏற்ப மாறுபடும்</span>
+    </p>
 
-    <h2 id="modalTitle">
-      Course
-    </h2>
+    <p>
+      <strong>
+        <span class="english">Mode:</span>
+        <span class="tamil">வகுப்பு முறை:</span>
+      </strong>
 
+      <span class="english">Online & Offline</span>
+      <span class="tamil">இணையவழி & நேரடி</span>
+    </p>
 
-    <div class="detail-row">
+    <p>
+      <strong>
+        <span class="english">Fees:</span>
+        <span class="tamil">கட்டணம்:</span>
+      </strong>
 
-      <div class="detail-label">
-        Course Name
-      </div>
+      <span class="english">Please enquire for current course fee.</span>
+      <span class="tamil">தற்போதைய பாடநெறி கட்டணத்திற்கு தொடர்புகொள்ளவும்.</span>
+    </p>
 
-      <div
-        class="detail-value"
-        id="modalName"
-      ></div>
+    <div class="buttons">
 
-    </div>
+      <a href="#enroll"
+         class="btn btn-gold"
+         onclick="closeCourse()">
 
+        <span class="english">ENROLL NOW</span>
+        <span class="tamil">இப்போதே சேருங்கள்</span>
 
-    <div class="detail-row">
+      </a>
 
-      <div class="detail-label">
-        Course Duration
-      </div>
+      <a href="https://wa.me/919789805888"
+         target="_blank"
+         class="btn btn-outline">
 
-      <div
-        class="detail-value"
-        id="modalDuration"
-      ></div>
+        <span class="english">WHATSAPP US</span>
+        <span class="tamil">வாட்ஸ்அப்பில் தொடர்புகொள்ள</span>
 
-    </div>
-
-
-    <div class="detail-row">
-
-      <div class="detail-label">
-        Online / Offline
-      </div>
-
-      <div
-        class="detail-value"
-        id="modalMode"
-      ></div>
-
-    </div>
-
-
-    <div class="detail-row">
-
-      <div class="detail-label">
-        Course Details
-      </div>
-
-      <div
-        class="detail-value"
-        id="modalDetails"
-      ></div>
-
-    </div>
-
-
-    <div class="detail-row">
-
-      <div class="detail-label">
-        Fees
-      </div>
-
-      <div
-        class="detail-value"
-        id="modalFees"
-      ></div>
-
-    </div>
-
-
-    <div class="modal-actions">
-
-      <button
-        class="btn gold"
-        onclick="enrollFromCourse()"
-      >
-        Enroll Now
-      </button>
-
-      <button
-        class="btn outline"
-        onclick="closeCourse()"
-      >
-        Close
-      </button>
+      </a>
 
     </div>
 
@@ -2573,140 +1881,52 @@ footer a:hover{
 
 <script>
 
-const courseData = {
+/* MOBILE MENU */
 
-  "Diploma in Fashion Designing":{
+function toggleMenu(){
 
-    duration:"6–8 Months",
+  document
+    .getElementById("navLinks")
+    .classList
+    .toggle("show");
 
-    mode:"Online / Offline",
-
-    details:
-      "Design development, fashion concepts, creativity, silhouettes, draping, garment construction, professional finishing and portfolio development.",
-
-    fees:
-      "Fees to be announced"
-
-  },
+}
 
 
-  "Master Diploma in Fashion Designing":{
+/* LANGUAGE SWITCH */
 
-    duration:
-      "Advanced Programme",
+function toggleLanguage(){
 
-    mode:
-      "Online / Offline",
+  document.body.classList.toggle("tamil-mode");
 
-    details:
-      "Advanced fashion design learning covering design development, draping, garment construction, finishing, creative development and professional portfolio work.",
+  const button =
+    document.getElementById("langBtn");
 
-    fees:
-      "Fees to be announced"
+  if(document.body.classList.contains("tamil-mode")){
 
-  },
+    button.innerText = "English";
 
+  }else{
 
-  "Aari Embroidery Professional Course":{
-
-    duration:
-      "Course schedule varies",
-
-    mode:
-      "Online / Offline",
-
-    details:
-      "Traditional and professional Aari embroidery techniques with practical application, motifs and embroidery design development.",
-
-    fees:
-      "Fees to be announced"
-
-  },
-
-
-  "Professional Tailoring":{
-
-    duration:
-      "Course schedule varies",
-
-    mode:
-      "Online / Offline",
-
-    details:
-      "Measurements, pattern development, cutting, garment construction, fitting, finishing and practical tailoring skills.",
-
-    fees:
-      "Fees to be announced"
-
-  },
-
-
-  "Professional Draping":{
-
-    duration:
-      "Course schedule varies",
-
-    mode:
-      "Online / Offline",
-
-    details:
-      "Three-dimensional garment development with practical understanding of fabric behaviour, form, proportion and silhouette.",
-
-    fees:
-      "Fees to be announced"
-
-  },
-
-
-  "Hand Embroidery":{
-
-    duration:
-      "Course schedule varies",
-
-    mode:
-      "Online / Offline",
-
-    details:
-      "Creative hand-embroidery techniques and surface embellishment with practical fashion applications.",
-
-    fees:
-      "Fees to be announced"
+    button.innerText = "தமிழ்";
 
   }
 
-};
+}
 
 
-let selectedCourse="";
+/* COURSE MODAL */
 
+function openCourse(courseName){
 
-function openCourse(name){
-
-  selectedCourse=name;
-
-  const c=courseData[name];
-
-  document.getElementById("modalTitle").textContent=name;
-
-  document.getElementById("modalName").textContent=name;
-
-  document.getElementById("modalDuration").textContent=
-    c.duration;
-
-  document.getElementById("modalMode").textContent=
-    c.mode;
-
-  document.getElementById("modalDetails").textContent=
-    c.details;
-
-  document.getElementById("modalFees").textContent=
-    c.fees;
+  document
+    .getElementById("modalCourseName")
+    .innerText = courseName;
 
   document
     .getElementById("courseModal")
-    .classList.add("show");
-
-  document.body.style.overflow="hidden";
+    .classList
+    .add("active");
 
 }
 
@@ -2715,77 +1935,57 @@ function closeCourse(){
 
   document
     .getElementById("courseModal")
-    .classList.remove("show");
-
-  document.body.style.overflow="";
+    .classList
+    .remove("active");
 
 }
 
 
-function closeOutside(e){
+window.addEventListener("click",function(event){
 
-  if(e.target.id==="courseModal"){
+  const modal =
+    document.getElementById("courseModal");
+
+  if(event.target === modal){
 
     closeCourse();
 
   }
 
-}
+});
 
 
-function enrollFromCourse(){
+/* WHATSAPP ENQUIRY */
 
-  closeCourse();
+function submitEnquiry(event){
 
-  document.getElementById("studentCourse").value=
-    selectedCourse;
+  event.preventDefault();
 
-  document
-    .getElementById("enroll")
-    .scrollIntoView({
-      behavior:"smooth"
-    });
+  const name =
+    document.getElementById("name").value.trim();
 
-}
+  const phone =
+    document.getElementById("phone").value.trim();
 
+  const course =
+    document.getElementById("course").value;
 
-function submitEnrollment(e){
-
-  e.preventDefault();
+  const message =
+    document.getElementById("message").value.trim();
 
 
-  const name=
-    document
-      .getElementById("studentName")
-      .value
-      .trim();
+  const whatsappMessage =
+    "Hello Veyana School Of Style,%0A%0A" +
+    "Name: " + encodeURIComponent(name) +
+    "%0AMobile: " + encodeURIComponent(phone) +
+    "%0ACourse: " + encodeURIComponent(course) +
+    "%0AMessage: " + encodeURIComponent(message);
 
 
-  const phone=
-    document
-      .getElementById("studentPhone")
-      .value
-      .trim();
-
-
-  const course=
-    document
-      .getElementById("studentCourse")
-      .value;
-
-
-  alert(
-
-    "Thank you, "+name+"!\n\n"+
-
-    "Course: "+course+"\n"+
-
-    "Phone: "+phone+"\n\n"+
-
-    "Your enrollment enquiry has been submitted on this page.\n"+
-
-    "Payment integration will be connected later."
-
+  window.open(
+    "https://wa.me/919789805888?text=" +
+    whatsappMessage,
+    "_blank"
   );
 
 }
