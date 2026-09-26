@@ -9,9 +9,9 @@
 <style>
 :root{
   --green:#062d25;
-  --green2:#0b4035;
+  --green-light:#0c4035;
   --gold:#d4af37;
-  --gold2:#f0d477;
+  --gold-light:#f0d477;
   --cream:#f7f1df;
   --white:#ffffff;
   --text:#e9eee9;
@@ -27,16 +27,18 @@
 }
 
 body{
-  font-family:Georgia, "Times New Roman", serif;
+  font-family:Georgia,"Times New Roman",serif;
   background:
-    radial-gradient(circle at top right, rgba(212,175,55,.10), transparent 35%),
-    linear-gradient(135deg,#031b17,#062d25 45%,#031b17);
+    radial-gradient(circle at top right,rgba(212,175,55,.08),transparent 35%),
+    linear-gradient(135deg,#031b17,#062d25 50%,#031b17);
   color:var(--text);
   line-height:1.7;
   overflow-x:hidden;
 }
 
-body:before{
+/* LOGO WATERMARK */
+
+body::before{
   content:"";
   position:fixed;
   z-index:-1;
@@ -50,14 +52,14 @@ body:before{
   pointer-events:none;
 }
 
-a{
-  color:inherit;
-  text-decoration:none;
-}
-
 img{
   max-width:100%;
   display:block;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
 }
 
 .container{
@@ -73,7 +75,7 @@ header{
   left:0;
   right:0;
   z-index:1000;
-  background:rgba(3,27,23,.94);
+  background:rgba(3,27,23,.96);
   backdrop-filter:blur(14px);
   border-bottom:1px solid rgba(212,175,55,.25);
 }
@@ -90,9 +92,9 @@ header{
   display:flex;
   align-items:center;
   gap:12px;
+  color:var(--gold-light);
   font-weight:bold;
   letter-spacing:2px;
-  color:var(--gold2);
   white-space:nowrap;
 }
 
@@ -105,36 +107,26 @@ header{
 .nav-links{
   display:flex;
   align-items:center;
-  gap:25px;
+  gap:24px;
 }
 
 .nav-links a{
-  font-size:13px;
+  font-size:12px;
   letter-spacing:1px;
-  color:#e8eee9;
+  color:var(--white);
   transition:.3s;
 }
 
 .nav-links a:hover{
-  color:var(--gold2);
-}
-
-.lang-btn{
-  border:1px solid var(--gold);
-  background:transparent;
-  color:var(--gold2);
-  padding:7px 12px;
-  border-radius:20px;
-  cursor:pointer;
-  font-size:12px;
+  color:var(--gold-light);
 }
 
 .menu-btn{
   display:none;
-  background:none;
   border:1px solid rgba(212,175,55,.5);
-  color:var(--gold2);
-  padding:7px 10px;
+  background:transparent;
+  color:var(--gold-light);
+  padding:7px 11px;
   cursor:pointer;
 }
 
@@ -146,8 +138,7 @@ header{
   align-items:center;
   justify-content:center;
   text-align:center;
-  padding:120px 20px 80px;
-  position:relative;
+  padding:125px 20px 80px;
 }
 
 .hero-content{
@@ -155,69 +146,68 @@ header{
 }
 
 .hero-logo{
-  width:170px;
-  height:170px;
+  width:165px;
+  height:165px;
   object-fit:contain;
   margin:0 auto 25px;
-  filter:drop-shadow(0 0 25px rgba(212,175,55,.12));
 }
 
 .eyebrow{
-  color:var(--gold2);
+  color:var(--gold-light);
   letter-spacing:5px;
-  font-size:14px;
+  font-size:13px;
   margin-bottom:15px;
 }
 
 .hero h1{
+  color:var(--cream);
   font-size:clamp(38px,7vw,76px);
   line-height:1.05;
-  letter-spacing:4px;
-  color:var(--cream);
+  letter-spacing:3px;
   margin-bottom:18px;
 }
 
 .hero h2{
-  font-size:clamp(17px,3vw,25px);
-  color:var(--gold2);
+  color:var(--gold-light);
+  font-size:clamp(18px,3vw,26px);
   font-weight:normal;
   margin-bottom:18px;
 }
 
 .hero p{
-  max-width:720px;
+  max-width:750px;
   margin:auto;
   color:var(--muted);
-  font-size:17px;
+  font-size:16px;
 }
 
 .buttons{
-  margin-top:30px;
   display:flex;
   justify-content:center;
-  gap:15px;
   flex-wrap:wrap;
+  gap:14px;
+  margin-top:30px;
 }
 
 .btn{
   display:inline-block;
-  padding:13px 26px;
-  border-radius:4px;
   border:1px solid var(--gold);
-  font-size:13px;
-  letter-spacing:1px;
+  border-radius:4px;
+  padding:12px 25px;
   cursor:pointer;
+  font-size:12px;
+  letter-spacing:1px;
   transition:.3s;
 }
 
 .btn-gold{
-  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  background:linear-gradient(135deg,var(--gold),var(--gold-light));
   color:#13251f;
 }
 
 .btn-outline{
   background:transparent;
-  color:var(--gold2);
+  color:var(--gold-light);
 }
 
 .btn:hover{
@@ -234,24 +224,24 @@ section{
 
 .section-title{
   text-align:center;
-  margin-bottom:55px;
+  margin-bottom:50px;
 }
 
 .section-title .small{
-  color:var(--gold2);
+  color:var(--gold-light);
   letter-spacing:4px;
   font-size:12px;
 }
 
 .section-title h2{
   color:var(--cream);
-  font-size:38px;
-  margin:8px 0;
+  font-size:36px;
+  margin:8px 0 12px;
 }
 
 .section-title p{
   color:var(--muted);
-  max-width:700px;
+  max-width:750px;
   margin:auto;
 }
 
@@ -264,13 +254,14 @@ section{
 }
 
 .about-content h3{
-  color:var(--gold2);
-  font-size:26px;
+  color:var(--gold-light);
+  font-size:27px;
   margin-bottom:15px;
 }
 
 .about-content p{
   color:var(--muted);
+  font-size:16px;
 }
 
 /* VISION MISSION */
@@ -279,19 +270,22 @@ section{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:25px;
-  margin-top:35px;
 }
 
 .vm-card{
+  min-height:250px;
   padding:38px;
   border:1px solid rgba(212,175,55,.28);
-  background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.015));
   border-radius:8px;
-  min-height:250px;
+  background:linear-gradient(
+    145deg,
+    rgba(255,255,255,.045),
+    rgba(255,255,255,.015)
+  );
 }
 
 .vm-card h3{
-  color:var(--gold2);
+  color:var(--gold-light);
   font-size:25px;
   margin-bottom:15px;
 }
@@ -309,11 +303,11 @@ section{
 }
 
 .diff-card{
-  padding:28px 22px;
-  border:1px solid rgba(212,175,55,.18);
-  background:rgba(255,255,255,.025);
   min-height:190px;
+  padding:27px 22px;
+  border:1px solid rgba(212,175,55,.18);
   border-radius:7px;
+  background:rgba(255,255,255,.025);
   transition:.3s;
 }
 
@@ -331,7 +325,7 @@ section{
 .diff-card h3{
   color:var(--cream);
   font-size:18px;
-  margin:12px 0;
+  margin:10px 0;
 }
 
 .diff-card p{
@@ -348,14 +342,14 @@ section{
 
 .journey-step{
   display:grid;
-  grid-template-columns:90px 1fr;
+  grid-template-columns:80px 1fr;
   gap:25px;
   padding:25px 0;
   border-bottom:1px solid rgba(212,175,55,.12);
 }
 
 .step-no{
-  color:var(--gold2);
+  color:var(--gold-light);
   font-size:25px;
 }
 
@@ -396,12 +390,13 @@ section{
 }
 
 .course-body{
-  padding:25px;
+  padding:23px;
 }
 
 .course-body h3{
   color:var(--cream);
-  font-size:20px;
+  font-size:19px;
+  line-height:1.4;
   margin-bottom:10px;
 }
 
@@ -422,12 +417,12 @@ section{
 .learn-card{
   padding:38px;
   border:1px solid rgba(212,175,55,.25);
-  background:rgba(255,255,255,.025);
   border-radius:8px;
+  background:rgba(255,255,255,.025);
 }
 
 .learn-card h3{
-  color:var(--gold2);
+  color:var(--gold-light);
   font-size:25px;
   margin-bottom:15px;
 }
@@ -444,17 +439,17 @@ section{
 /* WHY */
 
 .why-box{
-  max-width:850px;
+  max-width:900px;
   margin:auto;
-  text-align:center;
   padding:50px 30px;
+  text-align:center;
   border:1px solid rgba(212,175,55,.3);
-  background:rgba(255,255,255,.025);
   border-radius:8px;
+  background:rgba(255,255,255,.025);
 }
 
 .why-box h3{
-  color:var(--gold2);
+  color:var(--gold-light);
   font-size:28px;
   margin-bottom:15px;
 }
@@ -470,8 +465,8 @@ section{
   margin:auto;
   padding:40px;
   border:1px solid rgba(212,175,55,.3);
-  background:rgba(255,255,255,.035);
   border-radius:8px;
+  background:rgba(255,255,255,.035);
 }
 
 .form-group{
@@ -480,7 +475,7 @@ section{
 
 .form-group label{
   display:block;
-  color:var(--gold2);
+  color:var(--gold-light);
   font-size:13px;
   margin-bottom:7px;
 }
@@ -490,8 +485,8 @@ section{
 .form-group textarea{
   width:100%;
   padding:13px;
-  border-radius:4px;
   border:1px solid rgba(212,175,55,.25);
+  border-radius:4px;
   background:#061f1b;
   color:white;
   outline:none;
@@ -514,12 +509,12 @@ section{
   padding:30px;
   text-align:center;
   border:1px solid rgba(212,175,55,.2);
-  background:rgba(255,255,255,.025);
   border-radius:8px;
+  background:rgba(255,255,255,.025);
 }
 
 .contact-card h3{
-  color:var(--gold2);
+  color:var(--gold-light);
   margin-bottom:10px;
 }
 
@@ -529,7 +524,7 @@ section{
 }
 
 .contact-card a:hover{
-  color:var(--gold2);
+  color:var(--gold-light);
 }
 
 /* FOOTER */
@@ -551,7 +546,7 @@ footer{
 }
 
 .footer-brand h3{
-  color:var(--gold2);
+  color:var(--gold-light);
   letter-spacing:2px;
 }
 
@@ -561,7 +556,7 @@ footer{
 }
 
 footer h4{
-  color:var(--gold2);
+  color:var(--gold-light);
   margin-bottom:12px;
 }
 
@@ -573,7 +568,7 @@ footer a{
 }
 
 footer a:hover{
-  color:var(--gold2);
+  color:var(--gold-light);
 }
 
 .copyright{
@@ -592,10 +587,10 @@ footer a:hover{
   position:fixed;
   inset:0;
   z-index:2000;
-  background:rgba(0,0,0,.75);
   align-items:center;
   justify-content:center;
   padding:20px;
+  background:rgba(0,0,0,.78);
 }
 
 .modal.active{
@@ -606,49 +601,35 @@ footer a:hover{
   width:min(650px,100%);
   max-height:90vh;
   overflow:auto;
-  background:#062d25;
+  position:relative;
+  padding:35px;
   border:1px solid var(--gold);
   border-radius:8px;
-  padding:35px;
-  position:relative;
+  background:#062d25;
 }
 
 .close{
   position:absolute;
-  top:12px;
-  right:17px;
-  font-size:25px;
-  color:var(--gold2);
+  top:10px;
+  right:18px;
+  color:var(--gold-light);
+  font-size:27px;
   cursor:pointer;
 }
 
 .modal-box h2{
-  color:var(--gold2);
+  color:var(--gold-light);
   margin-bottom:15px;
 }
 
 .modal-box p{
   color:var(--muted);
-  margin:8px 0;
-}
-
-/* LANGUAGE */
-
-.tamil{
-  display:none;
-}
-
-body.tamil-mode .english{
-  display:none;
-}
-
-body.tamil-mode .tamil{
-  display:inline;
+  margin:9px 0;
 }
 
 /* MOBILE */
 
-@media(max-width:900px){
+@media(max-width:950px){
 
   .nav-links{
     display:none;
@@ -656,9 +637,9 @@ body.tamil-mode .tamil{
     top:78px;
     left:0;
     right:0;
-    background:#031b17;
     flex-direction:column;
     padding:25px;
+    background:#031b17;
     border-bottom:1px solid rgba(212,175,55,.25);
   }
 
@@ -670,12 +651,6 @@ body.tamil-mode .tamil{
     display:block;
   }
 
-  .nav-right{
-    display:flex;
-    align-items:center;
-    gap:8px;
-  }
-
   .difference-grid{
     grid-template-columns:1fr 1fr;
   }
@@ -683,25 +658,20 @@ body.tamil-mode .tamil{
   .course-grid{
     grid-template-columns:1fr 1fr;
   }
+}
+
+@media(max-width:700px){
 
   .vm-grid,
-  .learn-box{
-    grid-template-columns:1fr 1fr;
-  }
-
+  .learn-box,
+  .course-grid,
+  .difference-grid,
   .contact-grid{
     grid-template-columns:1fr;
   }
 
   .footer-grid{
-    grid-template-columns:1fr 1fr;
-  }
-}
-
-@media(max-width:600px){
-
-  .hero{
-    padding-top:130px;
+    grid-template-columns:1fr;
   }
 
   .hero-logo{
@@ -709,31 +679,16 @@ body.tamil-mode .tamil{
     height:130px;
   }
 
+  .hero h1{
+    font-size:40px;
+  }
+
   section{
     padding:75px 0;
   }
 
-  .section-title h2{
-    font-size:30px;
-  }
-
-  .vm-grid,
-  .learn-box,
-  .course-grid,
-  .difference-grid{
-    grid-template-columns:1fr;
-  }
-
-  .journey-step{
-    grid-template-columns:55px 1fr;
-  }
-
   .enroll-box{
     padding:25px 18px;
-  }
-
-  .footer-grid{
-    grid-template-columns:1fr;
   }
 }
 </style>
@@ -741,112 +696,96 @@ body.tamil-mode .tamil{
 
 <body>
 
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
 
 <header>
   <div class="container nav">
 
     <a href="#home" class="brand">
-      <img src="logo.png" alt="Veyana Logo">
+      <img src="logo.png" alt="Veyana School Of Style Logo">
       <span>VEYANA</span>
     </a>
 
-    <div class="nav-right">
+    <nav class="nav-links" id="navLinks">
 
-      <nav class="nav-links" id="navLinks">
+      <a href="#about">
+        ABOUT US | எங்களைப் பற்றி
+      </a>
 
-        <a href="#about">
-          <span class="english">ABOUT</span>
-          <span class="tamil">எங்களைப் பற்றி</span>
-        </a>
+      <a href="#difference">
+        DIFFERENCE | எங்கள் சிறப்பு
+      </a>
 
-        <a href="#difference">
-          <span class="english">DIFFERENCE</span>
-          <span class="tamil">எங்கள் சிறப்பு</span>
-        </a>
+      <a href="#journey">
+        JOURNEY | பயணம்
+      </a>
 
-        <a href="#journey">
-          <span class="english">JOURNEY</span>
-          <span class="tamil">பயணம்</span>
-        </a>
+      <a href="#courses">
+        COURSES | பாடநெறிகள்
+      </a>
 
-        <a href="#courses">
-          <span class="english">COURSES</span>
-          <span class="tamil">பாடநெறிகள்</span>
-        </a>
+      <a href="#learn">
+        LEARN & EARN | கற்றுக்கொண்டு சம்பாதிக்க
+      </a>
 
-        <a href="#learn">
-          <span class="english">LEARN & EARN</span>
-          <span class="tamil">கற்றுக்கொண்டு சம்பாதிக்க</span>
-        </a>
+      <a href="#why">
+        WHY VEYANA | ஏன் VEYANA?
+      </a>
 
-        <a href="#why">
-          <span class="english">WHY VEYANA</span>
-          <span class="tamil">ஏன் VEYANA?</span>
-        </a>
+      <a href="#enroll">
+        ENROLL NOW | இப்போதே சேருங்கள்
+      </a>
 
-        <a href="#enroll">
-          <span class="english">ENROLL NOW</span>
-          <span class="tamil">இப்போதே சேருங்கள்</span>
-        </a>
+    </nav>
 
-      </nav>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
-      <button class="lang-btn" onclick="toggleLanguage()" id="langBtn">
-        தமிழ்
-      </button>
-
-      <button class="menu-btn" onclick="toggleMenu()">☰</button>
-
-    </div>
   </div>
 </header>
 
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 
 <section class="hero" id="home">
 
   <div class="hero-content">
 
-    <img src="logo.png" class="hero-logo" alt="Veyana School Of Style">
+    <img
+      src="logo.png"
+      class="hero-logo"
+      alt="Veyana School Of Style">
 
     <div class="eyebrow">
-      <span class="english">BEGIN YOUR JOURNEY</span>
-      <span class="tamil">உங்கள் பயணத்தைத் தொடங்குங்கள்</span>
+      BEGIN YOUR JOURNEY | உங்கள் பயணத்தைத் தொடங்குங்கள்
     </div>
 
-    <h1>VEYANA SCHOOL OF STYLE</h1>
+    <h1>
+      VEYANA SCHOOL OF STYLE
+    </h1>
 
     <h2>
-      <span class="english">Your style is waiting.</span>
-      <span class="tamil">உங்கள் தனித்துவமான பாணி உங்களுக்காக காத்திருக்கிறது.</span>
+      Your style is waiting. |
+      உங்கள் தனித்துவமான பாணி உங்களுக்காக காத்திருக்கிறது.
     </h2>
 
     <p>
-      <span class="english">
-        Whether you are beginning your fashion journey or building your
-        professional skills, Veyana School of Style is designed to help you
-        move forward.
-      </span>
-
-      <span class="tamil">
-        நீங்கள் ஃபேஷன் துறையில் உங்கள் பயணத்தைத் தொடங்குபவராக இருந்தாலும்,
-        உங்கள் தொழில்முறை திறன்களை வளர்த்துக் கொண்டிருப்பவராக இருந்தாலும்,
-        Veyana School of Style உங்களை அடுத்த நிலைக்கு அழைத்துச் செல்ல உருவாக்கப்பட்டுள்ளது.
-      </span>
+      Whether you are beginning your fashion journey or building your
+      professional skills, Veyana School of Style is designed to help you
+      move forward.
+      <br><br>
+      நீங்கள் ஃபேஷன் துறையில் உங்கள் பயணத்தைத் தொடங்குபவராக இருந்தாலும்,
+      உங்கள் தொழில்முறை திறன்களை வளர்த்துக் கொண்டிருப்பவராக இருந்தாலும்,
+      Veyana School of Style உங்களை அடுத்த நிலைக்கு முன்னேற உதவும் வகையில் உருவாக்கப்பட்டுள்ளது.
     </p>
 
     <div class="buttons">
 
       <a href="#courses" class="btn btn-gold">
-        <span class="english">START NOW</span>
-        <span class="tamil">இப்போதே தொடங்குங்கள்</span>
+        START NOW | இப்போதே தொடங்குங்கள்
       </a>
 
       <a href="#enroll" class="btn btn-outline">
-        <span class="english">ENROLL NOW</span>
-        <span class="tamil">இப்போதே சேருங்கள்</span>
+        ENROLL NOW | இப்போதே சேருங்கள்
       </a>
 
     </div>
@@ -856,7 +795,7 @@ body.tamil-mode .tamil{
 </section>
 
 
-<!-- ABOUT -->
+<!-- ================= ABOUT US ================= -->
 
 <section id="about">
 
@@ -865,36 +804,48 @@ body.tamil-mode .tamil{
     <div class="section-title">
 
       <div class="small">
-        <span class="english">ABOUT VEYANA</span>
-        <span class="tamil">VEYANA பற்றி</span>
+        ABOUT VEYANA | VEYANA பற்றி
       </div>
 
       <h2>
-        <span class="english">More Than Fashion Education</span>
-        <span class="tamil">ஃபேஷன் கல்வியைத் தாண்டி</span>
+        ABOUT US | எங்களைப் பற்றி
       </h2>
 
     </div>
 
+
     <div class="about-content">
 
       <h3>
-        <span class="english">Veyana School Of Style</span>
-        <span class="tamil">Veyana School Of Style</span>
+        VEYANA SCHOOL OF STYLE
       </h3>
 
       <p>
-        <span class="english">
-          Veyana School Of Style is a professional fashion education platform
-          created to transform aspiring learners into skilled, confident,
-          creative and industry-ready fashion professionals.
-        </span>
+        Veyana School Of Style is a professional fashion education platform
+        created to transform aspiring learners into
+        <strong>skilled, confident, creative, and industry-ready fashion professionals.</strong>
+      </p>
 
-        <span class="tamil">
-          Veyana School Of Style என்பது ஆர்வமுள்ள மாணவர்களை திறமையான,
-          தன்னம்பிக்கையான, படைப்பாற்றல் மிக்க மற்றும் தொழில்துறைக்கு தயாரான
-          ஃபேஷன் நிபுணர்களாக உருவாக்கும் ஒரு தொழில்முறை கல்வி தளம்.
-        </span>
+      <br>
+
+      <p>
+        Veyana School Of Style என்பது ஆர்வமுள்ள மாணவர்களை
+        <strong>திறமையான, தன்னம்பிக்கையான, படைப்பாற்றல் மிக்க மற்றும்
+        தொழில்துறைக்கு தயாரான ஃபேஷன் நிபுணர்களாக</strong>
+        உருவாக்கும் ஒரு தொழில்முறை ஃபேஷன் கல்வி தளம்.
+      </p>
+
+      <br>
+
+      <p>
+        Our approach goes beyond simply teaching tailoring or fashion techniques.
+      </p>
+
+      <br>
+
+      <p>
+        எங்கள் அணுகுமுறை தையல் அல்லது ஃபேஷன் நுட்பங்களை மட்டும்
+        கற்றுக்கொடுப்பதைத் தாண்டி செல்கிறது.
       </p>
 
     </div>
@@ -907,20 +858,19 @@ body.tamil-mode .tamil{
       <div class="vm-card">
 
         <h3>
-          <span class="english">VISION</span>
-          <span class="tamil">நோக்கம்</span>
+          VISION | நோக்கம்
         </h3>
 
         <p>
-          <span class="english">
-            To build a generation of skilled fashion professionals who can
-            learn, create, earn and grow with confidence.
-          </span>
+          To build a generation of skilled fashion professionals who can
+          learn, create, earn and grow with confidence.
+        </p>
 
-          <span class="tamil">
-            கற்றுக்கொண்டு, உருவாக்கி, சம்பாதித்து, தன்னம்பிக்கையுடன்
-            வளரக்கூடிய திறமையான ஃபேஷன் நிபுணர்களின் தலைமுறையை உருவாக்குவது.
-          </span>
+        <br>
+
+        <p>
+          கற்றுக்கொண்டு, உருவாக்கி, சம்பாதித்து, தன்னம்பிக்கையுடன்
+          வளரக்கூடிய திறமையான ஃபேஷன் நிபுணர்களின் தலைமுறையை உருவாக்குவது.
         </p>
 
       </div>
@@ -929,22 +879,21 @@ body.tamil-mode .tamil{
       <div class="vm-card">
 
         <h3>
-          <span class="english">MISSION</span>
-          <span class="tamil">பணி</span>
+          MISSION | பணி
         </h3>
 
         <p>
-          <span class="english">
-            To provide practical fashion education, professional skills,
-            creative guidance and opportunities that help learners turn
-            their talent into a meaningful career or business.
-          </span>
+          To provide practical fashion education, professional skills,
+          creative guidance and opportunities that help learners turn
+          their talent into a meaningful career or business.
+        </p>
 
-          <span class="tamil">
-            நடைமுறை சார்ந்த ஃபேஷன் கல்வி, தொழில்முறை திறன்கள்,
-            படைப்பாற்றல் வழிகாட்டுதல் மற்றும் மாணவர்களின் திறமையை
-            பயனுள்ள தொழில் அல்லது வணிகமாக மாற்ற உதவும் வாய்ப்புகளை வழங்குவது.
-          </span>
+        <br>
+
+        <p>
+          நடைமுறை சார்ந்த ஃபேஷன் கல்வி, தொழில்முறை திறன்கள்,
+          படைப்பாற்றல் வழிகாட்டுதல் மற்றும் மாணவர்களின் திறமையை
+          பயனுள்ள தொழில் அல்லது வணிகமாக மாற்ற உதவும் வாய்ப்புகளை வழங்குவது.
         </p>
 
       </div>
@@ -956,7 +905,7 @@ body.tamil-mode .tamil{
 </section>
 
 
-<!-- DIFFERENCE -->
+<!-- ================= DIFFERENCE ================= -->
 
 <section id="difference">
 
@@ -965,112 +914,102 @@ body.tamil-mode .tamil{
     <div class="section-title">
 
       <div class="small">
-        <span class="english">THE VEYANA DIFFERENCE</span>
-        <span class="tamil">VEYANA-வின் சிறப்பு</span>
+        THE VEYANA DIFFERENCE | VEYANA-வின் சிறப்பு
       </div>
 
       <h2>
-        <span class="english">Why We Are Different</span>
-        <span class="tamil">நாங்கள் ஏன் வித்தியாசமானவர்கள்?</span>
+        Why We Are Different | நாங்கள் ஏன் வித்தியாசமானவர்கள்?
       </h2>
 
     </div>
+
 
     <div class="difference-grid">
 
       <div class="diff-card">
         <div class="number">01</div>
-        <h3>
-          <span class="english">Practical Learning</span>
-          <span class="tamil">நடைமுறை கற்றல்</span>
-        </h3>
+        <h3>Practical Learning | நடைமுறை கற்றல்</h3>
         <p>
-          <span class="english">Learn through practical fashion techniques and real work.</span>
-          <span class="tamil">நடைமுறை ஃபேஷன் நுட்பங்கள் மற்றும் உண்மையான பணிகளின் மூலம் கற்றுக்கொள்ளுங்கள்.</span>
+          Learn through practical fashion techniques and real work.
+          <br>
+          நடைமுறை ஃபேஷன் நுட்பங்கள் மற்றும் உண்மையான பணிகளின் மூலம் கற்றுக்கொள்ளுங்கள்.
         </p>
       </div>
+
 
       <div class="diff-card">
         <div class="number">02</div>
-        <h3>
-          <span class="english">Professional Skills</span>
-          <span class="tamil">தொழில்முறை திறன்கள்</span>
-        </h3>
+        <h3>Professional Skills | தொழில்முறை திறன்கள்</h3>
         <p>
-          <span class="english">Build skills that can support your professional journey.</span>
-          <span class="tamil">உங்கள் தொழில்முறை பயணத்திற்கு உதவும் திறன்களை வளர்த்துக்கொள்ளுங்கள்.</span>
+          Build skills that support your professional journey.
+          <br>
+          உங்கள் தொழில்முறை பயணத்திற்கு உதவும் திறன்களை வளர்த்துக்கொள்ளுங்கள்.
         </p>
       </div>
+
 
       <div class="diff-card">
         <div class="number">03</div>
-        <h3>
-          <span class="english">Creative Thinking</span>
-          <span class="tamil">படைப்பாற்றல் சிந்தனை</span>
-        </h3>
+        <h3>Creative Thinking | படைப்பாற்றல் சிந்தனை</h3>
         <p>
-          <span class="english">Develop your own ideas, designs and creative identity.</span>
-          <span class="tamil">உங்கள் சொந்த யோசனைகள், வடிவமைப்புகள் மற்றும் படைப்பாற்றல் அடையாளத்தை வளர்த்துக்கொள்ளுங்கள்.</span>
+          Develop your own ideas, designs and creative identity.
+          <br>
+          உங்கள் சொந்த யோசனைகள், வடிவமைப்புகள் மற்றும் படைப்பாற்றல் அடையாளத்தை வளர்த்துக்கொள்ளுங்கள்.
         </p>
       </div>
+
 
       <div class="diff-card">
         <div class="number">04</div>
-        <h3>
-          <span class="english">Personal Guidance</span>
-          <span class="tamil">தனிப்பட்ட வழிகாட்டுதல்</span>
-        </h3>
+        <h3>Personal Guidance | தனிப்பட்ட வழிகாட்டுதல்</h3>
         <p>
-          <span class="english">Guidance designed to help learners progress confidently.</span>
-          <span class="tamil">மாணவர்கள் தன்னம்பிக்கையுடன் முன்னேற உதவும் வழிகாட்டுதல்.</span>
+          Guidance designed to help learners progress confidently.
+          <br>
+          மாணவர்கள் தன்னம்பிக்கையுடன் முன்னேற உதவும் வழிகாட்டுதல்.
         </p>
       </div>
+
 
       <div class="diff-card">
         <div class="number">05</div>
-        <h3>
-          <span class="english">Online & Offline</span>
-          <span class="tamil">இணையவழி & நேரடி வகுப்புகள்</span>
-        </h3>
+        <h3>Online & Offline | இணையவழி & நேரடி</h3>
         <p>
-          <span class="english">Choose the learning format that works for you.</span>
-          <span class="tamil">உங்களுக்கு ஏற்ற கற்றல் முறையைத் தேர்வு செய்யலாம்.</span>
+          Choose the learning format that works for you.
+          <br>
+          உங்களுக்கு ஏற்ற கற்றல் முறையைத் தேர்வு செய்யலாம்.
         </p>
       </div>
+
 
       <div class="diff-card">
         <div class="number">06</div>
-        <h3>
-          <span class="english">Skill Development</span>
-          <span class="tamil">திறன் வளர்ச்சி</span>
-        </h3>
+        <h3>Skill Development | திறன் வளர்ச்சி</h3>
         <p>
-          <span class="english">Progress from fundamentals to professional-level skills.</span>
-          <span class="tamil">அடிப்படையிலிருந்து தொழில்முறை திறன் வரை முன்னேறுங்கள்.</span>
+          Progress from fundamentals to professional-level skills.
+          <br>
+          அடிப்படையிலிருந்து தொழில்முறை திறன் வரை முன்னேறுங்கள்.
         </p>
       </div>
+
 
       <div class="diff-card">
         <div class="number">07</div>
-        <h3>
-          <span class="english">Learn & Create</span>
-          <span class="tamil">கற்றுக்கொண்டு உருவாக்குங்கள்</span>
-        </h3>
+        <h3>Learn & Create | கற்றுக்கொண்டு உருவாக்குங்கள்</h3>
         <p>
-          <span class="english">Turn what you learn into real creative work.</span>
-          <span class="tamil">நீங்கள் கற்றதை உண்மையான படைப்புகளாக மாற்றுங்கள்.</span>
+          Turn what you learn into real creative work.
+          <br>
+          நீங்கள் கற்றதை உண்மையான படைப்புகளாக மாற்றுங்கள்.
         </p>
       </div>
 
+
       <div class="diff-card">
         <div class="number">08</div>
-        <h3>
-          <span class="english">Career & Business Readiness</span>
-          <span class="tamil">தொழில் & வணிகத் தயாரிப்பு</span>
-        </h3>
+        <h3>Career & Business Readiness | தொழில் & வணிகத் தயாரிப்பு</h3>
         <p>
-          <span class="english">Build skills that can support employment, freelancing or your own business.</span>
-          <span class="tamil">வேலை, ஃப்ரீலான்சிங் அல்லது சொந்த தொழிலுக்கு உதவும் திறன்களை உருவாக்குங்கள்.</span>
+          Build skills that can support employment, freelancing or your own business.
+          <br>
+          வேலை, ஃப்ரீலான்சிங் அல்லது சொந்த தொழிலுக்கு உதவும் திறன்களை உருவாக்குங்கள்.
         </p>
       </div>
 
@@ -1081,7 +1020,7 @@ body.tamil-mode .tamil{
 </section>
 
 
-<!-- JOURNEY -->
+<!-- ================= JOURNEY ================= -->
 
 <section id="journey">
 
@@ -1090,73 +1029,85 @@ body.tamil-mode .tamil{
     <div class="section-title">
 
       <div class="small">
-        <span class="english">YOUR LEARNING JOURNEY</span>
-        <span class="tamil">உங்கள் கற்றல் பயணம்</span>
+        YOUR LEARNING JOURNEY | உங்கள் கற்றல் பயணம்
       </div>
 
       <h2>
-        <span class="english">Learn. Create. Build. Transform.</span>
-        <span class="tamil">கற்றுக்கொள்ளுங்கள். உருவாக்குங்கள். வளருங்கள். மாற்றத்தை உருவாக்குங்கள்.</span>
+        Learn. Create. Build. Transform.
+        <br>
+        கற்றுக்கொள்ளுங்கள். உருவாக்குங்கள். வளருங்கள். மாற்றத்தை உருவாக்குங்கள்.
       </h2>
 
     </div>
 
+
     <div class="journey">
 
       <div class="journey-step">
+
         <div class="step-no">01</div>
+
         <div>
-          <h3>
-            <span class="english">Learn</span>
-            <span class="tamil">கற்றுக்கொள்ளுங்கள்</span>
-          </h3>
+          <h3>Learn | கற்றுக்கொள்ளுங்கள்</h3>
+
           <p>
-            <span class="english">Understand the fundamentals and professional techniques.</span>
-            <span class="tamil">அடிப்படைகள் மற்றும் தொழில்முறை நுட்பங்களை கற்றுக்கொள்ளுங்கள்.</span>
+            Understand the fundamentals and professional techniques.
+            <br>
+            அடிப்படைகள் மற்றும் தொழில்முறை நுட்பங்களை கற்றுக்கொள்ளுங்கள்.
           </p>
         </div>
+
       </div>
 
+
       <div class="journey-step">
+
         <div class="step-no">02</div>
+
         <div>
-          <h3>
-            <span class="english">Create</span>
-            <span class="tamil">உருவாக்குங்கள்</span>
-          </h3>
+          <h3>Create | உருவாக்குங்கள்</h3>
+
           <p>
-            <span class="english">Practice and develop your own creative work.</span>
-            <span class="tamil">பயிற்சி செய்து உங்கள் சொந்த படைப்புகளை உருவாக்குங்கள்.</span>
+            Practice and develop your own creative work.
+            <br>
+            பயிற்சி செய்து உங்கள் சொந்த படைப்புகளை உருவாக்குங்கள்.
           </p>
         </div>
+
       </div>
 
+
       <div class="journey-step">
+
         <div class="step-no">03</div>
+
         <div>
-          <h3>
-            <span class="english">Build</span>
-            <span class="tamil">வளருங்கள்</span>
-          </h3>
+          <h3>Build | வளருங்கள்</h3>
+
           <p>
-            <span class="english">Build your portfolio, confidence and professional skills.</span>
-            <span class="tamil">உங்கள் போர்ட்ஃபோலியோ, தன்னம்பிக்கை மற்றும் தொழில்முறை திறன்களை வளர்த்துக்கொள்ளுங்கள்.</span>
+            Build your portfolio, confidence and professional skills.
+            <br>
+            உங்கள் போர்ட்ஃபோலியோ, தன்னம்பிக்கை மற்றும் தொழில்முறை திறன்களை வளர்த்துக்கொள்ளுங்கள்.
           </p>
         </div>
+
       </div>
 
+
       <div class="journey-step">
+
         <div class="step-no">04</div>
+
         <div>
-          <h3>
-            <span class="english">Transform</span>
-            <span class="tamil">மாற்றத்தை உருவாக்குங்கள்</span>
-          </h3>
+          <h3>Transform | மாற்றத்தை உருவாக்குங்கள்</h3>
+
           <p>
-            <span class="english">Use your skills to move towards your career or business goals.</span>
-            <span class="tamil">உங்கள் திறன்களைப் பயன்படுத்தி தொழில் அல்லது வணிக இலக்குகளை நோக்கி முன்னேறுங்கள்.</span>
+            Use your skills to move towards your career or business goals.
+            <br>
+            உங்கள் திறன்களைப் பயன்படுத்தி தொழில் அல்லது வணிக இலக்குகளை நோக்கி முன்னேறுங்கள்.
           </p>
         </div>
+
       </div>
 
     </div>
@@ -1166,7 +1117,7 @@ body.tamil-mode .tamil{
 </section>
 
 
-<!-- COURSES -->
+<!-- ================= COURSES ================= -->
 
 <section id="courses">
 
@@ -1175,46 +1126,47 @@ body.tamil-mode .tamil{
     <div class="section-title">
 
       <div class="small">
-        <span class="english">OUR COURSES</span>
-        <span class="tamil">எங்கள் பாடநெறிகள்</span>
+        OUR COURSES | எங்கள் பாடநெறிகள்
       </div>
 
       <h2>
-        <span class="english">Choose Your Learning Path</span>
-        <span class="tamil">உங்களுக்கு ஏற்ற பாடநெறியைத் தேர்வு செய்யுங்கள்</span>
+        Choose Your Learning Path |
+        உங்களுக்கு ஏற்ற பாடநெறியைத் தேர்வு செய்யுங்கள்
       </h2>
 
     </div>
 
+
     <div class="course-grid">
 
-      <!-- COURSE 1 -->
+
+      <!-- 01 DIPLOMA -->
 
       <div class="course-card">
 
-        <img src="logo.png" class="course-image" alt="Diploma">
+        <img
+          src="Diploma in fashion Designing.png"
+          class="course-image"
+          alt="Diploma in Fashion Designing">
 
         <div class="course-body">
 
           <h3>
-            <span class="english">Diploma in Fashion Designing</span>
-            <span class="tamil">ஆடை வடிவமைப்பு டிப்ளமோ</span>
+            Diploma in Fashion Designing
+            <br>
+            ஆடை வடிவமைப்பு டிப்ளமோ
           </h3>
 
           <p>
-            <span class="english">
-              Build a strong foundation in fashion designing, garment construction and creative development.
-            </span>
-
-            <span class="tamil">
-              ஆடை வடிவமைப்பு, ஆடை உருவாக்கம் மற்றும் படைப்பாற்றல் வளர்ச்சியில் வலுவான அடித்தளத்தை உருவாக்குங்கள்.
-            </span>
+            Fashion designing, garment construction and creative development.
+            <br>
+            ஆடை வடிவமைப்பு, ஆடை உருவாக்கம் மற்றும் படைப்பாற்றல் வளர்ச்சி.
           </p>
 
-          <button class="btn btn-outline"
-            onclick="openCourse('Diploma in Fashion Designing')">
-            <span class="english">VIEW COURSE</span>
-            <span class="tamil">பாடநெறியைப் பார்க்க</span>
+          <button
+            class="btn btn-outline"
+            onclick="openCourse('Diploma in Fashion Designing | ஆடை வடிவமைப்பு டிப்ளமோ')">
+            VIEW COURSE | பாடநெறியைப் பார்க்க
           </button>
 
         </div>
@@ -1222,33 +1174,33 @@ body.tamil-mode .tamil{
       </div>
 
 
-      <!-- COURSE 2 -->
+      <!-- 02 MASTER DIPLOMA -->
 
       <div class="course-card">
 
-        <img src="logo.png" class="course-image" alt="Master Diploma">
+        <img
+          src="Master Diploma in fashion designing.png"
+          class="course-image"
+          alt="Master Diploma in Fashion Designing">
 
         <div class="course-body">
 
           <h3>
-            <span class="english">Master Diploma in Fashion Designing</span>
-            <span class="tamil">மாஸ்டர் டிப்ளமோ – ஆடை வடிவமைப்பு</span>
+            Master Diploma in Fashion Designing
+            <br>
+            மாஸ்டர் டிப்ளமோ – ஆடை வடிவமைப்பு
           </h3>
 
           <p>
-            <span class="english">
-              Advanced learning for learners who want to develop professional-level fashion skills.
-            </span>
-
-            <span class="tamil">
-              தொழில்முறை அளவிலான ஃபேஷன் திறன்களை வளர்த்துக்கொள்ள விரும்புபவர்களுக்கான மேம்பட்ட பாடநெறி.
-            </span>
+            Advanced fashion designing and professional creative development.
+            <br>
+            மேம்பட்ட ஆடை வடிவமைப்பு மற்றும் தொழில்முறை படைப்பாற்றல் வளர்ச்சி.
           </p>
 
-          <button class="btn btn-outline"
-            onclick="openCourse('Master Diploma in Fashion Designing')">
-            <span class="english">VIEW COURSE</span>
-            <span class="tamil">பாடநெறியைப் பார்க்க</span>
+          <button
+            class="btn btn-outline"
+            onclick="openCourse('Master Diploma in Fashion Designing | மாஸ்டர் டிப்ளமோ – ஆடை வடிவமைப்பு')">
+            VIEW COURSE | பாடநெறியைப் பார்க்க
           </button>
 
         </div>
@@ -1256,33 +1208,33 @@ body.tamil-mode .tamil{
       </div>
 
 
-      <!-- COURSE 3 -->
+      <!-- 03 AARI -->
 
       <div class="course-card">
 
-        <img src="logo.png" class="course-image" alt="Aari Embroidery">
+        <img
+          src="Aari embroidery.png"
+          class="course-image"
+          alt="Aari Embroidery Professional Course">
 
         <div class="course-body">
 
           <h3>
-            <span class="english">Aari Embroidery Professional Course</span>
-            <span class="tamil">ஆரி எம்பிராய்டரி தொழில்முறை பாடநெறி</span>
+            Aari Embroidery Professional Course
+            <br>
+            ஆரி எம்பிராய்டரி தொழில்முறை பாடநெறி
           </h3>
 
           <p>
-            <span class="english">
-              Learn Aari embroidery techniques from fundamentals to professional creative work.
-            </span>
-
-            <span class="tamil">
-              அடிப்படையிலிருந்து தொழில்முறை படைப்புகள் வரை ஆரி எம்பிராய்டரி நுட்பங்களை கற்றுக்கொள்ளுங்கள்.
-            </span>
+            Learn Aari embroidery techniques from fundamentals to professional work.
+            <br>
+            அடிப்படையிலிருந்து தொழில்முறை பணிகள் வரை ஆரி எம்பிராய்டரி நுட்பங்களை கற்றுக்கொள்ளுங்கள்.
           </p>
 
-          <button class="btn btn-outline"
-            onclick="openCourse('Aari Embroidery Professional Course')">
-            <span class="english">VIEW COURSE</span>
-            <span class="tamil">பாடநெறியைப் பார்க்க</span>
+          <button
+            class="btn btn-outline"
+            onclick="openCourse('Aari Embroidery Professional Course | ஆரி எம்பிராய்டரி தொழில்முறை பாடநெறி')">
+            VIEW COURSE | பாடநெறியைப் பார்க்க
           </button>
 
         </div>
@@ -1290,33 +1242,33 @@ body.tamil-mode .tamil{
       </div>
 
 
-      <!-- COURSE 4 -->
+      <!-- 04 TAILORING -->
 
       <div class="course-card">
 
-        <img src="logo.png" class="course-image" alt="Tailoring">
+        <img
+          src="Professional tailoring.png"
+          class="course-image"
+          alt="Professional Tailoring">
 
         <div class="course-body">
 
           <h3>
-            <span class="english">Professional Tailoring</span>
-            <span class="tamil">தொழில்முறை தையல்</span>
+            Professional Tailoring
+            <br>
+            தொழில்முறை தையல்
           </h3>
 
           <p>
-            <span class="english">
-              Develop practical tailoring and garment construction skills.
-            </span>
-
-            <span class="tamil">
-              நடைமுறை தையல் மற்றும் ஆடை உருவாக்கத் திறன்களை வளர்த்துக்கொள்ளுங்கள்.
-            </span>
+            Develop practical tailoring and garment construction skills.
+            <br>
+            நடைமுறை தையல் மற்றும் ஆடை உருவாக்கத் திறன்களை வளர்த்துக்கொள்ளுங்கள்.
           </p>
 
-          <button class="btn btn-outline"
-            onclick="openCourse('Professional Tailoring')">
-            <span class="english">VIEW COURSE</span>
-            <span class="tamil">பாடநெறியைப் பார்க்க</span>
+          <button
+            class="btn btn-outline"
+            onclick="openCourse('Professional Tailoring | தொழில்முறை தையல்')">
+            VIEW COURSE | பாடநெறியைப் பார்க்க
           </button>
 
         </div>
@@ -1324,33 +1276,33 @@ body.tamil-mode .tamil{
       </div>
 
 
-      <!-- COURSE 5 -->
+      <!-- 05 DRAPPING -->
 
       <div class="course-card">
 
-        <img src="logo.png" class="course-image" alt="Draping">
+        <img
+          src="Professional Drapping.png"
+          class="course-image"
+          alt="Professional Draping">
 
         <div class="course-body">
 
           <h3>
-            <span class="english">Professional Draping</span>
-            <span class="tamil">தொழில்முறை டிரேப்பிங்</span>
+            Professional Draping
+            <br>
+            தொழில்முறை டிரேப்பிங்
           </h3>
 
           <p>
-            <span class="english">
-              Explore garment draping techniques and creative styling.
-            </span>
-
-            <span class="tamil">
-              ஆடை டிரேப்பிங் நுட்பங்கள் மற்றும் படைப்பாற்றல் ஸ்டைலிங்கை கற்றுக்கொள்ளுங்கள்.
-            </span>
+            Explore garment draping techniques and creative styling.
+            <br>
+            ஆடை டிரேப்பிங் நுட்பங்கள் மற்றும் படைப்பாற்றல் ஸ்டைலிங்கை கற்றுக்கொள்ளுங்கள்.
           </p>
 
-          <button class="btn btn-outline"
-            onclick="openCourse('Professional Draping')">
-            <span class="english">VIEW COURSE</span>
-            <span class="tamil">பாடநெறியைப் பார்க்க</span>
+          <button
+            class="btn btn-outline"
+            onclick="openCourse('Professional Draping | தொழில்முறை டிரேப்பிங்')">
+            VIEW COURSE | பாடநெறியைப் பார்க்க
           </button>
 
         </div>
@@ -1358,33 +1310,33 @@ body.tamil-mode .tamil{
       </div>
 
 
-      <!-- COURSE 6 -->
+      <!-- 06 PATTERN MAKING -->
 
       <div class="course-card">
 
-        <img src="logo.png" class="course-image" alt="Hand Embroidery">
+        <img
+          src="Pattern making.png"
+          class="course-image"
+          alt="Pattern Making">
 
         <div class="course-body">
 
           <h3>
-            <span class="english">Hand Embroidery</span>
-            <span class="tamil">கை எம்பிராய்டரி</span>
+            Pattern Making
+            <br>
+            பேட்டர்ன் மேக்கிங்
           </h3>
 
           <p>
-            <span class="english">
-              Learn beautiful hand embroidery techniques and creative surface design.
-            </span>
-
-            <span class="tamil">
-              அழகான கை எம்பிராய்டரி நுட்பங்கள் மற்றும் படைப்பாற்றல் மேற்பரப்பு வடிவமைப்பை கற்றுக்கொள்ளுங்கள்.
-            </span>
+            Learn garment pattern drafting, measurements and pattern development.
+            <br>
+            ஆடை பேட்டர்ன் உருவாக்கம், அளவீடுகள் மற்றும் பேட்டர்ன் டெவலப்மென்ட்டை கற்றுக்கொள்ளுங்கள்.
           </p>
 
-          <button class="btn btn-outline"
-            onclick="openCourse('Hand Embroidery')">
-            <span class="english">VIEW COURSE</span>
-            <span class="tamil">பாடநெறியைப் பார்க்க</span>
+          <button
+            class="btn btn-outline"
+            onclick="openCourse('Pattern Making | பேட்டர்ன் மேக்கிங்')">
+            VIEW COURSE | பாடநெறியைப் பார்க்க
           </button>
 
         </div>
@@ -1398,7 +1350,7 @@ body.tamil-mode .tamil{
 </section>
 
 
-<!-- LEARN & EARN -->
+<!-- ================= LEARN & EARN ================= -->
 
 <section id="learn">
 
@@ -1407,36 +1359,35 @@ body.tamil-mode .tamil{
     <div class="section-title">
 
       <div class="small">
-        <span class="english">LEARN & EARN</span>
-        <span class="tamil">கற்றுக்கொண்டு சம்பாதிக்க</span>
+        LEARN & EARN | கற்றுக்கொண்டு சம்பாதிக்க
       </div>
 
       <h2>
-        <span class="english">Turn Skills Into Opportunities</span>
-        <span class="tamil">திறன்களை வாய்ப்புகளாக மாற்றுங்கள்</span>
+        Turn Skills Into Opportunities |
+        திறன்களை வாய்ப்புகளாக மாற்றுங்கள்
       </h2>
 
     </div>
+
 
     <div class="learn-box">
 
       <div class="learn-card">
 
         <h3>
-          <span class="english">Learn</span>
-          <span class="tamil">கற்றுக்கொள்ளுங்கள்</span>
+          Learn | கற்றுக்கொள்ளுங்கள்
         </h3>
 
         <p>
-          <span class="english">
-            Develop practical skills in tailoring, embroidery, fashion designing,
-            garment construction and creative styling.
-          </span>
+          Develop practical skills in tailoring, embroidery,
+          fashion designing, garment construction and creative styling.
+        </p>
 
-          <span class="tamil">
-            தையல், எம்பிராய்டரி, ஆடை வடிவமைப்பு, ஆடை உருவாக்கம் மற்றும்
-            படைப்பாற்றல் ஸ்டைலிங் போன்ற நடைமுறை திறன்களை வளர்த்துக்கொள்ளுங்கள்.
-          </span>
+        <br>
+
+        <p>
+          தையல், எம்பிராய்டரி, ஆடை வடிவமைப்பு, ஆடை உருவாக்கம்
+          மற்றும் படைப்பாற்றல் ஸ்டைலிங் போன்ற நடைமுறை திறன்களை வளர்த்துக்கொள்ளுங்கள்.
         </p>
 
       </div>
@@ -1445,35 +1396,29 @@ body.tamil-mode .tamil{
       <div class="learn-card">
 
         <h3>
-          <span class="english">Earn</span>
-          <span class="tamil">சம்பாதிக்க</span>
+          Earn | சம்பாதிக்க
         </h3>
 
         <ul>
 
           <li>
-            <span class="english">Freelance work</span>
-            <span class="tamil">ஃப்ரீலான்ஸ் வேலை</span>
+            Freelance Work | ஃப்ரீலான்ஸ் வேலை
           </li>
 
           <li>
-            <span class="english">Tailoring services</span>
-            <span class="tamil">தையல் சேவைகள்</span>
+            Tailoring Services | தையல் சேவைகள்
           </li>
 
           <li>
-            <span class="english">Embroidery work</span>
-            <span class="tamil">எம்பிராய்டரி வேலை</span>
+            Embroidery Work | எம்பிராய்டரி வேலை
           </li>
 
           <li>
-            <span class="english">Fashion business</span>
-            <span class="tamil">ஃபேஷன் வணிகம்</span>
+            Fashion Business | ஃபேஷன் வணிகம்
           </li>
 
           <li>
-            <span class="english">Teaching & training</span>
-            <span class="tamil">கற்பித்தல் & பயிற்சி</span>
+            Teaching & Training | கற்பித்தல் & பயிற்சி
           </li>
 
         </ul>
@@ -1487,7 +1432,7 @@ body.tamil-mode .tamil{
 </section>
 
 
-<!-- WHY VEYANA -->
+<!-- ================= WHY VEYANA ================= -->
 
 <section id="why">
 
@@ -1496,36 +1441,38 @@ body.tamil-mode .tamil{
     <div class="section-title">
 
       <div class="small">
-        <span class="english">WHY VEYANA</span>
-        <span class="tamil">ஏன் VEYANA?</span>
+        WHY VEYANA | ஏன் VEYANA?
       </div>
 
       <h2>
-        <span class="english">We Don't Teach Fashion. We Awaken It.</span>
-        <span class="tamil">நாங்கள் ஃபேஷனை மட்டும் கற்றுக்கொடுப்பதில்லை. அதை உங்களுக்குள் விழிப்பூட்டுகிறோம்.</span>
+        We Don't Teach Fashion. We Awaken It.
+        <br>
+        நாங்கள் ஃபேஷனை மட்டும் கற்றுக்கொடுப்பதில்லை. அதை உங்களுக்குள் விழிப்பூட்டுகிறோம்.
       </h2>
 
     </div>
 
+
     <div class="why-box">
 
       <h3>
-        <span class="english">Your Talent. Your Skill. Your Style.</span>
-        <span class="tamil">உங்கள் திறமை. உங்கள் திறன். உங்கள் பாணி.</span>
+        Your Talent. Your Skill. Your Style.
+        <br>
+        உங்கள் திறமை. உங்கள் திறன். உங்கள் பாணி.
       </h3>
 
       <p>
-        <span class="english">
-          Veyana is designed to help learners discover their potential,
-          develop practical skills and move confidently towards their own
-          creative and professional journey.
-        </span>
+        Veyana is designed to help learners discover their potential,
+        develop practical skills and move confidently towards their
+        own creative and professional journey.
+      </p>
 
-        <span class="tamil">
-          மாணவர்கள் தங்களுடைய திறனை கண்டறிந்து, நடைமுறை திறன்களை வளர்த்து,
-          தங்களுடைய படைப்பாற்றல் மற்றும் தொழில்முறை பயணத்தில்
-          தன்னம்பிக்கையுடன் முன்னேற Veyana உருவாக்கப்பட்டுள்ளது.
-        </span>
+      <br>
+
+      <p>
+        மாணவர்கள் தங்களுடைய திறனை கண்டறிந்து, நடைமுறை திறன்களை வளர்த்து,
+        தங்களுடைய படைப்பாற்றல் மற்றும் தொழில்முறை பயணத்தில்
+        தன்னம்பிக்கையுடன் முன்னேற Veyana உருவாக்கப்பட்டுள்ளது.
       </p>
 
     </div>
@@ -1535,7 +1482,7 @@ body.tamil-mode .tamil{
 </section>
 
 
-<!-- ENROLL -->
+<!-- ================= ENROLL ================= -->
 
 <section id="enroll">
 
@@ -1544,23 +1491,17 @@ body.tamil-mode .tamil{
     <div class="section-title">
 
       <div class="small">
-        <span class="english">ADMISSIONS</span>
-        <span class="tamil">சேர்க்கை</span>
+        ADMISSIONS | சேர்க்கை
       </div>
 
       <h2>
-        <span class="english">Start Your Journey</span>
-        <span class="tamil">உங்கள் பயணத்தைத் தொடங்குங்கள்</span>
+        Start Your Journey | உங்கள் பயணத்தைத் தொடங்குங்கள்
       </h2>
 
       <p>
-        <span class="english">
-          Fill in your details and our team will contact you.
-        </span>
-
-        <span class="tamil">
-          உங்கள் விவரங்களை பதிவு செய்யுங்கள். எங்கள் குழு உங்களைத் தொடர்புகொள்ளும்.
-        </span>
+        Fill in your details and our team will contact you.
+        <br>
+        உங்கள் விவரங்களை பதிவு செய்யுங்கள். எங்கள் குழு உங்களைத் தொடர்புகொள்ளும்.
       </p>
 
     </div>
@@ -1573,11 +1514,13 @@ body.tamil-mode .tamil{
         <div class="form-group">
 
           <label>
-            <span class="english">Name</span>
-            <span class="tamil">பெயர்</span>
+            Name | பெயர்
           </label>
 
-          <input type="text" id="name" required>
+          <input
+            type="text"
+            id="name"
+            required>
 
         </div>
 
@@ -1585,11 +1528,13 @@ body.tamil-mode .tamil{
         <div class="form-group">
 
           <label>
-            <span class="english">Mobile Number</span>
-            <span class="tamil">மொபைல் எண்</span>
+            Mobile Number | மொபைல் எண்
           </label>
 
-          <input type="tel" id="phone" required>
+          <input
+            type="tel"
+            id="phone"
+            required>
 
         </div>
 
@@ -1597,8 +1542,7 @@ body.tamil-mode .tamil{
         <div class="form-group">
 
           <label>
-            <span class="english">Select Course</span>
-            <span class="tamil">பாடநெறியைத் தேர்வு செய்யுங்கள்</span>
+            Select Course | பாடநெறியைத் தேர்வு செய்யுங்கள்
           </label>
 
           <select id="course" required>
@@ -1607,17 +1551,29 @@ body.tamil-mode .tamil{
               Select / தேர்வு செய்யுங்கள்
             </option>
 
-            <option>Diploma in Fashion Designing</option>
+            <option>
+              Diploma in Fashion Designing | ஆடை வடிவமைப்பு டிப்ளமோ
+            </option>
 
-            <option>Master Diploma in Fashion Designing</option>
+            <option>
+              Master Diploma in Fashion Designing | மாஸ்டர் டிப்ளமோ – ஆடை வடிவமைப்பு
+            </option>
 
-            <option>Aari Embroidery Professional Course</option>
+            <option>
+              Aari Embroidery Professional Course | ஆரி எம்பிராய்டரி தொழில்முறை பாடநெறி
+            </option>
 
-            <option>Professional Tailoring</option>
+            <option>
+              Professional Tailoring | தொழில்முறை தையல்
+            </option>
 
-            <option>Professional Draping</option>
+            <option>
+              Professional Draping | தொழில்முறை டிரேப்பிங்
+            </option>
 
-            <option>Hand Embroidery</option>
+            <option>
+              Pattern Making | பேட்டர்ன் மேக்கிங்
+            </option>
 
           </select>
 
@@ -1627,8 +1583,7 @@ body.tamil-mode .tamil{
         <div class="form-group">
 
           <label>
-            <span class="english">Message</span>
-            <span class="tamil">செய்தி</span>
+            Message | செய்தி
           </label>
 
           <textarea id="message"></textarea>
@@ -1636,10 +1591,13 @@ body.tamil-mode .tamil{
         </div>
 
 
-        <button class="btn btn-gold" type="submit">
+        <button
+          type="submit"
+          class="btn btn-gold">
 
-          <span class="english">SEND ENQUIRY ON WHATSAPP</span>
-          <span class="tamil">வாட்ஸ்அப்பில் விசாரிக்கவும்</span>
+          SEND ENQUIRY ON WHATSAPP
+          <br>
+          வாட்ஸ்அப்பில் விசாரிக்கவும்
 
         </button>
 
@@ -1652,7 +1610,7 @@ body.tamil-mode .tamil{
 </section>
 
 
-<!-- CONTACT -->
+<!-- ================= CONTACT ================= -->
 
 <section id="contact">
 
@@ -1661,13 +1619,11 @@ body.tamil-mode .tamil{
     <div class="section-title">
 
       <div class="small">
-        <span class="english">CONTACT VEYANA</span>
-        <span class="tamil">VEYANA-வை தொடர்புகொள்ள</span>
+        CONTACT VEYANA | VEYANA-வை தொடர்புகொள்ள
       </div>
 
       <h2>
-        <span class="english">Let's Connect</span>
-        <span class="tamil">தொடர்புகொள்வோம்</span>
+        Let's Connect | தொடர்புகொள்வோம்
       </h2>
 
     </div>
@@ -1678,8 +1634,7 @@ body.tamil-mode .tamil{
       <div class="contact-card">
 
         <h3>
-          <span class="english">Phone</span>
-          <span class="tamil">தொலைபேசி</span>
+          Phone | தொலைபேசி
         </h3>
 
         <a href="tel:+919789805888">
@@ -1691,10 +1646,16 @@ body.tamil-mode .tamil{
 
       <div class="contact-card">
 
-        <h3>WhatsApp</h3>
+        <h3>
+          WhatsApp | வாட்ஸ்அப்
+        </h3>
 
-        <a href="https://wa.me/919789805888" target="_blank">
+        <a
+          href="https://wa.me/919789805888"
+          target="_blank">
+
           9789805888
+
         </a>
 
       </div>
@@ -1703,13 +1664,11 @@ body.tamil-mode .tamil{
       <div class="contact-card">
 
         <h3>
-          <span class="english">Enquire</span>
-          <span class="tamil">விசாரிக்க</span>
+          Enquire | விசாரிக்க
         </h3>
 
         <a href="#enroll">
-          <span class="english">Send an Enquiry</span>
-          <span class="tamil">விசாரணையை அனுப்புங்கள்</span>
+          Send an Enquiry | விசாரணையை அனுப்புங்கள்
         </a>
 
       </div>
@@ -1721,7 +1680,7 @@ body.tamil-mode .tamil{
 </section>
 
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
@@ -1731,18 +1690,19 @@ body.tamil-mode .tamil{
 
       <div class="footer-brand">
 
-        <img src="logo.png" alt="Veyana">
+        <img
+          src="logo.png"
+          alt="Veyana School Of Style">
 
-        <h3>VEYANA SCHOOL OF STYLE</h3>
+        <h3>
+          VEYANA SCHOOL OF STYLE
+        </h3>
 
         <p>
-          <span class="english">
-            We Don't Teach Fashion. We Awaken It.
-          </span>
-
-          <span class="tamil">
-            நாங்கள் ஃபேஷனை மட்டும் கற்றுக்கொடுப்பதில்லை. அதை உங்களுக்குள் விழிப்பூட்டுகிறோம்.
-          </span>
+          We Don't Teach Fashion. We Awaken It.
+          <br>
+          நாங்கள் ஃபேஷனை மட்டும் கற்றுக்கொடுப்பதில்லை.
+          அதை உங்களுக்குள் விழிப்பூட்டுகிறோம்.
         </p>
 
       </div>
@@ -1751,28 +1711,23 @@ body.tamil-mode .tamil{
       <div>
 
         <h4>
-          <span class="english">EXPLORE</span>
-          <span class="tamil">ஆராயுங்கள்</span>
+          EXPLORE | ஆராயுங்கள்
         </h4>
 
         <a href="#about">
-          <span class="english">About Veyana</span>
-          <span class="tamil">Veyana பற்றி</span>
+          About Us | எங்களைப் பற்றி
         </a>
 
         <a href="#courses">
-          <span class="english">Courses</span>
-          <span class="tamil">பாடநெறிகள்</span>
+          Courses | பாடநெறிகள்
         </a>
 
         <a href="#learn">
-          <span class="english">Learn & Earn</span>
-          <span class="tamil">கற்றுக்கொண்டு சம்பாதிக்க</span>
+          Learn & Earn | கற்றுக்கொண்டு சம்பாதிக்க
         </a>
 
         <a href="#why">
-          <span class="english">Why Veyana</span>
-          <span class="tamil">ஏன் Veyana?</span>
+          Why Veyana | ஏன் Veyana?
         </a>
 
       </div>
@@ -1781,21 +1736,23 @@ body.tamil-mode .tamil{
       <div>
 
         <h4>
-          <span class="english">CONNECT</span>
-          <span class="tamil">தொடர்புக்கு</span>
+          CONNECT | தொடர்புக்கு
         </h4>
 
         <a href="#enroll">
-          <span class="english">Enquire</span>
-          <span class="tamil">விசாரிக்க</span>
+          Enquire | விசாரிக்க
         </a>
 
         <a href="tel:+919789805888">
           9789805888
         </a>
 
-        <a href="https://wa.me/919789805888" target="_blank">
-          WhatsApp
+        <a
+          href="https://wa.me/919789805888"
+          target="_blank">
+
+          WhatsApp | வாட்ஸ்அப்
+
         </a>
 
       </div>
@@ -1804,7 +1761,9 @@ body.tamil-mode .tamil{
 
 
     <div class="copyright">
+
       © 2026 Veyana School Of Style. All Rights Reserved.
+
     </div>
 
   </div>
@@ -1812,63 +1771,69 @@ body.tamil-mode .tamil{
 </footer>
 
 
-<!-- COURSE MODAL -->
+<!-- ================= COURSE MODAL ================= -->
 
 <div class="modal" id="courseModal">
 
   <div class="modal-box">
 
-    <span class="close" onclick="closeCourse()">×</span>
+    <span
+      class="close"
+      onclick="closeCourse()">
+      ×
+    </span>
 
     <h2 id="modalCourseName"></h2>
 
     <p>
       <strong>
-        <span class="english">Duration:</span>
-        <span class="tamil">கால அளவு:</span>
+        Duration | கால அளவு:
       </strong>
 
-      <span class="english">Course specific</span>
-      <span class="tamil">பாடநெறிக்கு ஏற்ப மாறுபடும்</span>
+      Course specific | பாடநெறிக்கு ஏற்ப
     </p>
 
     <p>
       <strong>
-        <span class="english">Mode:</span>
-        <span class="tamil">வகுப்பு முறை:</span>
+        Mode | வகுப்பு முறை:
       </strong>
 
-      <span class="english">Online & Offline</span>
-      <span class="tamil">இணையவழி & நேரடி</span>
+      Online & Offline | இணையவழி & நேரடி
     </p>
 
     <p>
       <strong>
-        <span class="english">Fees:</span>
-        <span class="tamil">கட்டணம்:</span>
+        Fees | கட்டணம்:
       </strong>
 
-      <span class="english">Please enquire for current course fee.</span>
-      <span class="tamil">தற்போதைய பாடநெறி கட்டணத்திற்கு தொடர்புகொள்ளவும்.</span>
+      Please enquire for current course fee.
+      <br>
+      தற்போதைய பாடநெறி கட்டணத்திற்கு தொடர்புகொள்ளவும்.
     </p>
+
 
     <div class="buttons">
 
-      <a href="#enroll"
-         class="btn btn-gold"
-         onclick="closeCourse()">
+      <a
+        href="#enroll"
+        class="btn btn-gold"
+        onclick="closeCourse()">
 
-        <span class="english">ENROLL NOW</span>
-        <span class="tamil">இப்போதே சேருங்கள்</span>
+        ENROLL NOW
+        <br>
+        இப்போதே சேருங்கள்
 
       </a>
 
-      <a href="https://wa.me/919789805888"
-         target="_blank"
-         class="btn btn-outline">
 
-        <span class="english">WHATSAPP US</span>
-        <span class="tamil">வாட்ஸ்அப்பில் தொடர்புகொள்ள</span>
+      <a
+        href="https://wa.me/919789805888"
+        target="_blank"
+        class="btn btn-outline">
+
+        WHATSAPP US
+        <br>
+        வாட்ஸ்அப்பில் தொடர்புகொள்ள
 
       </a>
 
@@ -1889,28 +1854,6 @@ function toggleMenu(){
     .getElementById("navLinks")
     .classList
     .toggle("show");
-
-}
-
-
-/* LANGUAGE SWITCH */
-
-function toggleLanguage(){
-
-  document.body.classList.toggle("tamil-mode");
-
-  const button =
-    document.getElementById("langBtn");
-
-  if(document.body.classList.contains("tamil-mode")){
-
-    button.innerText = "English";
-
-  }else{
-
-    button.innerText = "தமிழ்";
-
-  }
 
 }
 
@@ -1974,7 +1917,7 @@ function submitEnquiry(event){
     document.getElementById("message").value.trim();
 
 
-  const whatsappMessage =
+  const whatsappText =
     "Hello Veyana School Of Style,%0A%0A" +
     "Name: " + encodeURIComponent(name) +
     "%0AMobile: " + encodeURIComponent(phone) +
@@ -1984,7 +1927,7 @@ function submitEnquiry(event){
 
   window.open(
     "https://wa.me/919789805888?text=" +
-    whatsappMessage,
+    whatsappText,
     "_blank"
   );
 
