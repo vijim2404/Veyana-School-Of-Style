@@ -1862,6 +1862,9 @@ window.addEventListener("click",function(event){
 function submitEnquiry(event){
 
   event.preventDefault();
+  
+  fbq('track', 'Contact');
+
 
   const name =
   document.getElementById("name").value.trim();
