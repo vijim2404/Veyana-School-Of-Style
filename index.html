@@ -1609,9 +1609,9 @@ Select / தேர்வு செய்யுங்கள்
 </div>
 
 <button type="submit" class="btn btn-gold">
-SEND ENQUIRY ON WHATSAPP
+SEND ENQUIRY
 <br>
-வாட்ஸ்அப்பில் விசாரிக்கவும்
+விசாரணையை அனுப்புங்கள்
 </button>
 
 </form>
@@ -1623,20 +1623,6 @@ SEND ENQUIRY ON WHATSAPP
 <!-- ================= CONTACT ================= -->
 
 <section id="contact">
-
-<div class="container">
-
-<div class="section-title">
-
-<div class="small">
-CONTACT VEYANA | VEYANA-வை தொடர்புகொள்ள
-</div>
-
-<h2>
-Let's Connect | தொடர்புகொள்வோம்
-</h2>
-
-</div>
 
 <div class="contact-grid">
 
@@ -1652,6 +1638,7 @@ Phone | தொலைபேசி
 
 </div>
 
+
 <div class="contact-card">
 
 <h3>
@@ -1664,21 +1651,59 @@ WhatsApp | வாட்ஸ்அப்
 
 </div>
 
+
+<div class="contact-card">
+
+<h3>
+Email | மின்னஞ்சல்
+</h3>
+
+<a href="mailto:veyanaschoolofstyle@gmail.com">
+veyanaschoolofstyle@gmail.com
+</a>
+
+</div>
+
+
+<div class="contact-card">
+
+<h3>
+Instagram | இன்ஸ்டாகிராம்
+</h3>
+
+<a href="https://www.instagram.com/veyanaschoolofstyle?stkn=MTFmcWh1djB4bDN6cA==" target="_blank" rel="noopener">
+@veyanaschoolofstyle
+</a>
+
+</div>
+
+
+<div class="contact-card">
+
+<h3>
+YouTube | யூடியூப்
+</h3>
+
+<a href="https://youtube.com/@veyanaschoolofstyle?si=M13mNJiy4jUWPWoU" target="_blank" rel="noopener">
+Veyana School Of Style
+</a>
+
+</div>
+
+
 <div class="contact-card">
 
 <h3>
 Enquire | விசாரிக்க
 </h3>
 
-<a href="#payment">
+<a href="#enroll">
 Send an Enquiry | விசாரணையை அனுப்புங்கள்
 </a>
 
 </div>
 
 </div>
-</div>
-</section>
 
 
 <!-- ================= FOOTER ================= -->
@@ -1724,6 +1749,17 @@ EXPLORE | ஆராயுங்கள்
 <h4>
 CONNECT | தொடர்புக்கு
 </h4>
+<a href="mailto:veyanaschoolofstyle@gmail.com">
+Email | மின்னஞ்சல்
+</a>
+
+<a href="https://www.instagram.com/veyanaschoolofstyle?stkn=MTFmcWh1djB4bDN6cA==" target="_blank" rel="noopener">
+Instagram | இன்ஸ்டாகிராம்
+</a>
+
+<a href="https://youtube.com/@veyanaschoolofstyle?si=M13mNJiy4jUWPWoU" target="_blank" rel="noopener">
+YouTube | யூடியூப்
+</a>
 
 <a href="#payment">Enquire | விசாரிக்க</a>
 
@@ -1862,9 +1898,8 @@ window.addEventListener("click",function(event){
 function submitEnquiry(event){
 
   event.preventDefault();
-  
-  fbq('track', 'Contact');
 
+  fbq('track', 'Contact');
 
   const name =
   document.getElementById("name").value.trim();
@@ -1878,18 +1913,49 @@ function submitEnquiry(event){
   const message =
   document.getElementById("message").value.trim();
 
-  const whatsappText =
-  "Hello Veyana School Of Style,\n\n" +
-  "Name: " + name + "\n" +
-  "Mobile: " + phone + "\n" +
-  "Course: " + course + "\n" +
-  "Message: " + message;
+  const scriptURL =
+  "https://script.google.com/macros/s/AKfycbzegYle4CeoZne6SVgrKJ43Blt4erzALEC_IrRIdFNbLJci23FsMv1mwLnvXWn4ZXiJ/exec";
 
-  window.open(
-    "https://wa.me/919789805888?text=" +
-    encodeURIComponent(whatsappText),
-    "_blank"
-  );
+  const formData = new URLSearchParams();
+
+  formData.append("name", name);
+  formData.append("mobile", phone);
+  formData.append("course", course);
+  formData.append("message", message);
+
+  fetch(scriptURL, {
+    method: "POST",
+    body: formData,
+    mode: "no-cors"
+  })
+  .then(function(){
+
+    document.querySelector("#enroll form").innerHTML = `
+
+      <div style="text-align:center;padding:40px 20px;">
+
+        <h2 style="color:var(--gold-light);margin-bottom:15px;">
+          Thank You!
+        </h2>
+
+        <p style="color:var(--muted);font-size:16px;">
+          Your enquiry has been submitted successfully.
+        </p>
+
+        <p style="color:var(--muted);font-size:15px;margin-top:10px;">
+          எங்கள் குழு விரைவில் உங்களைத் தொடர்புகொள்ளும்.
+        </p>
+
+      </div>
+
+    `;
+
+  })
+  .catch(function(){
+
+    alert("Unable to submit the enquiry. Please try again.");
+
+  });
 
 }
 
