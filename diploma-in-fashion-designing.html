@@ -16,37 +16,99 @@
       box-sizing: border-box;
     }
 
-    body {
+    /* Match the Main Page colours */
+:root {
+  --green: #01130f;
+  --green2: #021c16;
+  --green3: #06352a;
+  --gold: #d4af37;
+  --gold-light: #f0d477;
+  --cream: #f7f1df;
+  --white: #ffffff;
+  --text: #e9eee9;
+  --muted: #aebdb7;
+  --dark: #000b08;
+}
+
+html {
+  background: #000b08;
+}
+
+body {
   margin: 0;
-  background: #061D16;
-  color: #F8F4E8;
-  font-family: Georgia, serif;
+  font-family: Georgia, "Times New Roman", serif;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(212,175,55,.045),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #000b08,
+      #01130f 50%,
+      #000906
+    );
+  color: var(--text);
+  line-height: 1.7;
+  overflow-x: hidden;
   position: relative;
-  isolation: isolate;
 }
 
 body::before {
   content: "";
   position: fixed;
-  inset: 0;
-  background-image: url("./logo.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: min(65vw, 520px);
-  opacity: 0.12;
+  z-index: 0;
+  left: 50%;
+  top: 52%;
+  width: min(850px, 78vw);
+  height: min(850px, 78vw);
+  transform: translate(-50%, -50%);
+  background: url("logo.png") center / contain no-repeat;
+  opacity: .045;
   pointer-events: none;
-  z-index: -1;
+}
+
+/* Keep content above the watermark */
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+header {
+  background: rgba(0,11,8,.97);
+  border-bottom: 1px solid rgba(212,175,55,.22);
 }
 
 h1, h2, h3 {
-  color: #E8C66A;
+  color: var(--gold-light);
 }
 
-section, .course-card, .content-box {
-  background: rgba(4, 30, 22, 0.88);
-  color: #F8F4E8;
-  border: 1px solid rgba(212, 175, 85, 0.75);
-  border-radius: 14px;
+p, li {
+  color: var(--text);
+}
+
+a {
+  color: inherit;
+}
+
+button,
+.btn {
+  border-color: var(--gold);
+}
+
+.btn-gold {
+  background: linear-gradient(
+    135deg,
+    var(--gold),
+    var(--gold-light)
+  );
+  color: #13251f;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--gold-light);
 }
 
     header {
