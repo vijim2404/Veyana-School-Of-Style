@@ -16,13 +16,18 @@
       box-sizing: border-box;
     }
 
-    body {
-      margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      background: #061d18;
-      color: #f8f0dc;
-      line-height: 1.7;
-    }
+    body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("./logo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: min(75vw, 480px);
+  opacity: 0.10;
+  pointer-events: none;
+  z-index: -1;
+}
 
     header {
       padding: 22px 18px;
