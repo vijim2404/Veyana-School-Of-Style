@@ -18,8 +18,9 @@
 
     body {
   margin: 0;
-  background-color: #00251B;
-  color: #F4EBD0;
+  background: #061D16;
+  color: #F8F4E8;
+  font-family: Georgia, serif;
   position: relative;
   isolation: isolate;
 }
@@ -30,11 +31,22 @@ body::before {
   inset: 0;
   background-image: url("./logo.png");
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: min(75vw, 480px);
+  background-position: center center;
+  background-size: min(65vw, 520px);
   opacity: 0.12;
   pointer-events: none;
   z-index: -1;
+}
+
+h1, h2, h3 {
+  color: #E8C66A;
+}
+
+section, .course-card, .content-box {
+  background: rgba(4, 30, 22, 0.88);
+  color: #F8F4E8;
+  border: 1px solid rgba(212, 175, 85, 0.75);
+  border-radius: 14px;
 }
 
     header {
